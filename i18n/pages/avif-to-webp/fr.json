@@ -1,0 +1,39 @@
+{
+  "title_prefix": "Convertir",
+  "title_gradient": "AVIF en WebP",
+  "title_suffix": "",
+  "subtitle": "Modernisez vos images. Convertissez AVIF en WebP pour une excellente compression et un support de navigateur plus large.",
+  "seo": {
+    "title": "Convertir AVIF en WebP - Optimisé pour le Web | AvifKit",
+    "description": "Convertisseur AVIF vers WebP professionnel. Optimisation des performances Web, compression supérieure, 100% gratuit et privé.",
+    "h1": "Convertir AVIF en WebP - Performance Web Optimale",
+    "h2_how": "Comment convertir AVIF en WebP ?",
+    "h2_why": "Pourquoi convertir AVIF en WebP avec AvifKit ?"
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Télécharger AVIF",
+        "description": "Glissez-déposez vos fichiers .avif dans la zone ci-dessus."
+      },
+      "select": {
+        "title": "Sélectionner le Format",
+        "description": "Choisissez JPG, PNG ou WebP et ajustez les paramètres de qualité."
+      },
+      "download": {
+        "title": "Télécharger",
+        "description": "Obtenez vos images converties instantanément, individuellement ou en ZIP."
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "name": "Comment convertir AVIF en WebP",
+      "description": "Apprenez à convertir des images AVIF au format WebP à l'aide de notre convertisseur en ligne gratuit."
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "Convertissez AVIF en JPG, PNG et WebP localement dans votre navigateur"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Avifkit",
+  "description": "A modern, privacy-first secure client-side AVIF converter. Convert images locally without uploading files to any server.",
+  "requestFramePermissions": []
+}

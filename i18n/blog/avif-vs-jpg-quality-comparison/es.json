@@ -1,0 +1,59 @@
+{
+  "slug": "avif-vs-jpg-quality-comparison",
+  "title": "AVIF vs JPG: ¿Cuál Se Ve Mejor al Mismo Tamaño de Archivo?",
+  "description": "Comparación de calidad del mundo real entre AVIF y JPG a tamaños de archivo idénticos.",
+  "excerpt": "Comprimí la misma foto de atardecer a exactamente 100KB en ambos formatos. Los abrí lado a lado. La diferencia de calidad me sorprendió.",
+  "date": "2025-11-20",
+  "readingTime": 5,
+  "category": "Comparación",
+  "keywords": "avif vs jpg calidad, comparación formato imagen, comparación tamaño archivo",
+  "image": "/blog04.jpg",
+  "content": [
+    {
+      "type": "lead",
+      "text": "Tomé la misma foto de atardecer y la comprimí a exactamente 100KB tanto en AVIF como en JPG. Las abrí lado a lado en un monitor 4K. La diferencia de calidad fue más notable de lo que esperaba."
+    },
+    {
+      "type": "h2",
+      "text": "AVIF Gana, Pero..."
+    },
+    {
+      "type": "p",
+      "text": "A 100KB, la versión AVIF retuvo mucho más detalle. El JPG mostró artefactos de compresión notables - patrones de bloques en el cielo, bandas de color en gradientes."
+    },
+    {
+      "type": "p",
+      "text": "La trampa: cuando intenté abrir el archivo AVIF en mi laptop antigua (Windows 10, sin extensiones instaladas), falló. El JPG se abrió instantáneamente en todas partes."
+    },
+    {
+      "type": "h2",
+      "text": "La Solución Práctica: Convierte Cuando Sea Necesario"
+    },
+    {
+      "type": "p",
+      "text": "Aquí está lo que realmente hago: si alguien me envía un archivo AVIF y no puedo abrirlo, simplemente lo convierto a JPG. Toma 2 segundos con el {link:/avif-to-jpg|convertidor de AvifKit}."
+    },
+    {
+      "type": "h2",
+      "text": "Preguntas Frecuentes"
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "¿AVIF es siempre más pequeño que JPG?",
+          "answer": "A la misma calidad visual, sí - AVIF es típicamente 30-50% más pequeño. Pero si aumentas la compresión JPG, puedes igualar los tamaños de archivo. La calidad simplemente no será tan buena."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "¿Necesitas abrir un archivo AVIF ahora mismo?",
+      "subtitle": "Convierte a JPG en segundos. Funciona en cualquier dispositivo.",
+      "button": {
+        "text": "Convertir AVIF a JPG",
+        "link": "/avif-to-jpg"
+      }
+    }
+  ]
+}

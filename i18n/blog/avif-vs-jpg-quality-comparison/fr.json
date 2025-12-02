@@ -1,0 +1,47 @@
+{
+  "slug": "avif-vs-jpg-quality-comparison",
+  "title": "AVIF vs JPG: Lequel Est Vraiment Meilleur à la Même Taille?",
+  "description": "Comparaison de qualité réelle entre AVIF et JPG à des tailles de fichier identiques.",
+  "excerpt": "J'ai compressé la même photo de coucher de soleil à exactement 100KB dans les deux formats. La différence de qualité m'a surpris.",
+  "date": "2025-11-20",
+  "readingTime": 5,
+  "category": "Comparaison",
+  "keywords": "avif vs jpg qualité, comparaison format image",
+  "image": "/blog04.jpg",
+  "content": [
+    {
+      "type": "lead",
+      "text": "J'ai pris la même photo de coucher de soleil et l'ai compressée à exactement 100KB en AVIF et JPG. Ouvertes côte à côte. La différence était plus notable que prévu."
+    },
+    {
+      "type": "h2",
+      "text": "AVIF Gagne, Mais..."
+    },
+    {
+      "type": "p",
+      "text": "À 100KB, la version AVIF a conservé beaucoup plus de détails. Le JPG montrait des artefacts de compression notables."
+    },
+    {
+      "type": "p",
+      "text": "Le piège: quand j'ai essayé d'ouvrir le fichier AVIF sur mon ancien laptop, ça a échoué. Le JPG s'est ouvert instantanément partout."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "AVIF est-il toujours plus petit que JPG?",
+          "answer": "À la même qualité visuelle, oui - AVIF est typiquement 30-50% plus petit."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Besoin d'ouvrir un fichier AVIF maintenant?",
+      "subtitle": "Convertissez en JPG en secondes.",
+      "button": {
+        "text": "Convertir AVIF en JPG",
+        "link": "/avif-to-jpg"
+      }
+    }
+  ]
+}

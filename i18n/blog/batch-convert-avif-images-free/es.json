@@ -1,0 +1,61 @@
+{
+  "slug": "batch-convert-avif-images-free",
+  "title": "Cómo Convertir Más de 100 Archivos AVIF por Lotes en Menos de un Minuto",
+  "description": "Procesa cientos de archivos AVIF a la vez sin instalar software de escritorio.",
+  "excerpt": "Arrastra la carpeta. Espera 40 segundos. Descarga un zip. Eso es todo. Funciona offline, maneja 500+ imágenes sin problemas.",
+  "date": "2025-11-15",
+  "readingTime": 4,
+  "category": "Tutorial",
+  "keywords": "convertir avif por lotes, convertidor masivo avif, convertir múltiples archivos avif",
+  "image": "/blog05.jpg",
+  "content": [
+    {
+      "type": "lead",
+      "text": "¿Tienes una carpeta con 200 archivos AVIF que necesitas convertir? No los hagas uno por uno. Aquí está cómo convertir todo por lotes en menos de un minuto - sin instalación de software requerida."
+    },
+    {
+      "type": "h2",
+      "text": "La Forma Rápida: Convertir por Lotes en Línea"
+    },
+    {
+      "type": "p",
+      "text": "AvifKit te permite seleccionar múltiples archivos a la vez. Todo el proceso es del lado del cliente, así que no hay espera de subida. Tu computadora hace todo el trabajo localmente."
+    },
+    {
+      "type": "h3",
+      "text": "Paso a paso:"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Ve a {link:/avif-to-jpg|AvifKit Convertidor AVIF}",
+        "Haz clic en la zona de carga o arrastra múltiples archivos AVIF (hasta 30 a la vez)",
+        "Espera el procesamiento - usualmente 20-60 segundos dependiendo del tamaño",
+        "Haz clic en \"Descargar como ZIP\" para obtener todos los archivos convertidos",
+        "Extrae el zip - listo"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Preguntas Frecuentes"
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "¿Hay un límite de tamaño de archivo?",
+          "answer": "Archivos individuales hasta 50MB, 30 archivos por lote. Si necesitas convertir archivos más grandes, solo divídelos en múltiples lotes."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "¿Listo para convertir tus archivos AVIF por lotes?",
+      "subtitle": "Arrastra hasta 30 archivos. Convierte en segundos.",
+      "button": {
+        "text": "Comenzar Conversión por Lotes",
+        "link": "/avif-to-jpg"
+      }
+    }
+  ]
+}

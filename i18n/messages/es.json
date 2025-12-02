@@ -1,0 +1,214 @@
+{
+  "nav": {
+    "tools": "Herramientas",
+    "blog": "Blog",
+    "convert_now": "Convertir"
+  },
+  "hero": {
+    "privacy_banner": "Privacidad Verificada: Los archivos nunca salen de tu dispositivo",
+    "badges": {
+      "privacy": "100% Privado",
+      "speed": "Velocidad Instantánea",
+      "bulk": "Conversión por Lotes"
+    }
+  },
+  "converter": {
+    "drop_title": "Suelta archivos AVIF aquí",
+    "drop_subtitle": "O haz clic para buscar. Máx 30 archivos. Máx 50MB por archivo.",
+    "client_side_tag": "100% Seguro en el Cliente",
+    "add_more": "+ Añadir más archivos",
+    "queue_title": "Cola",
+    "clear_all": "Borrar todo",
+    "convert_all": "Convertir todo",
+    "download_zip": "Guardar como ZIP",
+    "download": "Descargar",
+    "converting": "Convirtiendo...",
+    "error": "Error",
+    "ready": "Listo",
+    "corrupted": "Corrupto",
+    "source_format": "Origen",
+    "settings": {
+      "quality": "Calidad",
+      "format_jpg": "Convertir a JPG",
+      "format_png": "Convertir a PNG",
+      "format_webp": "Convertir a WebP",
+      "global_format": "Convertir todo a"
+    },
+    "errors": {
+      "batch_limit": "Solo puedes convertir hasta 30 archivos a la vez.",
+      "size_limit": "Archivo demasiado grande para procesamiento en navegador (Máx 10MB).",
+      "non_image": "Tipo de archivo no soportado. Por favor, sube solo imágenes.",
+      "corrupted": "El archivo parece estar corrupto (0 bytes).",
+      "generic": "Conversión fallida",
+      "same_format_jpg": "ya es un JPG.",
+      "same_format_png": "ya es un PNG.",
+      "same_format_webp": "ya es un WebP.",
+      "convert_instead": "¿Convertir a {format} en su lugar?"
+    },
+    "toast": {
+      "files_rejected": "Algunos archivos fueron rechazados. Ver detalles arriba.",
+      "corrupted_added": "Archivos corruptos añadidos a la cola pero no se pueden convertir."
+    }
+  },
+  "features": {
+    "title": "¿Por qué usar Avifkit?",
+    "subtitle": "El estándar moderno para la conversión de imágenes.",
+    "privacy_title": "Privacidad del Lado del Cliente",
+    "privacy_desc": "A diferencia de otras herramientas, Avifkit procesa las imágenes localmente usando el motor de tu navegador. Tus fotos nunca se envían a un servidor en la nube.",
+    "speed_title": "Increíblemente Rápido",
+    "speed_desc": "Cero tiempo de carga. Cero espera de descarga. Usamos WebAssembly y Canvas API para convertir archivos al instante.",
+    "quality_title": "Salida de Alta Calidad",
+    "quality_desc": "Controla los niveles de compresión y preserva la transparencia (canal alfa) al convertir AVIF a PNG o WebP."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Es WebP mejor que AVIF?",
+    "a1": "Generalmente, AVIF ofrece mejor eficiencia de compresión (archivos más pequeños) que WebP para la misma calidad visual. Sin embargo, WebP tiene mayor compatibilidad actualmente.",
+    "q2": "¿Puedo abrir WebP en iPhone?",
+    "a2": "Sí, las versiones modernas de iOS (iOS 14+) soportan WebP nativamente. Si tienes un iPhone antiguo, se recomienda convertir a JPG.",
+    "q3": "¿Es seguro convertir fotos privadas aquí?",
+    "a3": "Absolutamente. Avifkit utiliza tecnología de procesamiento del lado del cliente. Tus imágenes se convierten directamente en la memoria de tu navegador y nunca se suben a ningún servidor externo.",
+    "q4": "¿Esta herramienta soporta transparencia?",
+    "a4": "¡Sí! Si conviertes AVIF a PNG o WebP, el fondo transparente se preserva. Si conviertes a JPG, las áreas transparentes se volverán blancas.",
+    "q5": "¿Cómo abro AVIF en Windows 10?",
+    "a5": "Windows 10 y 11 soportan AVIF si instalas la 'Extensión de Vídeo AV1'. Alternativamente, usa Avifkit para convertirlos a JPG estándar."
+  },
+  "footer": {
+    "slogan": "Convertidor AVIF seguro del lado del cliente. Optimizado para privacidad y velocidad.",
+    "headers": {
+      "tools": "Herramientas",
+      "resources": "Recursos",
+      "legal": "Legal"
+    },
+    "links": {
+      "blog": "Blog",
+      "api": "API para Desarrolladores",
+      "knowledge": "Base de Conocimientos",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "cookies": "Política de Cookies"
+    },
+    "copyright": "© 2025 Avifkit.com. Todos los derechos reservados."
+  },
+  "pages": {
+    "home": {
+      "title_prefix": "Convertidor AVIF",
+      "title_gradient": "Gratis y Online",
+      "title_suffix": "",
+      "subtitle": "Convierte archivos AVIF a WebP, JPG o PNG instantáneamente en tu navegador. Sin límites de tamaño. Sin subidas al servidor. Sin marcas de agua."
+    },
+    "jpg": {
+      "title_prefix": "Convertir",
+      "title_gradient": "de AVIF a JPG",
+      "title_suffix": "Gratis",
+      "subtitle": "Transforma imágenes AVIF a formato JPG estándar al instante. Lo mejor para compatibilidad con dispositivos y software antiguos."
+    },
+    "png": {
+      "title_prefix": "Convertir",
+      "title_gradient": "AVIF a PNG",
+      "title_suffix": "Online",
+      "subtitle": "Convierte archivos AVIF a PNG de alta calidad preservando la transparencia. Conversión 100% gratuita y segura en el cliente."
+    },
+    "webp": {
+      "title_prefix": "Convertir",
+      "title_gradient": "AVIF a WebP",
+      "title_suffix": "Online",
+      "subtitle": "Moderniza tus imágenes. Convierte AVIF a WebP para una excelente compresión y mayor soporte en navegadores."
+    }
+  },
+  "seo": {
+    "jpg": {
+      "title": "Convertir de AVIF a JPG Gratis - Sin subir archivos | AvifKit",
+      "description": "Convertidor de AVIF a JPG gratis. Pasar AVIF a JPG online sin servidor, conversión masiva rápida. Privacidad 100% garantizada.",
+      "h1": "Convertir de AVIF a JPG - 100% Gratis y Seguro",
+      "h2_how": "¿Cómo convertir de AVIF a JPG?",
+      "h2_why": "¿Por qué usar AvifKit para convertir de AVIF a JPG?"
+    },
+    "png": {
+      "title": "Convertir AVIF a PNG Transparente - Gratis | AvifKit",
+      "description": "Convertidor AVIF a PNG gratuito. Preserva transparencia, calidad sin pérdida, procesamiento local seguro. Sin subida al servidor.",
+      "h1": "Convertir AVIF a PNG - Transparencia Preservada",
+      "h2_how": "¿Cómo convertir AVIF a PNG con transparencia?",
+      "h2_why": "¿Por qué usar AvifKit para pasar AVIF a PNG?"
+    },
+    "webp": {
+      "title": "Convertir AVIF a WebP - Optimizado para Web | AvifKit",
+      "description": "Convertidor profesional de AVIF a WebP. Optimización del rendimiento web, compresión superior, 100% gratuito y privado.",
+      "h1": "Convertir AVIF a WebP - Rendimiento Web Óptimo",
+      "h2_how": "¿Cómo pasar de AVIF a WebP?",
+      "h2_why": "¿Por qué convertir AVIF a WebP con AvifKit?"
+    }
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Subir AVIF",
+        "description": "Arrastra y suelta tus archivos .avif en el cuadro de arriba."
+      },
+      "select": {
+        "title": "Seleccionar Formato",
+        "description": "Elige JPG, PNG o WebP y ajusta la calidad."
+      },
+      "download": {
+        "title": "Descargar",
+        "description": "Obtén tus imágenes convertidas al instante, individualmente o en ZIP."
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "jpg": {
+        "name": "Cómo convertir AVIF a JPG",
+        "description": "Aprende a convertir imágenes AVIF a formato JPG usando nuestro convertidor online gratuito."
+      },
+      "png": {
+        "name": "Cómo convertir AVIF a PNG",
+        "description": "Aprende a convertir imágenes AVIF a formato PNG usando nuestro convertidor online gratuito."
+      },
+      "webp": {
+        "name": "Cómo convertir AVIF a WebP",
+        "description": "Aprende a convertir imágenes AVIF a formato WebP usando nuestro convertidor online gratuito."
+      },
+      "home": {
+        "name": "Cómo convertir AVIF a múltiples formatos",
+        "description": "Aprende a convertir imágenes AVIF a múltiples formatos usando nuestro convertidor online gratuito."
+      }
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "Convierte AVIF a JPG, PNG y WebP localmente en tu navegador"
+    }
+  },
+  "footer_description": "Avifkit.com es un convertidor de archivos online gratuito que te permite convertir medios fácil y rápidamente de un formato a otro. Soportamos muchos formatos fuente diferentes como AVIF, WEBP, HEIC, y formatos de salida como JPG, PNG.",
+  "site": {
+    "title": "Avifkit - Convertidor AVIF Seguro del Lado del Cliente",
+    "description": "Convierte AVIF a JPG, PNG y WebP localmente en tu navegador. 100% Privado, Súper Rápido, Sin Subidas al Servidor.",
+    "og_image_alt": "Avifkit - Convertidor AVIF"
+  },
+  "blog": {
+    "meta": {
+      "title": "Guías de Conversión AVIF - Abrir, Convertir y Arreglar Archivos AVIF | Blog de AvifKit",
+      "description": "¿No puedes abrir archivos AVIF en Windows? Aprende cómo convertir AVIF a JPG/PNG, preservar transparencia y solucionar problemas de compatibilidad. Herramientas online gratuitas, sin instalación necesaria.",
+      "keywords": "abrir avif windows, convertir avif a jpg, avif a png transparente, visor de archivos avif, convertidor avif gratuito, extensión avif, conversión del lado del cliente"
+    },
+    "hero": {
+      "title_prefix": "Guías",
+      "title_gradient": "AVIF",
+      "subtitle": "Soluciones paso a paso para problemas de compatibilidad con Windows, errores de transparencia y dificultades de conversión"
+    },
+    "list": {
+      "min_read": "min de lectura",
+      "read_more": "Leer más",
+      "empty_state": "Aún no hay publicaciones de blog. ¡Vuelve pronto!"
+    },
+    "detail": {
+      "back_to_blog": "Volver al Blog"
+    },
+    "cta": {
+      "title": "¿Solo Necesitas Convertir Algo Ahora Mismo?",
+      "subtitle": "Funciona en tu navegador. Sin espera de carga. Sin procesamiento en servidor. Arrastra archivos, obtén resultados.",
+      "button_jpg": "Convertir a JPG",
+      "button_png": "Convertir a PNG"
+    }
+  }
+}

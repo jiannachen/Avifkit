@@ -1,0 +1,49 @@
+{
+  "slug": "avif-to-png-transparent-background",
+  "title": "AVIF vers PNG: Comment Convertir Sans Perdre la Transparence",
+  "description": "Convertir AVIF en JPG ruine la transparence. Apprenez pourquoi PNG est le bon format et comment préserver parfaitement les canaux alpha.",
+  "excerpt": "Votre logo a un fond blanc par accident? C'est parce que vous avez choisi JPG. PNG garde la transparence. Voici la bonne façon de convertir.",
+  "date": "2025-11-28",
+  "readingTime": 5,
+  "category": "Guide",
+  "keywords": "convertir avif en png transparent, canal alpha avif, garder fond transparent",
+  "image": "/blog02.jpg",
+  "content": [
+    {
+      "type": "lead",
+      "text": "Vous avez converti votre logo d'AVIF en JPG et le fond est devenu blanc? C'est parce que JPG ne supporte pas la transparence. PNG oui. Voici comment convertir AVIF en PNG correctement sans perdre le canal alpha."
+    },
+    {
+      "type": "h2",
+      "text": "Convertissez AVIF en PNG à la Place"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Allez sur {link:/avif-to-png|AvifKit Convertisseur AVIF vers PNG}",
+        "Glissez votre fichier AVIF dans la fenêtre",
+        "Attendez le traitement côté client (1-2 secondes)",
+        "Téléchargez le fichier PNG",
+        "Vérifiez que la transparence est préservée"
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Est-ce que JPG supporte la transparence?",
+          "answer": "Non. JPG n'a pas de canal alpha. Si vous convertissez une image transparente en JPG, le fond sera rempli avec une couleur unie (généralement blanc ou noir)."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Besoin de préserver la transparence?",
+      "subtitle": "Convertissez AVIF en PNG avec support parfait du canal alpha.",
+      "button": {
+        "text": "Convertir AVIF en PNG Maintenant",
+        "link": "/avif-to-png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "title_prefix": "Convertir",
+  "title_gradient": "AVIF a PNG",
+  "title_suffix": "Online",
+  "subtitle": "Convierte archivos AVIF a PNG de alta calidad preservando la transparencia. Conversión 100% gratuita y segura del lado del cliente.",
+  "seo": {
+    "title": "Convertir AVIF a PNG Transparente - Gratis | AvifKit",
+    "description": "Convertidor AVIF a PNG gratuito. Preserva transparencia, calidad sin pérdida, procesamiento local seguro. Sin subida al servidor.",
+    "h1": "Convertir AVIF a PNG - Transparencia Preservada",
+    "h2_how": "¿Cómo convertir AVIF a PNG con transparencia?",
+    "h2_why": "¿Por qué usar AvifKit para pasar AVIF a PNG?"
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Subir AVIF",
+        "description": "Arrastra y suelta tus archivos .avif en el cuadro de arriba."
+      },
+      "select": {
+        "title": "Seleccionar Formato",
+        "description": "Elige JPG, PNG o WebP y ajusta la calidad."
+      },
+      "download": {
+        "title": "Descargar",
+        "description": "Obtén tus imágenes convertidas al instante, individualmente o en ZIP."
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "name": "Cómo convertir AVIF a PNG",
+      "description": "Aprende a convertir imágenes AVIF a formato PNG usando nuestro convertidor online gratuito."
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "Convierte AVIF a JPG, PNG y WebP localmente en tu navegador"
+    }
+  }
+}

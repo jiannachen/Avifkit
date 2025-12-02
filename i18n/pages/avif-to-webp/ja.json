@@ -1,0 +1,39 @@
+{
+  "title_prefix": "AVIFを",
+  "title_gradient": "WebPに変換",
+  "title_suffix": "",
+  "subtitle": "画像を最新形式へ。優れた圧縮率と幅広いブラウザサポートのために、AVIFをWebPに変換しましょう。",
+  "seo": {
+    "title": "AVIF WebP 変換 - Web最適化ツール | AvifKit",
+    "description": "プロフェッショナルなAVIF WebP変換ツール。Web パフォーマンス最適化、優れた圧縮率、100%無料でプライバシー保護。",
+    "h1": "AVIF WebP 変換 - 高速・プライベート",
+    "h2_how": "AVIFをWebPに変換する方法",
+    "h2_why": "AvifKitでAVIF WebP変換を選ぶ理由"
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "AVIFアップロード",
+        "description": ".avifファイルを上のボックスにドラッグ&ドロップしてください。"
+      },
+      "select": {
+        "title": "フォーマット選択",
+        "description": "JPG、PNG、またはWebPを選択し、品質設定を調整してください。"
+      },
+      "download": {
+        "title": "ダウンロード",
+        "description": "変換された画像を個別またはZIPで即座にダウンロードできます。"
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "name": "AVIFをWebPに変換する方法",
+      "description": "無料のオンラインコンバーターを使用してAVIF画像をWebP形式に変換する方法を学びましょう。"
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "ブラウザ内でローカルにAVIFをJPG、PNG、WebPに変換"
+    }
+  }
+}

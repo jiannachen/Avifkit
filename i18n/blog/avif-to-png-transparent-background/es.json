@@ -1,0 +1,94 @@
+{
+  "slug": "avif-to-png-transparent-background",
+  "title": "AVIF a PNG: Cómo Convertir Sin Perder Transparencia",
+  "description": "Convertir AVIF a JPG arruina la transparencia. Aprende por qué PNG es el formato correcto y cómo preservar canales alfa perfectamente.",
+  "excerpt": "¿Tu logo quedó con fondo blanco por accidente? Es porque elegiste JPG. PNG mantiene la transparencia. Aquí está la forma correcta de convertir.",
+  "date": "2025-11-28",
+  "readingTime": 5,
+  "category": "Guía",
+  "keywords": "convertir avif a png transparente, canal alfa avif, mantener fondo transparente, avif vs png calidad",
+  "image": "/blog02.jpg",
+  "content": [
+    {
+      "type": "lead",
+      "text": "¿Convertiste tu logo de AVIF a JPG y el fondo se volvió blanco? Es porque JPG no soporta transparencia. PNG sí. Aquí está cómo convertir AVIF a PNG correctamente sin perder el canal alfa."
+    },
+    {
+      "type": "h2",
+      "text": "El Problema: Por Qué JPG Arruina Fondos Transparentes"
+    },
+    {
+      "type": "p",
+      "text": "JPG fue diseñado en 1992 para fotografías. No tiene canal alfa, lo que significa que no puede almacenar datos de transparencia. Cuando conviertes un AVIF transparente a JPG, el fondo se rellena con blanco o negro."
+    },
+    {
+      "type": "p",
+      "text": "PNG, por otro lado, soporta transparencia de canal alfa completo. Por eso es el formato estándar para logos, íconos, y cualquier imagen que necesite transparencia."
+    },
+    {
+      "type": "h2",
+      "text": "La Solución: Convierte AVIF a PNG en Su Lugar"
+    },
+    {
+      "type": "h3",
+      "text": "Guía paso a paso:"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Ve a {link:/avif-to-png|AvifKit Convertidor AVIF a PNG}",
+        "Arrastra tu archivo AVIF a la ventana",
+        "Espera el procesamiento del lado del cliente (1-2 segundos)",
+        "Descarga el archivo PNG",
+        "Verifica que la transparencia se haya preservado"
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Por qué AvifKit preserva la transparencia:",
+      "text": "Usamos procesamiento WebAssembly del lado del cliente que maneja correctamente los canales alfa. Tu imagen se procesa localmente en tu navegador - nunca se sube a un servidor - y todos los datos de transparencia se preservan durante la conversión."
+    },
+    {
+      "type": "h2",
+      "text": "Preguntas Frecuentes"
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "¿JPG soporta transparencia?",
+          "answer": "No. JPG no tiene canal alfa. Si conviertes una imagen transparente a JPG, el fondo se rellenará con un color sólido (usualmente blanco o negro)."
+        },
+        {
+          "question": "¿Cómo convierto AVIF a PNG por lotes?",
+          "answer": "Usa el {link:/avif-to-png|convertidor por lotes de AvifKit}. Puedes arrastrar múltiples archivos AVIF a la vez, y todos se convertirán a PNG con transparencia preservada. La herramienta los empaquetará en un archivo zip para descarga."
+        },
+        {
+          "question": "¿Los archivos PNG serán más grandes que AVIF?",
+          "answer": "Sí, típicamente 2-4x más grandes. PNG usa compresión sin pérdida, mientras que AVIF usa compresión con pérdida agresiva. El trade-off es compatibilidad - PNG funciona en todas partes, AVIF no."
+        },
+        {
+          "question": "¿Photoshop puede abrir archivos AVIF con transparencia?",
+          "answer": "Photoshop 2024 y más reciente tiene soporte AVIF parcial, pero es buggy con ciertos perfiles de color y modos de transparencia. Convertir a PNG primero es más confiable."
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Conclusión"
+    },
+    {
+      "type": "p",
+      "text": "Si tu imagen tiene transparencia, usa PNG, no JPG. El convertidor del lado del cliente de AvifKit asegura preservación perfecta del canal alfa sin subir tus archivos a ningún servidor."
+    },
+    {
+      "type": "cta",
+      "title": "¿Necesitas preservar transparencia?",
+      "subtitle": "Convierte AVIF a PNG con soporte perfecto de canal alfa. Procesamiento del lado del cliente, 100% privado.",
+      "button": {
+        "text": "Convertir AVIF a PNG Ahora",
+        "link": "/avif-to-png"
+      }
+    }
+  ]
+}

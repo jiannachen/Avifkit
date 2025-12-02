@@ -1,0 +1,39 @@
+{
+  "title_prefix": "AVIFを",
+  "title_gradient": "JPGに変換",
+  "title_suffix": "",
+  "subtitle": "AVIF画像を標準のJPG形式に即座に変換。古いデバイスやソフトウェアとの互換性に最適。",
+  "seo": {
+    "title": "AVIF JPG 変換 - インストール不要・完全無料 | AvifKit",
+    "description": "AVIF JPG 変換サイト。ブラウザ上で完結、アップロード不要、瞬時に変換。プライバシー保護で安全なAVIF画像変換ツール。",
+    "h1": "AVIF JPG 変換 - 完全無料・サーバーレス",
+    "h2_how": "AVIFをJPGに変換する方法",
+    "h2_why": "AvifKitでAVIF JPG変換を選ぶ理由"
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "AVIFアップロード",
+        "description": ".avifファイルを上のボックスにドラッグ&ドロップしてください。"
+      },
+      "select": {
+        "title": "フォーマット選択",
+        "description": "JPG、PNG、またはWebPを選択し、品質設定を調整してください。"
+      },
+      "download": {
+        "title": "ダウンロード",
+        "description": "変換された画像を個別またはZIPで即座にダウンロードできます。"
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "name": "AVIFをJPGに変換する方法",
+      "description": "無料のオンラインコンバーターを使用してAVIF画像をJPG形式に変換する方法を学びましょう。"
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "ブラウザ内でローカルにAVIFをJPG、PNG、WebPに変換"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title_prefix": "AVIFを",
+  "title_gradient": "PNGに変換",
+  "title_suffix": "",
+  "subtitle": "透明度を保持したまま、AVIFファイルを高品質なPNGに変換。100%無料で安全なクライアント側変換。",
+  "seo": {
+    "title": "AVIF PNG 変換 - 透明背景対応・無料 | AvifKit",
+    "description": "AVIF PNG変換ツール。透明度保持、高画質、ブラウザ上で安全に変換。サーバーアップロード不要のプライバシー重視設計。",
+    "h1": "AVIF PNG 変換 - 透明度保持対応",
+    "h2_how": "AVIFをPNGに変換する方法（透明度保持）",
+    "h2_why": "AvifKitでAVIF PNG変換を選ぶ理由"
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "AVIFアップロード",
+        "description": ".avifファイルを上のボックスにドラッグ&ドロップしてください。"
+      },
+      "select": {
+        "title": "フォーマット選択",
+        "description": "JPG、PNG、またはWebPを選択し、品質設定を調整してください。"
+      },
+      "download": {
+        "title": "ダウンロード",
+        "description": "変換された画像を個別またはZIPで即座にダウンロードできます。"
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "name": "AVIFをPNGに変換する方法",
+      "description": "無料のオンラインコンバーターを使用してAVIF画像をPNG形式に変換する方法を学びましょう。"
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "ブラウザ内でローカルにAVIFをJPG、PNG、WebPに変換"
+    }
+  }
+}

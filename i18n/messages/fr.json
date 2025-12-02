@@ -1,0 +1,212 @@
+{
+  "nav": {
+    "tools": "Outils",
+    "blog": "Blog",
+    "convert_now": "Convertir"
+  },
+  "hero": {
+    "privacy_banner": "Confidentialité Vérifiée : Les fichiers ne quittent jamais votre appareil",
+    "badges": {
+      "privacy": "100% Privé",
+      "speed": "Vitesse Instantanée",
+      "bulk": "Conversion par Lots"
+    }
+  },
+  "converter": {
+    "drop_title": "Déposez les fichiers AVIF ici",
+    "drop_subtitle": "Ou cliquez pour parcourir. Max 30 fichiers par lot. Max 50 Mo par fichier.",
+    "client_side_tag": "100% Sécurisé côté client",
+    "add_more": "+ Ajouter plus de fichiers",
+    "queue_title": "File d'attente",
+    "clear_all": "Tout effacer",
+    "convert_all": "Tout convertir",
+    "download_zip": "Enregistrer en ZIP",
+    "download": "Télécharger",
+    "converting": "Conversion en cours...",
+    "error": "Erreur",
+    "ready": "Prêt",
+    "settings": {
+      "quality": "Qualité",
+      "format_jpg": "Convertir en JPG",
+      "format_png": "Convertir en PNG",
+      "format_webp": "Convertir en WebP",
+      "global_format": "Tout convertir en"
+    },
+    "errors": {
+      "batch_limit": "Vous ne pouvez convertir que 30 fichiers à la fois.",
+      "size_limit": "Fichier trop volumineux pour le traitement du navigateur (Max 10 Mo).",
+      "non_image": "Type de fichier non pris en charge. Veuillez télécharger uniquement des images.",
+      "corrupted": "Le fichier semble être corrompu (0 octet).",
+      "generic": "Échec de la conversion",
+      "same_format_jpg": "est déjà un JPG.",
+      "same_format_png": "est déjà un PNG.",
+      "same_format_webp": "est déjà un WebP.",
+      "convert_instead": "Convertir en {format} à la place ?"
+    },
+    "toast": {
+      "files_rejected": "Certains fichiers ont été rejetés. Voir les détails ci-dessus.",
+      "corrupted_added": "Fichiers corrompus ajoutés à la file d'attente mais ne peuvent pas être convertis."
+    }
+  },
+  "features": {
+    "title": "Pourquoi utiliser Avifkit ?",
+    "subtitle": "La norme moderne pour la conversion d'images.",
+    "privacy_title": "Confidentialité côté client",
+    "privacy_desc": "Contrairement à d'autres outils, Avifkit traite les images localement en utilisant le moteur de votre navigateur. Vos photos ne sont jamais envoyées à un serveur cloud.",
+    "speed_title": "Ultra Rapide",
+    "speed_desc": "Zéro temps de téléchargement. Zéro attente de téléchargement. Nous utilisons WebAssembly et Canvas API pour convertir les fichiers instantanément.",
+    "quality_title": "Sortie de Haute Qualité",
+    "quality_desc": "Contrôlez les niveaux de compression et préservez la transparence (canal alpha) lors de la conversion AVIF en PNG ou WebP."
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "q1": "WebP est-il meilleur qu'AVIF ?",
+    "a1": "En général, AVIF offre une meilleure efficacité de compression (fichiers plus petits) que WebP pour la même qualité visuelle. Cependant, WebP bénéficie actuellement d'un support de navigateur légèrement plus large.",
+    "q2": "Puis-je ouvrir WebP sur iPhone ?",
+    "a2": "Oui, les versions modernes d'iOS (iOS 14+) prennent en charge WebP nativement. Si vous avez un iPhone plus ancien, la conversion en JPG est recommandée.",
+    "q3": "Est-il sûr de convertir des photos privées ici ?",
+    "a3": "Absolument. Avifkit utilise une technologie de traitement côté client. Vos images sont converties directement dans la mémoire de votre navigateur Web et ne sont jamais téléchargées vers un serveur externe.",
+    "q4": "Cet outil prend-il en charge la transparence ?",
+    "a4": "Oui ! Si vous convertissez AVIF en PNG ou WebP, l'arrière-plan transparent (canal alpha) est préservé. Si vous convertissez en JPG, les zones transparentes deviendront blanches.",
+    "q5": "Comment ouvrir AVIF sous Windows 10 ?",
+    "a5": "Windows 10 et 11 prennent en charge AVIF si vous installez 'AV1 Video Extension'. Alternativement, utilisez Avifkit pour les convertir en JPG standard."
+  },
+  "footer": {
+    "slogan": "Convertisseur AVIF sécurisé côté client. Optimisé pour la confidentialité et la vitesse.",
+    "headers": {
+      "tools": "Outils",
+      "resources": "Ressources",
+      "legal": "Juridique"
+    },
+    "links": {
+      "blog": "Blog",
+      "api": "API Développeur",
+      "knowledge": "Base de Connaissances",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "cookies": "Politique des Cookies"
+    },
+    "copyright": "© 2025 Avifkit.com. Tous droits réservés."
+  },
+  "pages": {
+    "home": {
+      "title_prefix": "Convertisseur AVIF",
+      "title_gradient": "Gratuit en Ligne",
+      "title_suffix": "",
+      "subtitle": "Convertissez instantanément des fichiers AVIF en WebP, JPG ou PNG dans votre navigateur. Sans limite de taille. Sans téléchargement sur serveur. Sans filigrane."
+    },
+    "jpg": {
+      "title_prefix": "Convertir",
+      "title_gradient": "AVIF en JPG",
+      "title_suffix": "en Ligne",
+      "subtitle": "Transformez instantanément des images AVIF au format JPG standard. Idéal pour la compatibilité avec les appareils et logiciels plus anciens."
+    },
+    "png": {
+      "title_prefix": "Convertir",
+      "title_gradient": "AVIF en PNG",
+      "title_suffix": "en Ligne",
+      "subtitle": "Convertissez des fichiers AVIF en PNG de haute qualité tout en préservant la transparence. Conversion 100% gratuite et sécurisée côté client."
+    },
+    "webp": {
+      "title_prefix": "Convertir",
+      "title_gradient": "AVIF en WebP",
+      "title_suffix": "",
+      "subtitle": "Modernisez vos images. Convertissez AVIF en WebP pour une excellente compression et un support de navigateur plus large."
+    }
+  },
+  "seo": {
+    "jpg": {
+      "title": "Convertir AVIF en JPG - Gratuit & Sans Téléchargement | AvifKit",
+      "description": "Convertissez AVIF en JPG gratuitement dans votre navigateur. Traitement côté client, aucun téléchargement de fichier. Conversion par lots rapide et sécurisée.",
+      "h1": "Convertir AVIF en JPG Gratuit - 100% Privé",
+      "h2_how": "Comment convertir AVIF en JPG ?",
+      "h2_why": "Pourquoi utiliser AvifKit pour convertir AVIF en JPG ?"
+    },
+    "png": {
+      "title": "Convertir AVIF en PNG Transparent - Gratuit | AvifKit",
+      "description": "Convertisseur AVIF vers PNG gratuit. Préserve la transparence, qualité sans perte, traitement local sécurisé. Pas de téléchargement sur serveur.",
+      "h1": "Convertir AVIF en PNG - Transparence Préservée",
+      "h2_how": "Comment convertir AVIF en PNG avec transparence ?",
+      "h2_why": "Pourquoi utiliser AvifKit pour convertir AVIF en PNG ?"
+    },
+    "webp": {
+      "title": "Convertir AVIF en WebP - Optimisé pour le Web | AvifKit",
+      "description": "Convertisseur AVIF vers WebP professionnel. Optimisation des performances Web, compression supérieure, 100% gratuit et privé.",
+      "h1": "Convertir AVIF en WebP - Performance Web Optimale",
+      "h2_how": "Comment convertir AVIF en WebP ?",
+      "h2_why": "Pourquoi convertir AVIF en WebP avec AvifKit ?"
+    }
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Télécharger AVIF",
+        "description": "Glissez-déposez vos fichiers .avif dans la zone ci-dessus."
+      },
+      "select": {
+        "title": "Sélectionner le Format",
+        "description": "Choisissez JPG, PNG ou WebP et ajustez les paramètres de qualité."
+      },
+      "download": {
+        "title": "Télécharger",
+        "description": "Obtenez vos images converties instantanément, individuellement ou en ZIP."
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "jpg": {
+        "name": "Comment convertir AVIF en JPG",
+        "description": "Apprenez à convertir des images AVIF au format JPG à l'aide de notre convertisseur en ligne gratuit."
+      },
+      "png": {
+        "name": "Comment convertir AVIF en PNG",
+        "description": "Apprenez à convertir des images AVIF au format PNG à l'aide de notre convertisseur en ligne gratuit."
+      },
+      "webp": {
+        "name": "Comment convertir AVIF en WebP",
+        "description": "Apprenez à convertir des images AVIF au format WebP à l'aide de notre convertisseur en ligne gratuit."
+      },
+      "home": {
+        "name": "Comment convertir AVIF en plusieurs formats",
+        "description": "Apprenez à convertir des images AVIF en plusieurs formats à l'aide de notre convertisseur en ligne gratuit."
+      }
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "Convertissez AVIF en JPG, PNG et WebP localement dans votre navigateur"
+    }
+  },
+  "footer_description": "Avifkit.com est un convertisseur de fichiers en ligne gratuit qui vous permet de convertir facilement et rapidement des médias d'un format à un autre. Nous prenons en charge de nombreux formats source différents tels que AVIF, WEBP, HEIC, et des formats de sortie tels que JPG, PNG.",
+  "site": {
+    "title": "Avifkit - Convertisseur AVIF Sécurisé Côté Client",
+    "description": "Convertissez AVIF en JPG, PNG et WebP localement dans votre navigateur. 100% Privé, Ultra Rapide, Aucun Téléchargement sur Serveur.",
+    "og_image_alt": "Avifkit - Convertisseur AVIF"
+  },
+  "blog": {
+    "meta": {
+      "title": "Guides de Conversion AVIF - Ouvrir, Convertir et Réparer les Fichiers AVIF | Blog AvifKit",
+      "description": "Impossible d'ouvrir des fichiers AVIF sur Windows ? Apprenez à convertir AVIF en JPG/PNG, préserver la transparence et résoudre les problèmes de compatibilité. Outils en ligne gratuits, aucune installation requise.",
+      "keywords": "ouvrir avif windows, convertir avif en jpg, avif en png transparent, visionneuse fichier avif, convertisseur avif gratuit, extension avif, conversion côté client"
+    },
+    "hero": {
+      "title_prefix": "Guides",
+      "title_gradient": "AVIF",
+      "subtitle": "Solutions étape par étape pour les problèmes de compatibilité Windows, erreurs de transparence et difficultés de conversion"
+    },
+    "list": {
+      "min_read": "min de lecture",
+      "read_more": "Lire la suite",
+      "empty_state": "Pas encore d'articles de blog. Revenez bientôt !"
+    },
+    "detail": {
+      "back_to_blog": "Retour au Blog"
+    },
+    "cta": {
+      "title": "Besoin de Convertir Quelque Chose Maintenant ?",
+      "subtitle": "Fonctionne dans votre navigateur. Pas d'attente de téléchargement. Pas de traitement serveur. Glissez les fichiers, obtenez les résultats.",
+      "button_jpg": "Convertir en JPG",
+      "button_png": "Convertir en PNG"
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "privacy": {
+    "meta": {
+      "title": "Politique de Confidentialité - Avifkit",
+      "description": "Politique de Confidentialité d'Avifkit - Découvrez comment nous protégeons vos données avec un traitement 100% côté client."
+    },
+    "hero": {
+      "title": "Politique de Confidentialité",
+      "subtitle": "Votre confidentialité est notre priorité. Découvrez comment Avifkit garde vos fichiers 100% privés.",
+      "last_updated": "Dernière Mise à Jour : 1er Décembre 2025"
+    },
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "Avifkit (\"nous\", \"notre\" ou \"nos\") s'engage à protéger votre vie privée. Cette Politique de Confidentialité explique comment nous gérons les informations lorsque vous utilisez nos services de conversion d'images sur avifkit.com.",
+        "principle_title": "🔒 Principe Fondamental de Confidentialité :",
+        "principle_content": "Avifkit traite toutes les images localement dans votre navigateur. Vos fichiers ne sont jamais téléchargés sur nos serveurs et ne quittent jamais votre appareil."
+      },
+      "client_side": {
+        "title": "1. Traitement Côté Client",
+        "intro": "Contrairement aux outils de conversion en ligne traditionnels, Avifkit utilise une technologie côté client :",
+        "items": [
+          "Toutes les conversions d'images se font directement dans votre navigateur Web en utilisant JavaScript et Canvas API",
+          "Les images sont traitées dans la mémoire de votre appareil et ne sont jamais transmises sur Internet",
+          "Les fichiers convertis sont générés localement et téléchargés directement depuis votre navigateur",
+          "Nous n'avons pas accès, ne pouvons pas voir et ne stockons aucune de vos images téléchargées"
+        ]
+      },
+      "info_collect": {
+        "title": "2. Informations que Nous Collectons",
+        "analytics_title": "2.1 Données Analytiques",
+        "analytics_intro": "Nous pouvons collecter des analyses d'utilisation anonymes pour améliorer notre service, notamment :",
+        "analytics_items": [
+          "Vues de page et durée de visite",
+          "Type de navigateur et système d'exploitation",
+          "Site Web référent et termes de recherche",
+          "Localisation géographique générale (niveau pays/ville)"
+        ],
+        "technical_title": "2.2 Données Techniques",
+        "technical_content": "Les journaux de serveur Web standard peuvent inclure des adresses IP, des agents utilisateurs de navigateur et des heures d'accès. Ces données sont utilisées uniquement pour la surveillance de la sécurité et des performances."
+      },
+      "not_collect": {
+        "title": "3. Ce que Nous NE Collectons PAS",
+        "intro": "Nous ne collectons explicitement PAS :",
+        "items": [
+          "❌ Vos images ou fichiers téléchargés",
+          "❌ Noms de fichiers ou métadonnées",
+          "❌ Informations d'identification personnelle (noms, e-mails, etc.)",
+          "❌ Informations de paiement (notre service est 100% gratuit)"
+        ]
+      },
+      "cookies": {
+        "title": "4. Cookies et Stockage Local",
+        "intro": "Avifkit peut utiliser :",
+        "items": [
+          "Cookies Essentiels : Pour les fonctionnalités de base du site et les préférences linguistiques",
+          "Cookies Analytiques : Pour comprendre comment les visiteurs utilisent notre site (anonyme)",
+          "Stockage Local : Pour enregistrer vos paramètres de conversion (qualité, préférences de format) localement dans votre navigateur"
+        ],
+        "control": "Vous pouvez contrôler les paramètres des cookies via les préférences de votre navigateur."
+      },
+      "third_party": {
+        "title": "5. Services Tiers",
+        "intro": "Nous pouvons utiliser des services tiers pour :",
+        "items": [
+          "Analyses : Google Analytics ou outils similaires (anonymisés)",
+          "Hébergement : Fournisseurs d'hébergement cloud pour le code de notre site Web",
+          "CDN : Réseaux de distribution de contenu pour des chargements de page plus rapides"
+        ],
+        "note": "Ces services n'ont PAS accès à vos images téléchargées, car le traitement se fait entièrement dans votre navigateur."
+      },
+      "security": {
+        "title": "6. Sécurité des Données",
+        "content": "Comme nous ne collectons ni ne stockons vos images, il n'y a aucun risque de violation de données liées à vos fichiers. Notre site Web utilise le cryptage HTTPS pour protéger votre connexion. Tout le traitement se fait localement, offrant le plus haut niveau de sécurité pour vos images sensibles."
+      },
+      "rights": {
+        "title": "7. Vos Droits",
+        "intro": "Selon votre emplacement, vous pouvez avoir des droits incluant :",
+        "items": [
+          "Droit d'accès à toutes les données personnelles que nous pourrions détenir",
+          "Droit de demander la suppression de vos données",
+          "Droit de refuser le suivi analytique",
+          "Droit à la portabilité des données"
+        ]
+      },
+      "children": {
+        "title": "8. Confidentialité des Enfants",
+        "content": "Notre service est sûr pour tous les âges. Nous ne collectons pas sciemment d'informations personnelles auprès de quiconque, y compris les enfants de moins de 13 ans."
+      },
+      "changes": {
+        "title": "9. Modifications de Cette Politique",
+        "content": "Nous pouvons mettre à jour cette Politique de Confidentialité périodiquement. Les modifications seront publiées sur cette page avec une date de \"Dernière Mise à Jour\" mise à jour."
+      },
+      "contact": {
+        "title": "10. Nous Contacter",
+        "intro": "Si vous avez des questions sur cette Politique de Confidentialité, veuillez nous contacter à :",
+        "email": "E-mail : support@avifkit.com",
+        "response": "Nous répondrons dans les 48 heures."
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Conditions d'Utilisation - Avifkit",
+      "description": "Conditions d'Utilisation d'Avifkit - Règles et directives pour utiliser notre service gratuit de conversion d'images."
+    },
+    "hero": {
+      "title": "Conditions d'Utilisation",
+      "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser Avifkit.",
+      "last_updated": "Dernière Mise à Jour : 1er Décembre 2025"
+    },
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptation des Conditions",
+        "content": [
+          "En accédant et en utilisant Avifkit (\"le Service\"), vous acceptez et convenez d'être lié par les termes et dispositions de cet accord. Si vous n'acceptez pas ces Conditions d'Utilisation, veuillez ne pas utiliser le Service.",
+          "Avifkit est un outil gratuit de conversion d'images côté client qui permet aux utilisateurs de convertir des fichiers AVIF en divers formats (JPG, PNG, WebP) directement dans leur navigateur Web."
+        ]
+      },
+      "use": {
+        "title": "2. Utilisation du Service",
+        "permitted_title": "2.1 Utilisation Autorisée",
+        "permitted_intro": "Vous pouvez utiliser Avifkit pour :",
+        "permitted_items": [
+          "Besoins personnels de conversion d'images",
+          "Projets commerciaux et utilisation professionnelle",
+          "Objectifs éducatifs",
+          "Convertir toutes les images que vous avez le droit légal d'utiliser"
+        ],
+        "prohibited_title": "2.2 Utilisation Interdite",
+        "prohibited_intro": "Vous acceptez de NE PAS :",
+        "prohibited_items": [
+          "Tenter de procéder à l'ingénierie inverse, de décompiler ou de désassembler le Service",
+          "Utiliser le Service à des fins illégales ou non autorisées",
+          "Transmettre des virus, des logiciels malveillants ou du code nuisible",
+          "Tenter de surcharger ou de perturber l'infrastructure du Service",
+          "Utiliser des systèmes automatisés ou des bots pour accéder excessivement au Service",
+          "Violer toute loi ou réglementation applicable"
+        ]
+      },
+      "intellectual": {
+        "title": "3. Propriété Intellectuelle",
+        "your_content_title": "3.1 Votre Contenu",
+        "your_content": "Vous conservez tous les droits sur les images que vous convertissez à l'aide d'Avifkit. Étant donné que tout le traitement se fait côté client dans votre navigateur, nous n'avons jamais accès à vos fichiers et ne revendiquons aucune propriété ou droit sur eux.",
+        "our_service_title": "3.2 Notre Service",
+        "our_service": "Le site Web Avifkit, y compris sa conception, son code, ses logos et son contenu, est la propriété d'Avifkit et est protégé par le droit d'auteur et d'autres lois sur la propriété intellectuelle. Vous ne pouvez pas copier, modifier ou distribuer notre code ou notre conception sans autorisation explicite."
+      },
+      "availability": {
+        "title": "4. Disponibilité du Service",
+        "intro": "Avifkit est fourni \"tel quel\" et \"selon disponibilité\". Nous visons une disponibilité de 100% mais ne pouvons garantir un service ininterrompu. Nous nous réservons le droit de :",
+        "items": [
+          "Modifier, suspendre ou interrompre le Service à tout moment",
+          "Effectuer une maintenance planifiée ou d'urgence",
+          "Mettre à jour les fonctionnalités"
+        ],
+        "note": "Nous ferons des efforts raisonnables pour informer les utilisateurs des changements importants."
+      },
+      "disclaimers": {
+        "title": "5. Dénis de Responsabilité et Limitations",
+        "warranties_title": "5.1 Aucune Garantie",
+        "warranties_intro": "Avifkit est fourni sans garantie d'aucune sorte, expresse ou implicite. Nous ne garantissons pas que :",
+        "warranties_items": [
+          "Le Service répondra à vos exigences spécifiques",
+          "Les conversions seront toujours parfaites ou sans erreur",
+          "Le Service sera ininterrompu ou sécurisé"
+        ],
+        "liability_title": "5.2 Limitation de Responsabilité",
+        "liability_content": "Dans toute la mesure permise par la loi, Avifkit ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs résultant de votre utilisation ou de votre incapacité à utiliser le Service."
+      },
+      "responsibilities": {
+        "title": "6. Responsabilités de l'Utilisateur",
+        "intro": "Vous êtes responsable de :",
+        "items": [
+          "Vous assurer que vous avez les droits légaux pour convertir les images que vous téléchargez",
+          "Maintenir des sauvegardes de fichiers importants avant la conversion",
+          "Utiliser un navigateur Web moderne et pris en charge",
+          "Votre connexion Internet et les performances de votre appareil",
+          "Vérifier que les résultats de conversion répondent à vos normes de qualité"
+        ]
+      },
+      "browser": {
+        "title": "7. Compatibilité du Navigateur",
+        "content": "Avifkit fonctionne mieux sur les navigateurs modernes (Chrome, Firefox, Safari, Edge). Certaines fonctionnalités peuvent ne pas fonctionner sur les navigateurs obsolètes ou les appareils non pris en charge. Nous recommandons de maintenir votre navigateur à jour pour des performances et une sécurité optimales."
+      },
+      "privacy_section": {
+        "title": "8. Confidentialité",
+        "content": "Votre utilisation d'Avifkit est également régie par notre Politique de Confidentialité, qui explique notre approche de traitement côté client et nos pratiques de gestion des données. Veuillez consulter notre Politique de Confidentialité pour comprendre comment nous protégeons votre vie privée."
+      },
+      "third_party_links": {
+        "title": "9. Liens Tiers",
+        "content": "Notre site Web peut contenir des liens vers des sites Web ou des services tiers. Nous ne sommes pas responsables du contenu, de l'exactitude ou des pratiques de ces sites externes. Utilisez les services tiers à vos propres risques."
+      },
+      "indemnification": {
+        "title": "10. Indemnisation",
+        "content": "Vous acceptez d'indemniser et de dégager de toute responsabilité Avifkit de toute réclamation, dommage, perte ou dépense découlant de votre utilisation du Service, de la violation de ces Conditions ou de la violation de droits de tiers."
+      },
+      "governing_law": {
+        "title": "11. Loi Applicable",
+        "content": "Ces Conditions seront régies et interprétées conformément aux lois internationales applicables. Tout litige sera résolu conformément à la juridiction où Avifkit opère."
+      },
+      "changes": {
+        "title": "12. Modifications des Conditions",
+        "content": "Nous nous réservons le droit de modifier ces Conditions à tout moment. Les modifications prendront effet immédiatement après leur publication. L'utilisation continue du Service après les modifications constitue l'acceptation des Conditions modifiées."
+      },
+      "severability": {
+        "title": "13. Divisibilité",
+        "content": "Si une disposition de ces Conditions est jugée invalide ou inapplicable, les dispositions restantes continueront de s'appliquer pleinement."
+      },
+      "contact": {
+        "title": "14. Informations de Contact",
+        "intro": "Pour toute question concernant ces Conditions d'Utilisation, veuillez nous contacter :",
+        "email": "E-mail : support@avifkit.com",
+        "website": "Site Web : https://avifkit.com"
+      },
+      "acknowledgment": {
+        "title": "Merci",
+        "content": "En utilisant Avifkit, vous reconnaissez avoir lu, compris et accepté d'être lié par ces Conditions d'Utilisation."
+      }
+    }
+  }
+}

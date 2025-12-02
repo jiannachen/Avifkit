@@ -1,0 +1,214 @@
+{
+  "nav": {
+    "tools": "ツール",
+    "blog": "ブログ",
+    "convert_now": "今すぐ変換"
+  },
+  "hero": {
+    "privacy_banner": "プライバシー保護：ファイルはデバイスから送信されません",
+    "badges": {
+      "privacy": "100% プライバシー",
+      "speed": "高速変換",
+      "bulk": "一括変換対応"
+    }
+  },
+  "converter": {
+    "drop_title": "AVIFファイルをここにドロップ",
+    "drop_subtitle": "またはクリックして選択。最大30ファイルまで。1ファイル50MBまで。",
+    "client_side_tag": "100% クライアントサイド処理で安全",
+    "add_more": "+ ファイルを追加",
+    "queue_title": "待機中",
+    "clear_all": "すべて削除",
+    "convert_all": "すべて変換",
+    "download_zip": "ZIPで保存",
+    "download": "ダウンロード",
+    "converting": "変換中...",
+    "error": "エラー",
+    "ready": "準備完了",
+    "corrupted": "破損",
+    "source_format": "元の形式",
+    "settings": {
+      "quality": "画質",
+      "format_jpg": "JPGに変換",
+      "format_png": "PNGに変換",
+      "format_webp": "WebPに変換",
+      "global_format": "すべて次に変換"
+    },
+    "errors": {
+      "batch_limit": "一度に変換できるのは30ファイルまでです。",
+      "size_limit": "ブラウザ処理には大きすぎるファイル（最大10MB）。",
+      "non_image": "サポートされていないファイル形式です。画像のみアップロードしてください。",
+      "corrupted": "ファイルが破損しているようです（0バイト）。",
+      "generic": "変換に失敗しました",
+      "same_format_jpg": "は既にJPGです。",
+      "same_format_png": "は既にPNGです。",
+      "same_format_webp": "は既にWebPです。",
+      "convert_instead": "代わりに{format}に変換しますか？"
+    },
+    "toast": {
+      "files_rejected": "一部のファイルが拒否されました。詳細は上記を参照してください。",
+      "corrupted_added": "破損したファイルがキューに追加されましたが、変換できません。"
+    }
+  },
+  "features": {
+    "title": "Avifkitが選ばれる理由",
+    "subtitle": "現代のWeb標準に合わせた画像変換ツール",
+    "privacy_title": "完全なプライバシー",
+    "privacy_desc": "他のツールとは異なり、Avifkitはブラウザ内で画像を処理します。あなたの写真がサーバーに送信されることはありません。",
+    "speed_title": "爆速処理",
+    "speed_desc": "アップロード時間ゼロ。ダウンロード待ち時間ゼロ。WebAssemblyとCanvas APIを使用して瞬時に変換します。",
+    "quality_title": "高品質な出力",
+    "quality_desc": "圧縮レベルを調整可能。PNGやWebPへの変換時には透明度（アルファチャンネル）を保持します。"
+  },
+  "faq": {
+    "title": "よくある質問",
+    "q1": "WebPはAVIFより優れていますか？",
+    "a1": "一般的に、同じ画質であればAVIFの方が圧縮効率が良い（ファイルサイズが小さい）ですが、WebPの方がブラウザの互換性が若干広いです。",
+    "q2": "iPhoneでWebPを開けますか？",
+    "a2": "はい、iOS 14以降であれば標準で対応しています。古い機種用に共有する場合はJPGへの変換をお勧めします。",
+    "q3": "プライベートな写真を変換しても安全ですか？",
+    "a3": "はい、絶対に安全です。Avifkitはクライアントサイド処理技術を使用しており、画像はブラウザのメモリ内でのみ処理され、外部サーバーには一切送信されません。",
+    "q4": "透明背景に対応していますか？",
+    "a4": "はい！PNGまたはWebPに変換する場合、透明背景は保持されます。JPGに変換する場合は、透明部分は白くなります。",
+    "q5": "Windows 10でAVIFを開くには？",
+    "a5": "Microsoft Storeから「AV1 Video Extension」をインストールすると開けます。または、このツールでJPGに変換することをお勧めします。"
+  },
+  "footer": {
+    "slogan": "安全なクライアントサイドAVIF変換ツール。プライバシーとスピードを最優先。",
+    "headers": {
+      "tools": "ツール",
+      "resources": "リソース",
+      "legal": "法的事項"
+    },
+    "links": {
+      "blog": "ブログ",
+      "api": "開発者向けAPI",
+      "knowledge": "ナレッジベース",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "cookies": "クッキーポリシー"
+    },
+    "copyright": "© 2025 Avifkit.com. All rights reserved."
+  },
+  "pages": {
+    "home": {
+      "title_prefix": "無料オンライン",
+      "title_gradient": "AVIF変換ツール",
+      "title_suffix": "",
+      "subtitle": "ブラウザ上でAVIFファイルをWebP、JPG、PNGに瞬時に変換。サイズ制限なし、アップロードなし、透かしなし。"
+    },
+    "jpg": {
+      "title_prefix": "",
+      "title_gradient": "AVIF JPG 変換",
+      "title_suffix": "- インストール不要・完全無料",
+      "subtitle": "AVIF画像を標準的なJPG形式に瞬時に変換します。古いデバイスやソフトウェアとの互換性に最適です。"
+    },
+    "png": {
+      "title_prefix": "AVIFを",
+      "title_gradient": "PNGに変換",
+      "title_suffix": "（透明度保持）",
+      "subtitle": "透明度を保持したままAVIFを高画質なPNGに変換します。100%無料、安全なクライアントサイド変換。"
+    },
+    "webp": {
+      "title_prefix": "AVIFを",
+      "title_gradient": "WebPに変換",
+      "title_suffix": "",
+      "subtitle": "画像を最新形式へ。優れた圧縮率と幅広いブラウザサポートのために、AVIFをWebPに変換しましょう。"
+    }
+  },
+  "seo": {
+    "jpg": {
+      "title": "AVIF JPG 変換 - インストール不要・完全無料 | AvifKit",
+      "description": "AVIF JPG 変換サイト。ブラウザ上で完結、アップロード不要、瞬時に変換。プライバシー保護で安全なAVIF画像変換ツール。",
+      "h1": "AVIF JPG 変換 - 完全無料・サーバーレス",
+      "h2_how": "AVIFをJPGに変換する方法",
+      "h2_why": "AvifKitでAVIF JPG変換を選ぶ理由"
+    },
+    "png": {
+      "title": "AVIF PNG 変換 - 透明背景対応・無料 | AvifKit",
+      "description": "AVIF PNG変換ツール。透明度保持、高画質、ブラウザ上で安全に変換。サーバーアップロード不要のプライバシー重視設計。",
+      "h1": "AVIF PNG 変換 - 透明度保持対応",
+      "h2_how": "AVIFをPNGに変換する方法（透明度保持）",
+      "h2_why": "AvifKitでAVIF PNG変換を選ぶ理由"
+    },
+    "webp": {
+      "title": "AVIF WebP 変換 - Web最適化ツール | AvifKit",
+      "description": "プロフェッショナルなAVIF WebP変換ツール。Web パフォーマンス最適化、優れた圧縮率、100%無料でプライバシー保護。",
+      "h1": "AVIF WebP 変換 - 高速・プライベート",
+      "h2_how": "AVIFをWebPに変換する方法",
+      "h2_why": "AvifKitでAVIF WebP変換を選ぶ理由"
+    }
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "AVIFアップロード",
+        "description": ".avifファイルを上のボックスにドラッグ&ドロップしてください。"
+      },
+      "select": {
+        "title": "フォーマット選択",
+        "description": "JPG、PNG、またはWebPを選択し、品質設定を調整してください。"
+      },
+      "download": {
+        "title": "ダウンロード",
+        "description": "変換された画像を個別またはZIPで即座にダウンロードできます。"
+      }
+    }
+  },
+  "schemas": {
+    "howto": {
+      "jpg": {
+        "name": "AVIFをJPGに変換する方法",
+        "description": "無料のオンラインコンバーターを使用してAVIF画像をJPG形式に変換する方法を学びましょう。"
+      },
+      "png": {
+        "name": "AVIFをPNGに変換する方法",
+        "description": "無料のオンラインコンバーターを使用してAVIF画像をPNG形式に変換する方法を学びましょう。"
+      },
+      "webp": {
+        "name": "AVIFをWebPに変換する方法",
+        "description": "無料のオンラインコンバーターを使用してAVIF画像をWebP形式に変換する方法を学びましょう。"
+      },
+      "home": {
+        "name": "AVIFを複数の形式に変換する方法",
+        "description": "無料のオンラインコンバーターを使用してAVIF画像を複数の形式に変換する方法を学びましょう。"
+      }
+    },
+    "software": {
+      "name": "Avifkit",
+      "description": "ブラウザ内でローカルにAVIFをJPG、PNG、WebPに変換"
+    }
+  },
+  "footer_description": "Avifkit.comは、メディアをある形式から別の形式に簡単かつ迅速に変換できる無料のオンラインファイルコンバーターです。AVIF、WEBP、HEICなどの多くの異なるソース形式と、JPG、PNGなどの出力形式をサポートしています。",
+  "site": {
+    "title": "Avifkit - 安全なクライアントサイドAVIF変換ツール",
+    "description": "ブラウザ上でローカルにAVIFをJPG、PNG、WebPに変換。100%プライベート、超高速、サーバーアップロード不要。",
+    "og_image_alt": "Avifkit - AVIF変換ツール"
+  },
+  "blog": {
+    "meta": {
+      "title": "AVIF変換ガイド - AVIFファイルの開き方・変換・修正方法 | AvifKit ブログ",
+      "description": "WindowsでAVIFファイルを開けない?AVIF→JPG/PNG変換、透明度の保持、互換性問題の解決方法を学ぶ。無料オンラインツール、インストール不要。",
+      "keywords": "avif windows 開く, avif jpg 変換, avif png 透明, avifファイルビューア, 無料avif変換, avif拡張子, クライアントサイド変換"
+    },
+    "hero": {
+      "title_prefix": "AVIF",
+      "title_gradient": "ガイド",
+      "subtitle": "Windows互換性問題、透明度エラー、変換トラブルの段階的解決方法"
+    },
+    "list": {
+      "min_read": "分で読めます",
+      "read_more": "続きを読む",
+      "empty_state": "まだブログ記事はありません。後でまた確認してください！"
+    },
+    "detail": {
+      "back_to_blog": "ブログに戻る"
+    },
+    "cta": {
+      "title": "今すぐ何かを変換する必要がありますか？",
+      "subtitle": "ブラウザで動作。アップロード待機なし。サーバー処理なし。ファイルをドラッグして結果を取得。",
+      "button_jpg": "JPGに変換",
+      "button_png": "PNGに変換"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "batch-convert-avif-images-free",
+  "title": "Comment Convertir Plus de 100 Fichiers AVIF par Lot en Moins d'une Minute",
+  "description": "Traitez des centaines de fichiers AVIF en une seule fois sans installer de logiciel.",
+  "excerpt": "Glissez le dossier. Attendez 40 secondes. Téléchargez un zip. C'est tout. Fonctionne hors ligne, gère 500+ images sans problème.",
+  "date": "2025-11-15",
+  "readingTime": 4,
+  "category": "Tutoriel",
+  "keywords": "convertir avif par lot, convertisseur avif en masse",
+  "image": "/blog05.jpg",
+  "content": [
+    {
+      "type": "lead",
+      "text": "Vous avez un dossier avec 200 fichiers AVIF à convertir? Ne les faites pas un par un. Voici comment tout convertir par lot en moins d'une minute."
+    },
+    {
+      "type": "h2",
+      "text": "La Méthode Rapide: Convertir par Lot en Ligne"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Allez sur {link:/avif-to-jpg|AvifKit Convertisseur AVIF}",
+        "Cliquez sur la zone de dépôt ou glissez plusieurs fichiers AVIF (jusqu'à 30 à la fois)",
+        "Attendez le traitement - généralement 20-60 secondes",
+        "Cliquez sur \"Télécharger en ZIP\"",
+        "Extrayez le zip - terminé"
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Y a-t-il une limite de taille de fichier?",
+          "answer": "Fichiers individuels jusqu'à 50MB, 30 fichiers par lot."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Prêt à convertir vos fichiers AVIF par lot?",
+      "subtitle": "Glissez jusqu'à 30 fichiers. Convertit en secondes.",
+      "button": {
+        "text": "Commencer la Conversion par Lot",
+        "link": "/avif-to-jpg"
+      }
+    }
+  ]
+}
