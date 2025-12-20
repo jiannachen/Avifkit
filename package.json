@@ -11,7 +11,7 @@
   "dependencies": {
     "jszip": "^3.10.1",
     "lucide-react": "0.469.0",
-    "next": "15.2.3",
+    "next": "15.2.8",
     "next-intl": "^4.5.7",
     "react": "19.2.0",
     "react-dom": "19.2.0"
