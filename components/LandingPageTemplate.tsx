@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Converter } from './Converter';
-import { Shield, Zap, Image, CheckCircle, HelpCircle } from 'lucide-react';
+import { Shield, Zap, Image, CheckCircle, HelpCircle, ChevronDown } from 'lucide-react';
 import { TargetFormat } from '../types';
 import { useTranslations, useLocale } from 'next-intl';
 import { FAQSchema, HowToSchema, SoftwareAppSchema, WebsiteSchema, OrganizationSchema } from './StructuredData';
@@ -11,6 +11,28 @@ interface LandingPageProps {
   pageKey: 'home' | 'jpg' | 'png' | 'webp';
   defaultFormat?: TargetFormat;
 }
+
+const ScrollReveal: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(el); } },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={`${className} transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-6'}`}>
+      {children}
+    </div>
+  );
+};
 
 const TrustBadge: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, text }) => (
   <div className="flex items-center gap-2 text-slate-600 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
@@ -29,15 +51,26 @@ const FeatureCard: React.FC<{ title: string; desc: string; icon: React.ReactNode
   </div>
 );
 
-const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => (
-  <div className="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
-    <h4 className="font-semibold text-slate-900 mb-2 flex items-start gap-2">
-      <HelpCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-      {question}
-    </h4>
-    <p className="text-slate-600 text-sm leading-relaxed pl-7">{answer}</p>
-  </div>
-);
+const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-slate-100 last:border-0">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between gap-3 py-4 text-left"
+      >
+        <h4 className="font-semibold text-slate-900 flex items-start gap-2">
+          <HelpCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+          {question}
+        </h4>
+        <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'}`}>
+        <p className="text-slate-600 text-sm leading-relaxed pl-7">{answer}</p>
+      </div>
+    </div>
+  );
+};
 
 export const LandingPageTemplate: React.FC<LandingPageProps> = ({
   pageKey,
@@ -145,14 +178,15 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 2. How-To Section (SEO-Optimized H2 for Featured Snippets) */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-slate-50">
+        <ScrollReveal>
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
             {h2HowText || "How to convert AVIF files?"}
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-slate-100 -z-10"></div>
+            <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-slate-200 via-blue-200 to-slate-200 -z-10"></div>
             <div className="text-center relative">
                <div className="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">1</div>
                <h3 className="font-bold text-lg mb-2">{t('howto.steps.upload.title')}</h3>
@@ -170,10 +204,12 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* 3. Features Grid (with SEO-Optimized H2 for "Why Use") */}
-      <section className="py-16 bg-slate-50/50">
+      <section className="py-16 bg-white">
+        <ScrollReveal>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900">
@@ -200,13 +236,15 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
             />
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* 4. FAQ Section */}
       <section className="py-16 bg-slate-50">
+        <ScrollReveal>
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">{t('faq.title')}</h2>
-          <div className="space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
             <FaqItem question={t('faq.q1')} answer={t('faq.a1')} />
             <FaqItem question={t('faq.q2')} answer={t('faq.a2')} />
             <FaqItem question={t('faq.q3')} answer={t('faq.a3')} />
@@ -214,6 +252,7 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
             <FaqItem question={t('faq.q5')} answer={t('faq.a5')} />
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* Footer Text */}

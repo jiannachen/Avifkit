@@ -6,7 +6,6 @@ import { routing } from "@/i18n/routing";
 import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -104,44 +103,7 @@ export default async function LangLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Avifkit',
-              url: 'https://avifkit.com',
-              logo: 'https://avifkit.com/logo.svg',
-              description: messages.site?.description || 'Free online AVIF converter and image tools',
-              sameAs: [],
-            }),
-          }}
-        />
-        <Script
-          id="website-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'Avifkit',
-              url: 'https://avifkit.com',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://avifkit.com/search?q={search_term_string}',
-                'query-input': 'required name=search_term_string',
-              },
-            }),
-          }}
-        />
-      </head>
+      <head />
       <body className={`${inter.className} bg-white text-slate-900 antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <LayoutClient>{children}</LayoutClient>

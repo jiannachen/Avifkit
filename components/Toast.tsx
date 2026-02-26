@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, AlertCircle, AlertTriangle, Info, CheckCircle } from 'lucide-react';
 
 export type ToastType = 'error' | 'warning' | 'info' | 'success';
@@ -20,14 +20,22 @@ interface ToastProps {
 }
 
 const Toast: React.FC<ToastProps> = ({ toast, onDismiss }) => {
+  const [isExiting, setIsExiting] = useState(false);
+
+  const handleDismiss = () => {
+    setIsExiting(true);
+    setTimeout(() => onDismiss(toast.id), 250);
+  };
+
   useEffect(() => {
     if (toast.duration !== 0) {
       const timer = setTimeout(() => {
-        onDismiss(toast.id);
+        handleDismiss();
       }, toast.duration || 5000);
       return () => clearTimeout(timer);
     }
-  }, [toast.id, toast.duration, onDismiss]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toast.id, toast.duration]);
 
   const getToastStyle = () => {
     switch (toast.type) {
@@ -57,7 +65,7 @@ const Toast: React.FC<ToastProps> = ({ toast, onDismiss }) => {
   };
 
   return (
-    <div className={`${getToastStyle()} border rounded-lg shadow-lg p-4 flex items-center gap-3 min-w-[320px] max-w-md animate-slide-in`}>
+    <div className={`${getToastStyle()} border rounded-lg shadow-lg p-4 flex items-center gap-3 min-w-[320px] max-w-md ${isExiting ? 'animate-slide-out' : 'animate-slide-in'}`}>
       {getIcon()}
       <p className="flex-grow text-sm font-medium">{toast.message}</p>
       {toast.actionLabel && toast.onAction && (
@@ -69,7 +77,7 @@ const Toast: React.FC<ToastProps> = ({ toast, onDismiss }) => {
         </button>
       )}
       <button
-        onClick={() => onDismiss(toast.id)}
+        onClick={handleDismiss}
         className="flex-shrink-0 hover:bg-black/5 rounded p-1 transition-colors"
       >
         <X className="w-4 h-4" />
@@ -78,15 +86,19 @@ const Toast: React.FC<ToastProps> = ({ toast, onDismiss }) => {
   );
 };
 
+const MAX_VISIBLE_TOASTS = 5;
+
 interface ToastContainerProps {
   toasts: ToastMessage[];
   onDismiss: (id: string) => void;
 }
 
 export const ToastContainer: React.FC<ToastContainerProps> = ({ toasts, onDismiss }) => {
+  const visibleToasts = toasts.slice(-MAX_VISIBLE_TOASTS);
+
   return (
-    <div className="fixed top-4 right-4 z-50 flex flex-col gap-2">
-      {toasts.map(toast => (
+    <div className="fixed top-20 right-4 z-50 flex flex-col gap-2">
+      {visibleToasts.map(toast => (
         <Toast key={toast.id} toast={toast} onDismiss={onDismiss} />
       ))}
     </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, Globe, ChevronDown, X, ShieldCheck } from 'lucide-react';
@@ -19,6 +19,23 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isToolsMenuOpen, setIsToolsMenuOpen] = useState(false);
 
+  const toolsRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
+
+  // Click outside to close dropdowns
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
+        setIsToolsMenuOpen(false);
+      }
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setIsLangMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
@@ -26,13 +43,10 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
     setIsLangMenuOpen(false);
     setIsMobileMenuOpen(false);
 
-    // Store language preference in localStorage
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', lang);
     }
 
-    // Use next-intl router to navigate with proper locale handling
-    // pathname is already without locale prefix from next-intl's usePathname
     router.replace(pathname, { locale: lang });
   };
 
@@ -60,26 +74,21 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-8">
-              {/* Tools Dropdown */}
-              <div className="relative">
+              {/* Tools Dropdown - unified click interaction */}
+              <div className="relative" ref={toolsRef}>
                 <button
-                  onMouseEnter={() => setIsToolsMenuOpen(true)}
-                  onMouseLeave={() => setIsToolsMenuOpen(false)}
-                  className="flex items-center text-sm font-medium text-slate-600 hover:text-blue-600 py-2 transition-colors"
+                  onClick={() => { setIsToolsMenuOpen(!isToolsMenuOpen); setIsLangMenuOpen(false); }}
+                  className={`flex items-center text-sm font-medium py-2 transition-colors ${isToolsMenuOpen ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'}`}
                 >
-                  {t('nav.tools')} <ChevronDown className="ml-1 w-4 h-4" />
+                  {t('nav.tools')} <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${isToolsMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
 
                 {isToolsMenuOpen && (
-                   <div
-                   onMouseEnter={() => setIsToolsMenuOpen(true)}
-                   onMouseLeave={() => setIsToolsMenuOpen(false)}
-                   className="absolute top-full left-0 w-56 pt-2"
-                 >
+                  <div className="absolute top-full left-0 w-56 pt-2">
                     <div className="bg-white rounded-lg shadow-xl border border-slate-100 p-2">
-                      <Link href={getLink('avif-to-jpg')} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to JPG</Link>
-                      <Link href={getLink('avif-to-webp')} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md bg-blue-50/50 font-medium text-blue-700">AVIF to WebP <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1">Hot</span></Link>
-                      <Link href={getLink('avif-to-png')} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to PNG</Link>
+                      <Link href={getLink('avif-to-jpg')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to JPG</Link>
+                      <Link href={getLink('avif-to-webp')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md bg-blue-50/50 font-medium text-blue-700">AVIF to WebP <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1">Hot</span></Link>
+                      <Link href={getLink('avif-to-png')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to PNG</Link>
                     </div>
                   </div>
                 )}
@@ -87,11 +96,11 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
               <Link href={getLink('blog')} className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">{t('nav.blog')}</Link>
 
-              {/* Language Switcher */}
-              <div className="relative">
+              {/* Language Switcher - unified click interaction */}
+              <div className="relative" ref={langRef}>
                 <button
-                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                  className="flex items-center gap-1 text-slate-600 hover:text-black transition-colors"
+                  onClick={() => { setIsLangMenuOpen(!isLangMenuOpen); setIsToolsMenuOpen(false); }}
+                  className={`flex items-center gap-1 transition-colors ${isLangMenuOpen ? 'text-blue-600' : 'text-slate-600 hover:text-black'}`}
                 >
                   <Globe className="w-5 h-5" />
                   <span className="text-xs font-semibold uppercase">{locale}</span>
@@ -124,23 +133,21 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-b border-slate-200">
-            <div className="px-4 pt-2 pb-6 space-y-1">
-              <Link href={getLink('avif-to-jpg')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to JPG</Link>
-              <Link href={getLink('avif-to-png')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to PNG</Link>
-              <Link href={getLink('avif-to-webp')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to WebP</Link>
-              <div className="h-px bg-slate-100 my-2"></div>
-              <div className="flex gap-4 px-3 py-2">
-                <button onClick={() => changeLang('en')} className={`text-sm font-bold ${locale === 'en' ? 'text-blue-600' : 'text-slate-500'}`}>EN</button>
-                <button onClick={() => changeLang('ja')} className={`text-sm font-bold ${locale === 'ja' ? 'text-blue-600' : 'text-slate-500'}`}>JA</button>
-                <button onClick={() => changeLang('es')} className={`text-sm font-bold ${locale === 'es' ? 'text-blue-600' : 'text-slate-500'}`}>ES</button>
-                <button onClick={() => changeLang('fr')} className={`text-sm font-bold ${locale === 'fr' ? 'text-blue-600' : 'text-slate-500'}`}>FR</button>
-              </div>
+        {/* Mobile Menu with transition */}
+        <div className={`md:hidden bg-white border-b border-slate-200 overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 border-b-0'}`}>
+          <div className="px-4 pt-2 pb-6 space-y-1">
+            <Link href={getLink('avif-to-jpg')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to JPG</Link>
+            <Link href={getLink('avif-to-png')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to PNG</Link>
+            <Link href={getLink('avif-to-webp')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to WebP</Link>
+            <div className="h-px bg-slate-100 my-2"></div>
+            <div className="flex gap-4 px-3 py-2">
+              <button onClick={() => changeLang('en')} className={`text-sm font-bold ${locale === 'en' ? 'text-blue-600' : 'text-slate-500'}`}>EN</button>
+              <button onClick={() => changeLang('ja')} className={`text-sm font-bold ${locale === 'ja' ? 'text-blue-600' : 'text-slate-500'}`}>JA</button>
+              <button onClick={() => changeLang('es')} className={`text-sm font-bold ${locale === 'es' ? 'text-blue-600' : 'text-slate-500'}`}>ES</button>
+              <button onClick={() => changeLang('fr')} className={`text-sm font-bold ${locale === 'fr' ? 'text-blue-600' : 'text-slate-500'}`}>FR</button>
             </div>
           </div>
-        )}
+        </div>
       </header>
 
       {/* Main Content */}
@@ -156,9 +163,12 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
             {/* Brand Column */}
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-black rounded flex items-center justify-center text-white font-bold text-xs">
-                  A
-                </div>
+                <Image
+                  src="/logo.svg"
+                  alt="Avifkit Logo"
+                  width={24}
+                  height={24}
+                />
                 <span className="font-bold text-lg text-slate-900">Avifkit</span>
               </div>
               <p className="text-sm text-slate-500 leading-relaxed">

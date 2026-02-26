@@ -5,8 +5,14 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // 确保静态导出支持(如果需要)
-  // output: 'export',
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.avifkit.com',
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);

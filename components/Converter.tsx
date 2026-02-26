@@ -41,17 +41,52 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
   const [isDragging, setIsDragging] = useState(false);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const [dropZoneError, setDropZoneError] = useState(false);
+  const [isConverting, setIsConverting] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const filesRef = useRef(files);
+  filesRef.current = files;
 
   // Update format if prop changes (e.g. navigation)
   useEffect(() => {
     setGlobalTargetFormat(defaultOutputFormat);
   }, [defaultOutputFormat]);
 
+  // Cleanup all Blob URLs on unmount
+  useEffect(() => {
+    return () => {
+      files.forEach(f => {
+        if (f.previewUrl) URL.revokeObjectURL(f.previewUrl);
+        if (f.convertedUrl) URL.revokeObjectURL(f.convertedUrl);
+      });
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Clipboard paste support (Ctrl+V)
+  useEffect(() => {
+    const handlePaste = (e: ClipboardEvent) => {
+      const items = e.clipboardData?.items;
+      if (!items) return;
+      const imageFiles: File[] = [];
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].type.startsWith('image/')) {
+          const file = items[i].getAsFile();
+          if (file) imageFiles.push(file);
+        }
+      }
+      if (imageFiles.length > 0) {
+        e.preventDefault();
+        addFiles(imageFiles);
+      }
+    };
+    document.addEventListener('paste', handlePaste);
+    return () => document.removeEventListener('paste', handlePaste);
+  });
+
   // Toast management
   const addToast = (message: string, type: ToastMessage['type'] = 'error', actionLabel?: string, onAction?: () => void) => {
-    const id = Math.random().toString(36).substr(2, 9);
+    const id = Math.random().toString(36).substring(2, 11);
     setToasts(prev => [...prev, { id, message, type, actionLabel, onAction }]);
   };
 
@@ -88,7 +123,7 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
     setDropZoneError(false);
 
     // 1. Check Batch Size Limit
-    if (files.length + newFiles.length > MAX_BATCH_SIZE) {
+    if (filesRef.current.length + newFiles.length > MAX_BATCH_SIZE) {
       addToast(t('converter.errors.batch_limit'), 'warning');
       setDropZoneError(true);
       return;
@@ -172,7 +207,7 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
     const processedFiles: ProcessedFile[] = validFiles.map(({ file, sourceFormat }) => {
       const isCorrupted = file.size === 0;
       return {
-        id: Math.random().toString(36).substr(2, 9),
+        id: Math.random().toString(36).substring(2, 11),
         originalFile: file,
         previewUrl: isCorrupted ? '' : URL.createObjectURL(file),
         status: isCorrupted ? ConversionStatus.ERROR : ConversionStatus.IDLE,
@@ -259,6 +294,8 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
 
     if (filesToConvert.length === 0) return;
 
+    setIsConverting(true);
+
     const updateFileStatus = (id: string, updates: Partial<ProcessedFile>) => {
       setFiles(prev => prev.map(f => f.id === id ? { ...f, ...updates } : f));
     };
@@ -285,8 +322,20 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
       }
     };
 
-    // Run parallel
-    await Promise.all(filesToConvert.map(f => processFile(f)));
+    // Run with concurrency pool (max 3 at a time to avoid freezing)
+    const CONCURRENCY = 3;
+    const queue = [...filesToConvert];
+    const runNext = async (): Promise<void> => {
+      const fileData = queue.shift();
+      if (!fileData) return;
+      await processFile(fileData);
+      await runNext();
+    };
+    await Promise.all(
+      Array.from({ length: Math.min(CONCURRENCY, queue.length) }, () => runNext())
+    );
+
+    setIsConverting(false);
   };
 
   const downloadFile = (file: ProcessedFile) => {
@@ -354,7 +403,8 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                 </select>
               </div>
 
-              {/* Quality Slider */}
+              {/* Quality Slider - hidden for PNG (lossless) */}
+              {globalTargetFormat !== 'image/png' && (
               <div className="flex-grow sm:flex-grow-0 sm:min-w-[200px]">
                 <label className="text-xs font-medium text-slate-500 mb-1.5 block">
                   {t('converter.settings.quality')}: {Math.round(quality * 100)}%
@@ -369,6 +419,7 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                   className="w-full sm:w-40 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
               </div>
+              )}
             </div>
 
             {/* Action Buttons */}
@@ -384,11 +435,16 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                )}
                <button
                  onClick={convertAll}
-                 disabled={files.length === 0 || !files.some(f => f.status === ConversionStatus.IDLE && f.originalFile.size > 0)}
+                 disabled={isConverting || files.length === 0 || !files.some(f => f.status === ConversionStatus.IDLE && f.originalFile.size > 0)}
                  className="flex items-center justify-center gap-2 px-6 py-2.5 sm:py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 whitespace-nowrap"
                >
-                 <RefreshCw className="w-4 h-4" />
-                 <span>{t('converter.convert_all')}</span>
+                 <RefreshCw className={`w-4 h-4 ${isConverting ? 'animate-spin' : ''}`} />
+                 <span>
+                   {isConverting
+                     ? `${files.filter(f => f.status === ConversionStatus.COMPLETED).length}/${files.filter(f => f.originalFile.size > 0).length}`
+                     : t('converter.convert_all')
+                   }
+                 </span>
                </button>
             </div>
           </div>
@@ -478,7 +534,14 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                     {/* Status & Action */}
                     <div className="flex-shrink-0">
                       {file.status === ConversionStatus.IDLE && <span className="text-xs text-slate-400 font-medium px-2 py-1 bg-slate-100 rounded">{t('converter.ready')}</span>}
-                      {file.status === ConversionStatus.PROCESSING && <span className="text-xs text-blue-600 font-medium animate-pulse">{t('converter.converting')}</span>}
+                      {file.status === ConversionStatus.PROCESSING && (
+                        <div className="flex items-center gap-2">
+                          <div className="w-16 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                            <div className="h-full bg-blue-600 rounded-full animate-pulse" style={{ width: '60%' }} />
+                          </div>
+                          <span className="text-xs text-blue-600 font-medium">{t('converter.converting')}</span>
+                        </div>
+                      )}
                       {file.status === ConversionStatus.ERROR && (
                         <span className="text-xs text-red-500 font-medium px-2 py-1 bg-red-50 rounded">
                           {file.errorMessage || t('converter.error')}
@@ -494,12 +557,12 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                       )}
                     </div>
 
-                    {/* Remove Button */}
+                    {/* Remove Button - always visible on mobile, hover on desktop */}
                     <button
                       onClick={() => removeFile(file.id)}
-                      className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full border border-slate-200 shadow-sm flex items-center justify-center text-slate-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="flex-shrink-0 w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-red-500 hover:border-red-200 hover:bg-red-50 transition-all md:opacity-0 md:group-hover:opacity-100"
                     >
-                      <X className="w-3 h-3" />
+                      <X className="w-3.5 h-3.5" />
                     </button>
                  </div>
                ))}
