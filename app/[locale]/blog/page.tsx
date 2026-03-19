@@ -22,6 +22,7 @@ export async function generateMetadata({
     'ja': 'ja_JP',
     'fr': 'fr_FR'
   };
+  const ogImage = 'https://img.avifkit.com/blog/what-is-avif-guide.webp';
 
   return {
     title: t('title'),
@@ -34,9 +35,9 @@ export async function generateMetadata({
       description: t('description'),
       type: 'website',
       url: blogUrl,
-      siteName: 'Avifkit',
+      siteName: 'AvifKit',
       locale: localeMap[locale] || 'en_US',
-      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: t('title') }],
     },
 
     // Twitter Card tags
@@ -44,7 +45,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['/og-image.png'],
+      images: [ogImage],
     },
 
     // Robots directives
@@ -63,10 +64,11 @@ export async function generateMetadata({
     alternates: {
       canonical: blogUrl,
       languages: {
-        'en': '/blog',
-        'es': '/es/blog',
-        'ja': '/ja/blog',
-        'fr': '/fr/blog',
+        'en': 'https://avifkit.com/blog',
+        'es': 'https://avifkit.com/es/blog',
+        'ja': 'https://avifkit.com/ja/blog',
+        'fr': 'https://avifkit.com/fr/blog',
+        'x-default': 'https://avifkit.com/blog',
       },
     },
   };

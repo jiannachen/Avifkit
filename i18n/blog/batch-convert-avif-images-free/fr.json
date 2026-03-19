@@ -7,7 +7,7 @@
   "readingTime": 4,
   "category": "Tutoriel",
   "keywords": "convertir avif par lot, convertisseur avif en masse",
-  "image": "https://img.avifkit.com/blog/blog05.webp",
+  "image": "https://img.avifkit.com/blog/batch-convert-100-avif.webp",
   "content": [
     {
       "type": "lead",
@@ -32,7 +32,7 @@
       "items": [
         {
           "question": "Y a-t-il une limite de taille de fichier?",
-          "answer": "Fichiers individuels jusqu'à 50MB, 30 fichiers par lot."
+          "answer": "Fichiers individuels jusqu'à 10MB, 30 fichiers par lot."
         }
       ]
     },

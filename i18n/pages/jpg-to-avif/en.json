@@ -1,0 +1,152 @@
+{
+  "title_prefix": "Convert",
+  "title_gradient": "JPG to AVIF",
+  "title_suffix": "Online",
+  "subtitle": "Upload your JPG photos and get smaller, higher-quality AVIF files instantly — no upload to any server, no registration, 100% private.",
+  "seo": {
+    "title": "JPG to AVIF Converter — Free, Online, No Upload | Avifkit",
+    "description": "Convert JPG to AVIF free in your browser. No file uploads, no size limits, no watermarks. 100% private client-side processing.",
+    "h1": "Convert JPG to AVIF Online Free",
+    "h2_how": "How to Convert JPG to AVIF",
+    "h2_why": "Why Convert JPG to AVIF?"
+  },
+  "schemas": {
+    "howto": {
+      "name": "How to convert JPG to AVIF",
+      "description": "Convert JPG photos to AVIF format free in your browser — no upload, no registration required."
+    }
+  },
+  "hero": {
+    "privacy_banner": "Your files are converted locally in your browser — never uploaded to any server",
+    "badges": {
+      "privacy": "100% Private",
+      "speed": "Instant Speed",
+      "bulk": "Bulk Support"
+    }
+  },
+  "features": {
+    "title": "Why Convert JPG to AVIF?",
+    "subtitle": "Upgrade to a more efficient image format — smaller files, same quality.",
+    "privacy_title": "Complete Privacy",
+    "privacy_desc": "Your JPG photos are converted to AVIF entirely inside your browser. No images are uploaded to any server — your files never leave your device.",
+    "speed_title": "Instant Conversion",
+    "speed_desc": "Zero upload time. Your photos convert directly in your browser the moment you click — no waiting for server responses.",
+    "quality_title": "Superior Compression",
+    "quality_desc": "AVIF achieves 30–50% smaller file sizes than JPG at the same visual quality, making it ideal for web performance and storage savings."
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Upload JPG Files",
+        "description": "Drag and drop your .jpg or .jpeg files into the converter box, or click to browse. Upload up to 30 JPG files at once for batch conversion to AVIF."
+      },
+      "select": {
+        "title": "Set AVIF Quality",
+        "description": "Adjust the quality slider for AVIF output. For web images, 60–75% quality provides excellent results with dramatic file size savings. Higher quality (80%+) for photography where detail matters."
+      },
+      "download": {
+        "title": "Download AVIF Files",
+        "description": "Download each AVIF file individually or save all as a ZIP archive. AVIF files are ready for modern websites, apps, and storage optimization."
+      }
+    }
+  },
+  "sections": {
+    "beforeAfter": {
+      "title": "See the Savings: JPG vs AVIF",
+      "description": "AVIF delivers dramatically smaller file sizes compared to JPG while maintaining visual quality. See how much space you can save.",
+      "original_label": "Original (JPG)",
+      "compressed_label": "Compressed (AVIF)",
+      "smaller": "smaller",
+      "loading": "Generating comparison...",
+      "drag_hint": "Drag the slider to compare image quality",
+      "avif_label": "JPG (Source)",
+      "result_label": "AVIF (Converted)",
+      "size_reduction": "Significant file size reduction",
+      "quality_note": "Output quality adjustable from 10% to 100%"
+    },
+    "useCases": {
+      "title": "When Should You Convert JPG to AVIF?",
+      "items": [
+        {
+          "title": "Website Modernization",
+          "description": "Replace JPG images with AVIF on your website to reduce page load times by 30–50%. Improve Core Web Vitals scores and SEO rankings with smaller image files."
+        },
+        {
+          "title": "Storage Optimization",
+          "description": "Convert your JPG photo library to AVIF to reclaim storage space. A 10 MB JPG collection can shrink to 5–7 MB in AVIF with identical visual quality."
+        },
+        {
+          "title": "App Development",
+          "description": "Use AVIF in mobile and web apps for faster loading and lower bandwidth usage. Modern browsers and platforms increasingly support AVIF natively."
+        },
+        {
+          "title": "Photo Archives",
+          "description": "Convert large JPG archives to AVIF for long-term storage savings. AVIF's superior compression means the same photos take up significantly less disk space."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "JPG vs AVIF – Why Upgrade?",
+      "description": "See how AVIF improves upon the classic JPG format.",
+      "headers": ["Feature", "JPG", "AVIF"],
+      "rows": [
+        ["Compression", "Good (DCT-based)", "Superior (AV1-based)"],
+        ["File Size", "Baseline", "30–50% smaller"],
+        ["Visual Quality", "Good", "Better at same size"],
+        ["Transparency", "Not supported", "Full alpha channel"],
+        ["HDR Support", "No (8-bit only)", "Yes (10-bit, 12-bit)"],
+        ["Browser Support", "Universal", "Chrome 85+, Safari 16.4+"],
+        ["Encoding Speed", "Fast", "Moderate"],
+        ["Animation", "No", "Yes (AVIF sequence)"]
+      ]
+    },
+    "specs": {
+      "title": "Tool Specifications",
+      "items": [
+        { "label": "Max File Size", "value": "10 MB per file" },
+        { "label": "Batch Limit", "value": "30 files per session" },
+        { "label": "Output Format", "value": "AVIF (AV1 Image)" },
+        { "label": "Input Format", "value": "JPG / JPEG" },
+        { "label": "Processing", "value": "100% client-side (browser)" },
+        { "label": "Quality Control", "value": "10%–100% adjustable" },
+        { "label": "Expected Savings", "value": "30–50% smaller than JPG" },
+        { "label": "Cost", "value": "Free, no registration required" }
+      ]
+    },
+    "relatedTools": {
+      "title": "Related Conversion Tools",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF to JPG", "description": "Convert AVIF images to universally compatible JPG format." },
+        "avif-to-png": { "title": "AVIF to PNG", "description": "Convert AVIF to PNG with full transparency support." },
+        "avif-to-webp": { "title": "AVIF to WebP", "description": "Convert AVIF to WebP for optimized web performance." },
+        "png-to-avif": { "title": "PNG to AVIF", "description": "Compress PNG images to smaller AVIF format." },
+        "jpg-to-avif": { "title": "JPG to AVIF", "description": "Convert JPG photos to next-gen AVIF format." },
+        "webp-to-avif": { "title": "WebP to AVIF", "description": "Upgrade WebP images to superior AVIF compression." },
+        "avif-to-gif": { "title": "AVIF to GIF", "description": "Convert AVIF images to GIF format." },
+        "avif-to-pdf": { "title": "AVIF to PDF", "description": "Embed AVIF images in PDF documents." },
+        "avif-viewer": { "title": "AVIF Viewer", "description": "Preview AVIF files and inspect metadata." }
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How much smaller will AVIF files be compared to JPG?",
+    "a1": "AVIF files are typically 30–50% smaller than JPG at the same visual quality. A 1 MB JPG photo might become 500–700 KB in AVIF with no perceptible quality difference.",
+    "q2": "Will converting JPG to AVIF reduce image quality?",
+    "a2": "At recommended quality settings (60–80%), the visual difference is imperceptible to the human eye. AVIF's advanced compression preserves detail better than JPG at equivalent file sizes.",
+    "q3": "Is it safe to convert my private photos here?",
+    "a3": "Yes. Avifkit processes everything client-side — your images are converted directly in your browser and are never uploaded to any external server. Your files stay on your device at all times.",
+    "q4": "Which browsers support AVIF?",
+    "a4": "Chrome 85+, Firefox 93+, Opera 71+, Edge 121+, and Safari 16.4+ all support AVIF. This covers approximately 93% of global browser usage.",
+    "q5": "Can I use AVIF images on my website?",
+    "a5": "Yes! Use the HTML 'picture' element to serve AVIF with a JPG fallback for older browsers, so all visitors get the best format their browser supports.",
+    "q6": "What is the maximum file size I can convert?",
+    "a6": "Each file can be up to 10 MB. There are no watermarks, no registration required, and no daily usage caps.",
+    "q7": "Can I batch convert JPG to AVIF?",
+    "a7": "Yes! Upload up to 30 JPG files at once. Click Convert All, then download individually or as a ZIP archive.",
+    "q8": "What quality setting should I use for AVIF?",
+    "a8": "For web images, 60–75% quality provides excellent results with dramatic size savings. For photography, use 75–85%. For near-lossless quality, use 90%+.",
+    "q9": "Do I need to create an account?",
+    "a9": "No. Avifkit is completely free with no registration, no watermarks, and no usage limits."
+  }
+}

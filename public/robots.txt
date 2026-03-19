@@ -8,6 +8,3 @@ Disallow: /api/
 
 # Sitemap location
 Sitemap: https://avifkit.com/sitemap.xml
-
-# Crawl-delay (optional, for polite crawling)
-Crawl-delay: 1

@@ -1,0 +1,241 @@
+{
+    "title_prefix": "Visionneuse",
+    "title_gradient": "AVIF",
+    "title_suffix": "Gratuite en Ligne",
+    "subtitle": "Prévisualisez vos fichiers AVIF instantanément dans votre navigateur. Sans upload, sans installation — glissez votre fichier et affichez-le. Entièrement gratuit, entièrement privé.",
+    "seo": {
+      "title": "Visionneuse AVIF — Ouvrir Fichiers AVIF Gratuitement en Ligne, Sans Upload | Avifkit",
+      "description": "Visionneuse AVIF gratuite en ligne. Prévisualisez vos images AVIF dans votre navigateur — sans upload, sans installation, sans inscription. Consultez dimensions, taille et couleurs. 100% privé.",
+      "h1": "Ouvrir des Fichiers AVIF en Ligne Gratuitement — Sans Upload",
+      "h2_how": "Comment Ouvrir des Fichiers AVIF en Ligne",
+      "h2_why": "Pourquoi Utiliser Avifkit pour Afficher des Fichiers AVIF ?"
+    },
+    "schemas": {
+      "howto": {
+        "name": "Comment afficher des fichiers AVIF en ligne gratuitement",
+        "description": "Prévisualisez et inspectez des images AVIF instantanément dans votre navigateur avec la visionneuse gratuite d'Avifkit — sans upload ni installation."
+      }
+    },
+    "hero": {
+      "privacy_banner": "Confidentialité garantie : vos fichiers ne quittent jamais votre appareil",
+      "badges": {
+        "privacy": "100% Privé",
+        "speed": "Aperçu Instantané",
+        "bulk": "Plusieurs Fichiers"
+      }
+    },
+    "features": {
+      "title": "Pourquoi Utiliser Avifkit pour Afficher des Fichiers AVIF ?",
+      "subtitle": "Le moyen le plus simple d'ouvrir et de prévisualiser des images AVIF en ligne — sans logiciel, sans upload.",
+      "privacy_title": "Vos Fichiers Ne Quittent Jamais Votre Appareil",
+      "privacy_desc": "Tout le traitement s'effectue localement dans votre navigateur. Vos images AVIF ne sont jamais envoyées à aucun serveur — même temporairement. Ce que vous consultez reste sur votre appareil.",
+      "speed_title": "Aperçu Instantané, Sans Installation",
+      "speed_desc": "Aucun logiciel à télécharger, aucune extension à installer. Ouvrez la page, déposez votre fichier AVIF et visualisez-le en quelques secondes. Fonctionne avec Chrome, Firefox, Safari et Edge.",
+      "quality_title": "Tous les Détails du Fichier en Un Coup d'Œil",
+      "quality_desc": "Affichez l'image en pleine résolution avec les métadonnées essentielles : largeur, hauteur, taille du fichier, profondeur de couleur et type de format — tout ce qu'il vous faut avant de décider de le convertir."
+    },
+    "howto": {
+      "steps": {
+        "upload": {
+          "title": "Déposez Votre Fichier AVIF",
+          "description": "Glissez-déposez votre fichier .avif dans la visionneuse, ou cliquez pour en sélectionner un depuis votre appareil. Vous pouvez charger plusieurs fichiers et les prévisualiser un par un."
+        },
+        "select": {
+          "title": "Prévisualisez et Inspectez",
+          "description": "Visualisez l'image complète avec les détails du fichier : dimensions, taille, profondeur de couleur et type de format. Tout est traité localement — vos fichiers ne quittent pas votre navigateur."
+        },
+        "download": {
+          "title": "Convertissez Si Nécessaire",
+          "description": "Si le fichier AVIF n'est pas compatible avec votre application ou plateforme, convertissez-le en JPG ou PNG en un clic directement depuis l'aperçu."
+        }
+      }
+    },
+    "sections": {
+      "beforeAfter": {
+        "title": "Prévisualisez N'Importe Quel Fichier AVIF Instantanément",
+        "description": "Impossible d'ouvrir un fichier AVIF sous Windows 10, sur un Mac ancien ou dans une app qui ne le supporte pas encore ? Déposez-le ici et affichez-le en quelques secondes — sans installer de codec, sans conversion.",
+        "original_label": "Original (AVIF)",
+        "compressed_label": "Aperçu",
+        "smaller": "plus petit",
+        "loading": "Chargement de l'aperçu...",
+        "drag_hint": "Déposez un fichier AVIF pour le prévisualiser",
+        "avif_label": "Fichier AVIF",
+        "result_label": "Aperçu",
+        "size_reduction": "Aperçu en pleine résolution",
+        "quality_note": "Voir dimensions, taille du fichier et informations de couleur"
+      },
+      "useCases": {
+        "title": "Quand Avez-Vous Besoin d'Afficher des Fichiers AVIF ?",
+        "items": [
+          {
+            "title": "Impossible d'Ouvrir AVIF sous Windows ?",
+            "description": "Windows 10 et les versions antérieures ne peuvent pas afficher les fichiers AVIF sans l'extension AV1 Video. Évitez l'installation — déposez votre fichier ici pour un aperçu instantané."
+          },
+          {
+            "title": "Vérifiez Avant de Publier",
+            "description": "Contrôlez les dimensions, la qualité visuelle et la profondeur de couleur avant de mettre vos fichiers AVIF en ligne ou de les livrer à un client."
+          },
+          {
+            "title": "Vérification Rapide Avant Conversion",
+            "description": "Vous n'êtes pas sûr que le fichier AVIF est correct avant de le convertir en JPG ou PNG ? Prévisualisez-le ici d'abord pour confirmer la qualité, puis convertissez si nécessaire."
+          },
+          {
+            "title": "Votre App ou CMS Ne Supporte Pas AVIF ?",
+            "description": "Beaucoup d'outils anciens et de plateformes CMS ne supportent pas encore AVIF. Prévisualisez votre fichier ici, puis convertissez-le en JPG ou PNG pour une compatibilité maximale."
+          }
+        ]
+      },
+      "comparison": {
+        "title": "Visionneuse AVIF : En Ligne vs Autres Méthodes",
+        "description": "Comparatif des différentes façons d'ouvrir et d'afficher des fichiers AVIF.",
+        "headers": [
+          "Méthode",
+          "Prérequis",
+          "Vitesse"
+        ],
+        "rows": [
+          [
+            "Avifkit Visionneuse en ligne",
+            "N'importe quel navigateur moderne",
+            "Instantané"
+          ],
+          [
+            "Extension AV1 Windows",
+            "Windows 10/11 + installation via Store",
+            "Après installation"
+          ],
+          [
+            "Chrome / Firefox",
+            "Chrome 85+ / Firefox 93+",
+            "Natif"
+          ],
+          [
+            "Adobe Photoshop 2024+",
+            "Abonnement payant",
+            "Après lancement"
+          ],
+          [
+            "GIMP 2.10+",
+            "Téléchargement et installation gratuits",
+            "Après lancement"
+          ],
+          [
+            "Aperçu macOS",
+            "macOS Ventura 13+",
+            "Natif"
+          ],
+          [
+            "Photos iOS",
+            "iOS 16+",
+            "Natif"
+          ],
+          [
+            "Autres Convertisseurs en Ligne",
+            "Upload du fichier vers un serveur",
+            "Upload + attente"
+          ]
+        ]
+      },
+      "specs": {
+        "title": "Spécifications de la Visionneuse",
+        "items": [
+          {
+            "label": "Taille max du fichier",
+            "value": "Sans limite"
+          },
+          {
+            "label": "Plusieurs fichiers",
+            "value": "Oui — prévisualisez plusieurs fichiers AVIF"
+          },
+          {
+            "label": "Informations affichées",
+            "value": "Dimensions, taille, profondeur de couleur, format"
+          },
+          {
+            "label": "Traitement",
+            "value": "100% côté client — aucun upload serveur"
+          },
+          {
+            "label": "Conversion rapide",
+            "value": "Un clic pour convertir en JPG ou PNG"
+          },
+          {
+            "label": "Installation",
+            "value": "Aucune requise"
+          },
+          {
+            "label": "Navigateurs supportés",
+            "value": "Chrome 85+, Firefox 93+, Safari 16.4+, Edge"
+          },
+          {
+            "label": "Tarif",
+            "value": "Gratuit — sans compte requis"
+          }
+        ]
+      },
+      "relatedTools": {
+        "title": "Outils Associés",
+        "items": {
+          "avif-to-jpg": {
+            "title": "AVIF en JPG",
+            "description": "Convertissez AVIF au format JPG universellement compatible."
+          },
+          "avif-to-png": {
+            "title": "AVIF en PNG",
+            "description": "Convertissez AVIF en PNG avec prise en charge complète de la transparence."
+          },
+          "avif-to-webp": {
+            "title": "AVIF en WebP",
+            "description": "Convertissez AVIF en WebP pour une diffusion web optimisée."
+          },
+          "png-to-avif": {
+            "title": "PNG en AVIF",
+            "description": "Compressez des images PNG au format AVIF plus léger."
+          },
+          "jpg-to-avif": {
+            "title": "JPG en AVIF",
+            "description": "Convertissez des photos JPG au format AVIF nouvelle génération."
+          },
+          "webp-to-avif": {
+            "title": "WebP en AVIF",
+            "description": "Passez vos images WebP à AVIF pour une meilleure compression."
+          },
+          "avif-to-gif": {
+            "title": "AVIF en GIF",
+            "description": "Convertissez des images AVIF au format GIF."
+          },
+          "avif-to-pdf": {
+            "title": "AVIF en PDF",
+            "description": "Intégrez des images AVIF dans un document PDF."
+          },
+          "avif-viewer": {
+            "title": "Visionneuse AVIF",
+            "description": "Prévisualisez des fichiers AVIF et inspectez les métadonnées."
+          }
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "q1": "Comment ouvrir des fichiers AVIF sous Windows 10 ou 11 ?",
+      "a1": "Windows 10 et 11 nécessitent l'installation de l'extension 'AV1 Video' depuis le Microsoft Store pour ouvrir les fichiers AVIF nativement. Si vous ne souhaitez rien installer, utilisez simplement Avifkit — déposez votre fichier et prévisualisez-le instantanément dans votre navigateur.",
+      "q2": "Puis-je afficher des fichiers AVIF sur iPhone ou iPad ?",
+      "a2": "iOS 16 et les versions ultérieures supportent AVIF nativement dans l'application Photos. Si vous utilisez une version iOS plus ancienne, vous pouvez prévisualiser des fichiers AVIF avec Avifkit dans Safari.",
+      "q3": "Mes photos sont-elles en sécurité ? Sont-elles uploadées ?",
+      "a3": "Vos fichiers sont 100% privés. Toute la prévisualisation s'effectue dans votre navigateur par traitement local — vos images ne sont jamais envoyées à aucun serveur. Même temporairement.",
+      "q4": "Puis-je convertir le fichier AVIF après l'avoir visualisé ?",
+      "a4": "Oui. Après la prévisualisation, cliquez sur 'Convertir en JPG' ou 'Convertir en PNG' pour convertir instantanément le fichier dans votre navigateur. La conversion ne nécessite pas non plus d'upload.",
+      "q5": "Quelles informations la visionneuse affiche-t-elle ?",
+      "a5": "La visionneuse affiche l'image en pleine résolution avec : les dimensions de l'image (largeur × hauteur en pixels), la taille du fichier, la profondeur de couleur et le type de format.",
+      "q6": "Quels navigateurs peuvent ouvrir des fichiers AVIF ?",
+      "a6": "Chrome 85+, Firefox 93+, Opera 71+, Edge 121+ et Safari 16.4+ supportent tous AVIF nativement. La visionneuse d'Avifkit fonctionne avec n'importe lequel de ces navigateurs.",
+      "q7": "Puis-je prévisualiser plusieurs fichiers AVIF à la fois ?",
+      "a7": "Oui. Vous pouvez déposer plusieurs fichiers AVIF en même temps et les parcourir un par un. Chaque fichier affiche son propre aperçu complet et ses métadonnées.",
+      "q8": "Pourquoi Photoshop n'ouvre pas mon fichier AVIF ?",
+      "a8": "La prise en charge d'AVIF a été ajoutée dans Adobe Photoshop 2024 (version 25.0+). Les versions antérieures ne peuvent pas ouvrir les fichiers AVIF. Utilisez Avifkit pour prévisualiser, ou convertissez en JPG ou PNG pour la compatibilité avec les anciennes versions de Photoshop.",
+      "q9": "Une inscription est-elle nécessaire ?",
+      "a9": "Non. Avifkit est entièrement gratuit sans compte requis. Ouvrez la page et commencez à prévisualiser.",
+      "q10": "Qu'est-ce que le format AVIF ?",
+      "a10": "AVIF (AV1 Image File Format) est un format d'image moderne basé sur le codec vidéo AV1. Il offre une compression nettement supérieure à celle de JPG et WebP pour la même qualité visuelle — des fichiers plus petits sans perte de qualité perceptible. Son adoption a progressé rapidement et il est désormais pris en charge par Chrome, Firefox, Safari et la plupart des smartphones récents."
+    }
+  }

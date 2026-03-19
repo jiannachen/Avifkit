@@ -1,0 +1,156 @@
+{
+  "title_prefix": "Convertir",
+  "title_gradient": "AVIF a PDF",
+  "title_suffix": "Online Gratis",
+  "subtitle": "Convierte AVIF a PDF online gratis — sin subir archivos, sin registro, sin marcas de agua. Transforma tus imágenes AVIF en documentos PDF listos para imprimir directamente en tu navegador.",
+  "seo": {
+    "title": "Convertir AVIF a PDF — Gratis, Online, Sin Subir Archivos | Avifkit",
+    "description": "Convierte AVIF a PDF gratis en tu navegador. Sin subir archivos, sin límites de tamaño, sin marcas de agua. Crea documentos PDF listos para imprimir con procesamiento 100% privado.",
+    "h1": "Convertir AVIF a PDF Online Gratis",
+    "h2_how": "¿Cómo convertir AVIF a PDF?",
+    "h2_why": "¿Por qué convertir AVIF a PDF?"
+  },
+  "schemas": {
+    "howto": {
+      "name": "Cómo convertir AVIF a PDF",
+      "description": "Aprende a convertir imágenes AVIF a documentos PDF usando nuestro convertidor online gratuito."
+    }
+  },
+  "hero": {
+    "privacy_banner": "Privacidad Verificada: Los archivos nunca salen de tu dispositivo",
+    "badges": {
+      "privacy": "100% Privado",
+      "speed": "Velocidad Instantánea",
+      "bulk": "Conversión Masiva"
+    }
+  },
+  "features": {
+    "title": "¿Por qué convertir AVIF a PDF con Avifkit?",
+    "subtitle": "Crea documentos PDF profesionales a partir de tus imágenes — de forma privada, instantánea y sin límites.",
+    "privacy_title": "Privacidad del Lado del Cliente",
+    "privacy_desc": "Tus imágenes se convierten a PDF completamente en tu navegador. No se sube ningún archivo a ningún servidor — tus documentos permanecen completamente privados en tu dispositivo.",
+    "speed_title": "Ultra Rápido",
+    "speed_desc": "Cero tiempo de subida significa cero espera. Nuestro motor WebAssembly incrusta imágenes AVIF en documentos PDF al instante, directamente en tu navegador.",
+    "quality_title": "PDFs Listos para Imprimir",
+    "quality_desc": "Genera documentos PDF de alta calidad que preservan la resolución original completa. Perfecto para impresión, archivo y compartir documentos profesionalmente."
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Subir Archivos AVIF",
+        "description": "Arrastra y suelta tus archivos .avif en el convertidor o haz clic para seleccionar. Sube hasta 30 archivos AVIF a la vez para crear documentos PDF."
+      },
+      "select": {
+        "title": "Configurar Salida PDF",
+        "description": "Cada imagen AVIF se incrustará en un documento PDF separado a resolución completa. El PDF preserva las dimensiones y calidad originales de la imagen."
+      },
+      "download": {
+        "title": "Descargar Documentos PDF",
+        "description": "Descarga cada PDF individualmente o guarda todos como un archivo ZIP. Tus archivos se convierten localmente en tu navegador — nunca se suben a ningún servidor."
+      }
+    }
+  },
+  "sections": {
+    "beforeAfter": {
+      "title": "De Imagen a Documento: AVIF a PDF",
+      "description": "Convierte tus imágenes AVIF en documentos PDF profesionales para impresión, archivo y compartir documentos formales.",
+      "original_label": "Original (AVIF)",
+      "compressed_label": "Documento PDF",
+      "smaller": "más pequeño",
+      "loading": "Generando comparación...",
+      "drag_hint": "Arrastra el deslizador para comparar",
+      "avif_label": "AVIF (Origen)",
+      "result_label": "PDF (Documento)",
+      "size_reduction": "Incrustado en formato PDF",
+      "quality_note": "Resolución completa preservada en la salida PDF"
+    },
+    "useCases": {
+      "title": "¿Cuándo necesitas la conversión AVIF a PDF?",
+      "items": [
+        {
+          "title": "Impresión Profesional",
+          "description": "Las imprentas aceptan universalmente PDF. Convierte tus imágenes AVIF a PDF para una salida de impresión confiable y de alta calidad en Windows, Mac o cualquier plataforma."
+        },
+        {
+          "title": "Archivo de Documentos",
+          "description": "PDF es el estándar de oro para almacenamiento a largo plazo. Convierte imágenes AVIF a documentos compatibles con PDF/A para archivo con legibilidad futura garantizada."
+        },
+        {
+          "title": "Compartir Multiplataforma",
+          "description": "No todos pueden abrir archivos AVIF — PCs con Windows 10 antiguos, algunos iPhones y muchas apps no son compatibles. Comparte tus imágenes como PDF para que los destinatarios puedan verlas en cualquier dispositivo sin software especial."
+        },
+        {
+          "title": "Documentación Formal",
+          "description": "Incluye imágenes en informes, propuestas y documentos oficiales. PDF garantiza un formato consistente en todos los dispositivos y sistemas operativos."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Imagen AVIF vs Documento PDF",
+      "description": "Comprender cuándo usar cada formato te ayuda a elegir la salida correcta.",
+      "headers": ["Característica", "AVIF (Imagen)", "PDF (Documento)"],
+      "rows": [
+        ["Propósito", "Visualización web y almacenamiento", "Impresión, archivo y compartir"],
+        ["Editabilidad", "Editores de imagen", "Editores y lectores de PDF"],
+        ["Múltiples Páginas", "No", "Sí"],
+        ["Soporte de Texto", "No", "Sí"],
+        ["Calidad de Impresión", "Depende del visor", "Consistente y confiable"],
+        ["Tamaño de Archivo", "Compacto (compresión AV1)", "Varía según el contenido"],
+        ["Soporte de Visor", "Solo navegadores modernos", "Cualquier lector de PDF"],
+        ["Estándar de Archivo", "No", "Sí (PDF/A)"]
+      ]
+    },
+    "specs": {
+      "title": "Especificaciones de la Herramienta",
+      "items": [
+        { "label": "Tamaño Máximo", "value": "10 MB por archivo" },
+        { "label": "Límite por Lote", "value": "30 archivos por sesión" },
+        { "label": "Formato de Salida", "value": "Documento PDF" },
+        { "label": "Formato de Entrada", "value": "AVIF" },
+        { "label": "Procesamiento", "value": "100% del lado del cliente (navegador)" },
+        { "label": "Resolución", "value": "Resolución original completa preservada" },
+        { "label": "Tamaño de Página", "value": "Se adapta a las dimensiones de la imagen" },
+        { "label": "Costo", "value": "Gratis, sin registro necesario" }
+      ]
+    },
+    "relatedTools": {
+      "title": "Herramientas de Conversión Relacionadas",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF a JPG", "description": "Convierte imágenes AVIF a formato JPG universalmente compatible." },
+        "avif-to-png": { "title": "AVIF a PNG", "description": "Convierte AVIF a PNG con soporte completo de transparencia." },
+        "avif-to-webp": { "title": "AVIF a WebP", "description": "Convierte AVIF a WebP para un rendimiento web optimizado." },
+        "png-to-avif": { "title": "PNG a AVIF", "description": "Comprime imágenes PNG al formato AVIF más pequeño." },
+        "jpg-to-avif": { "title": "JPG a AVIF", "description": "Convierte fotos JPG al formato AVIF de nueva generación." },
+        "webp-to-avif": { "title": "WebP a AVIF", "description": "Actualiza imágenes WebP a la compresión AVIF superior." },
+        "avif-to-gif": { "title": "AVIF a GIF", "description": "Convierte imágenes AVIF a formato GIF." },
+        "avif-to-pdf": { "title": "AVIF a PDF", "description": "Incrusta imágenes AVIF en documentos PDF." },
+        "avif-viewer": { "title": "Visor AVIF", "description": "Previsualiza archivos AVIF e inspecciona metadatos." }
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Es seguro convertir imágenes privadas a PDF aquí?",
+    "a1": "Sí. Tu conversión de AVIF a PDF se realiza completamente en tu navegador. Las imágenes nunca se suben a ningún servidor externo — tus archivos permanecen en tu dispositivo en todo momento.",
+    "q2": "¿El PDF preserva la calidad original de la imagen?",
+    "a2": "Sí. La imagen AVIF se incrusta en el PDF a resolución completa. La calidad de imagen en el PDF coincide con la fuente AVIF original sin compresión adicional.",
+    "q3": "¿Cómo abro archivos AVIF en Windows?",
+    "a3": "Windows 11 soporta AVIF nativamente. En Windows 10, instala la extensión gratuita 'AV1 Video Extension' desde la Microsoft Store. O simplemente usa Avifkit para convertir tus archivos AVIF a PDF para una fácil visualización e impresión.",
+    "q4": "¿Puedo abrir AVIF en iPhone o Mac?",
+    "a4": "macOS Ventura e iOS 16+ soportan AVIF nativamente. Para dispositivos Apple más antiguos, convertir AVIF a PDF con Avifkit es la forma más fácil de ver y compartir tus imágenes.",
+    "q5": "¿Puedo imprimir el PDF directamente?",
+    "a5": "Sí. El PDF generado está listo para imprimir. Ábrelo en cualquier lector de PDF — Adobe Acrobat, Vista Previa en Mac, Chrome o Edge — e imprime directamente a resolución completa.",
+    "q6": "¿Qué tamaño de página usará el PDF?",
+    "a6": "El tamaño de página del PDF se ajusta automáticamente a las dimensiones de tu imagen AVIF, asegurando que no haya recortes ni estiramientos.",
+    "q7": "¿Cuál es el tamaño máximo de archivo que puedo convertir?",
+    "a7": "Cada archivo puede ser de hasta 10 MB. Como el procesamiento ocurre completamente en tu navegador, los archivos más grandes pueden tardar un poco más según el rendimiento de tu dispositivo.",
+    "q8": "¿Puedo convertir múltiples archivos AVIF a PDF a la vez?",
+    "a8": "Sí. Sube hasta 30 archivos AVIF a la vez. Cada uno se convertirá en un documento PDF separado. Descárgalos individualmente o como un archivo ZIP.",
+    "q9": "¿Qué es el formato AVIF?",
+    "a9": "AVIF (AV1 Image File Format) es un formato de imagen moderno que ofrece compresión superior a JPG y WebP. Es compatible con Chrome, Firefox, Edge y Safari 16.4+, pero no todas las aplicaciones pueden abrirlo — convertir a PDF garantiza compatibilidad universal.",
+    "q10": "¿Necesito crear una cuenta?",
+    "a10": "No. Avifkit es completamente gratuito, sin registro, sin marcas de agua y sin límites de uso. Solo abre la página y comienza a convertir.",
+    "q11": "¿Puedo combinar múltiples imágenes AVIF en un solo PDF?",
+    "a11": "Actualmente, cada imagen AVIF se convierte en un documento PDF separado. Para combinar múltiples imágenes en un solo PDF de varias páginas, conviértelas individualmente y usa una herramienta de fusión de PDF."
+  }
+}

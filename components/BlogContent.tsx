@@ -8,6 +8,8 @@ interface ContentBlock {
   title?: string;
   subtitle?: string;
   button?: {text: string; link: string};
+  headers?: string[];
+  rows?: string[][];
 }
 
 // Parse link syntax {link:/path|Text} and convert to Link component
@@ -100,6 +102,38 @@ export function BlogContent({ content }: { content: ContentBlock[] }) {
                     <p className="text-slate-700">{parseTextWithLinks(faq.answer)}</p>
                   </div>
                 ))}
+              </div>
+            );
+
+          case 'table':
+            return (
+              <div key={index} className="overflow-x-auto my-8">
+                <table className="w-full border-collapse bg-white rounded-lg overflow-hidden border border-slate-200">
+                  {block.headers && (
+                    <thead>
+                      <tr className="bg-slate-900 text-white">
+                        {block.headers.map((header, i) => (
+                          <th key={i} className="px-4 py-3 text-left text-sm font-semibold">
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                  )}
+                  {block.rows && (
+                    <tbody>
+                      {block.rows.map((row, rowIdx) => (
+                        <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                          {row.map((cell, cellIdx) => (
+                            <td key={cellIdx} className={`px-4 py-3 text-sm border-t border-slate-100 ${cellIdx === 0 ? 'font-medium text-slate-900' : 'text-slate-600'}`}>
+                              {parseTextWithLinks(cell)}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  )}
+                </table>
               </div>
             );
 

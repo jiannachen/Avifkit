@@ -1,0 +1,157 @@
+{
+  "slug": "avif-vs-webp",
+  "title": "AVIF vs WebP: ¿Qué formato de imagen usar en 2026?",
+  "description": "Comparativa detallada entre AVIF y WebP. Compresión, calidad, compatibilidad con navegadores, velocidad de codificación y cuándo usar cada uno.",
+  "excerpt": "Los dos son formatos modernos, pero para la mayoría de los casos uno sale ganando claramente. Comparamos compresión, calidad, compatibilidad y velocidad.",
+  "date": "2025-12-20",
+  "readingTime": 7,
+  "category": "Comparativa",
+  "keywords": "avif vs webp, webp vs avif, comparativa formatos imagen, mejor formato imagen 2026",
+  "image": "https://img.avifkit.com/blog/avif-vs-webp-2026.webp",
+  "content": [
+    {
+      "type": "lead",
+      "text": "AVIF y WebP son los dos formatos modernos que aspiran a sustituir a JPG y PNG en la web. Pero, ¿cuál conviene usar realmente? Los hemos probado a fondo y comparado en todo lo que importa: compresión, calidad, velocidad y compatibilidad."
+    },
+    {
+      "type": "h2",
+      "text": "Comparativa rápida: AVIF vs WebP de un vistazo"
+    },
+    {
+      "type": "table",
+      "headers": ["Característica", "AVIF", "WebP"],
+      "rows": [
+        ["Códec", "AV1 (AOMedia)", "VP8/VP9 (Google)"],
+        ["Compresión (con pérdida)", "30-50% más pequeño que JPG", "25-35% más pequeño que JPG"],
+        ["Compresión (sin pérdida)", "20% más pequeño que PNG", "25% más pequeño que PNG"],
+        ["Resolución máxima", "8192×4352 por tile", "16383×16383"],
+        ["Profundidad de color", "8, 10, 12 bits", "Solo 8 bits"],
+        ["Soporte HDR", "Sí", "No"],
+        ["Transparencia", "Sí", "Sí"],
+        ["Animación", "Sí", "Sí"],
+        ["Velocidad de codificación", "Lenta", "Rápida"],
+        ["Compatibilidad", "95%+ global", "97%+ global"],
+        ["Licencia", "Sin royalties", "Sin royalties"]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Calidad de compresión"
+    },
+    {
+      "type": "p",
+      "text": "En nuestras pruebas con 50 fotografías variadas, AVIF produjo archivos más pequeños que WebP a calidad visual equivalente de forma consistente. Con un SSIM objetivo de 0,95 —calidad visualmente indistinguible para la mayoría de los usuarios—, los archivos AVIF fueron de media un 20-30% más pequeños que los WebP."
+    },
+    {
+      "type": "p",
+      "text": "La ventaja es más notable en fotografías con texturas complejas, degradados y variaciones de color sutiles. En gráficos simples de colores planos, la diferencia se reduce bastante."
+    },
+    {
+      "type": "p",
+      "text": "Donde AVIF realmente brilla es en bitrates muy bajos. Si necesitas comprimir imágenes agresivamente para usuarios móviles o conexiones lentas, AVIF conserva mejor la calidad visual que WebP. Por eso es especialmente valioso en miniaturas y previsualizaciones, donde cada kilobyte cuenta."
+    },
+    {
+      "type": "h2",
+      "text": "Velocidad de codificación y decodificación"
+    },
+    {
+      "type": "p",
+      "text": "Aquí WebP tiene una ventaja clara. Codificar en WebP es entre 5 y 10 veces más rápido que hacerlo en AVIF a la misma calidad. Si conviertes imágenes en tiempo real o procesas lotes grandes en un servidor, esta diferencia se nota."
+    },
+    {
+      "type": "p",
+      "text": "La velocidad de decodificación —mostrar la imagen— es más parecida entre los dos. Ambos decodifican lo suficientemente rápido como para que la diferencia sea imperceptible en la navegación normal. Eso sí, AVIF es algo más lento, lo que puede tener importancia en dispositivos de bajo rendimiento."
+    },
+    {
+      "type": "p",
+      "text": "Para imágenes preprocesadas en tiempo de build, la velocidad de codificación importa poco: codificas una vez y sirves muchas. Para contenido subido por usuarios que requiere conversión en tiempo real, la ventaja de velocidad de WebP puede ser decisiva."
+    },
+    {
+      "type": "h2",
+      "text": "Compatibilidad con navegadores y software"
+    },
+    {
+      "type": "p",
+      "text": "WebP existe desde 2010 y lleva más tiempo ganándose su lugar. Lo soportan todos los navegadores principales y la mayoría de las librerías de procesamiento de imágenes. AVIF, lanzado en 2019, está alcanzándolo rápidamente, aunque todavía tiene huecos en algunos navegadores y software más antiguos."
+    },
+    {
+      "type": "table",
+      "headers": ["Navegador", "Soporte WebP", "Soporte AVIF"],
+      "rows": [
+        ["Chrome", "Versión 32+ (2014)", "Versión 85+ (2020)"],
+        ["Firefox", "Versión 65+ (2019)", "Versión 93+ (2021)"],
+        ["Safari", "Versión 14+ (2020)", "Versión 16.4+ (2023)"],
+        ["Edge", "Versión 18+ (2018)", "Versión 121+ (2024)"],
+        ["Cobertura global", "~97%", "~95%"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "En cuanto a software, WebP está más extendido. Photoshop, Figma, Sketch y la mayoría de los CMS lo soportan de forma nativa. El soporte de AVIF en herramientas de diseño está llegando, aunque mejora rápidamente."
+    },
+    {
+      "type": "h2",
+      "text": "Profundidad de color y HDR"
+    },
+    {
+      "type": "p",
+      "text": "AVIF soporta 10 y 12 bits de profundidad de color, lo que le permite representar más de mil millones de colores frente a los 16,7 millones de WebP (8 bits). Para fotografía HDR o trabajo profesional con color, AVIF gana sin discusión."
+    },
+    {
+      "type": "p",
+      "text": "Para contenido web estándar en monitores habituales, esta diferencia no cambia nada. Pero si sirves imágenes a dispositivos con HDR —iPhone 15 Pro, monitores HDR, pantallas Apple ProMotion—, el soporte HDR de AVIF ofrece una ventaja de calidad real."
+    },
+    {
+      "type": "h2",
+      "text": "¿Qué formato elegir?"
+    },
+    {
+      "type": "h3",
+      "text": "Usa AVIF si:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "La compresión máxima es crítica (sitios con muchas imágenes, apps móviles)",
+        "Necesitas soporte HDR o gama de color amplia",
+        "Puedes preprocesar las imágenes en tiempo de build",
+        "Tu audiencia usa navegadores modernos"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Usa WebP si:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Necesitas codificación rápida para conversión en tiempo real",
+        "Requieres máxima compatibilidad con navegadores y software",
+        "Trabajas con imágenes sin pérdida (WebP lossless es competitivo con AVIF)",
+        "Tus imágenes son principalmente gráficos simples, no fotografías"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "O usa los dos con fallback:"
+    },
+    {
+      "type": "p",
+      "text": "Para la mayoría de los sitios, la mejor estrategia es servir AVIF a los navegadores que lo soportan y caer de vuelta a WebP (o JPG) para los demás. El elemento HTML 'picture' lo facilita. Así obtienes la mejor compresión para la mayoría de los usuarios sin sacrificar compatibilidad."
+    },
+    {
+      "type": "tip",
+      "title": "Consejo de conversión:",
+      "text": "¿Necesitas convertir entre AVIF y WebP? Usa el conversor gratuito de Avifkit, que funciona en ambas direcciones directamente en tu navegador."
+    },
+    {
+      "type": "cta",
+      "title": "Convierte entre AVIF y WebP",
+      "subtitle": "Conversor online gratuito. Sin subidas, sin registro, resultado instantáneo.",
+      "button": {
+        "text": "Convertir AVIF a WebP",
+        "link": "/avif-to-webp"
+      }
+    }
+  ]
+}

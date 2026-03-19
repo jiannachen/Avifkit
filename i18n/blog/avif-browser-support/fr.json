@@ -1,0 +1,173 @@
+{
+  "slug": "avif-browser-support",
+  "title": "Compatibilité AVIF en 2026 : Guide complet des navigateurs",
+  "description": "Guide complet sur la compatibilité AVIF dans les navigateurs. Découvrez quels navigateurs prennent en charge AVIF, les versions minimales requises et les stratégies de repli pour une compatibilité maximale.",
+  "excerpt": "Quels navigateurs supportent AVIF ? Quelles versions sont nécessaires ? Quelles stratégies de repli fonctionnent ? Tout ce que vous devez savoir.",
+  "date": "2025-12-25",
+  "readingTime": 6,
+  "category": "Guide",
+  "keywords": "compatibilité avif navigateurs, avif compatibilité, support format avif, puis-je utiliser avif, avif fallback",
+  "image": "https://img.avifkit.com/blog/browser-support-2026.webp",
+  "content": [
+    {
+      "type": "lead",
+      "text": "La compatibilité AVIF dans les navigateurs a considérablement progressé depuis l'introduction du format en 2019. En 2026, plus de 95 % des internautes dans le monde peuvent afficher des images AVIF nativement. Voici le tour d'horizon complet : quels navigateurs prennent en charge AVIF, quelles versions sont nécessaires et comment gérer les rares lacunes de compatibilité qui subsistent."
+    },
+    {
+      "type": "h2",
+      "text": "État actuel de la compatibilité AVIF (2026)"
+    },
+    {
+      "type": "table",
+      "headers": ["Navigateur", "Support depuis", "Version minimale", "Statut"],
+      "rows": [
+        ["Google Chrome", "Août 2020", "85", "Support complet"],
+        ["Mozilla Firefox", "Octobre 2021", "93", "Support complet"],
+        ["Microsoft Edge", "Janvier 2024", "121", "Support complet"],
+        ["Apple Safari", "Mars 2023", "16.4", "Support complet"],
+        ["Opera", "Août 2020", "71", "Support complet"],
+        ["Samsung Internet", "Octobre 2021", "16.0", "Support complet"],
+        ["Chrome Android", "Août 2020", "85", "Support complet"],
+        ["Safari iOS", "Mars 2023", "16.4", "Support complet"],
+        ["Firefox Android", "Octobre 2021", "93", "Support complet"],
+        ["Internet Explorer", "Jamais", "N/A", "Non supporté"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "D'après les données de Can I Use, AVIF atteint environ 95,5 % de couverture mondiale. Les principaux angles morts concernent les anciennes versions de Safari (antérieures à la 16.4) et quelques navigateurs de niche. Pour la plupart des sites, cette couverture est largement suffisante pour une utilisation en production."
+    },
+    {
+      "type": "h2",
+      "text": "Détail par navigateur de bureau"
+    },
+    {
+      "type": "h3",
+      "text": "Google Chrome"
+    },
+    {
+      "type": "p",
+      "text": "Chrome a été le premier grand navigateur à adopter AVIF, dès la version 85 en août 2020. Il prend en charge l'ensemble des fonctionnalités du format : compression avec et sans perte, canal alpha, profondeur de couleur 10 et 12 bits, HDR et séquences AVIF animées. Le support s'étend également aux images de fond CSS et aux éléments canvas."
+    },
+    {
+      "type": "h3",
+      "text": "Mozilla Firefox"
+    },
+    {
+      "type": "p",
+      "text": "Firefox a introduit AVIF avec la version 93 (octobre 2021). Le support des AVIF animés était initialement partiel, mais Firefox 113 l'a rendu complet. Le décodeur utilisé est dav1d, réputé pour ses excellentes performances."
+    },
+    {
+      "type": "h3",
+      "text": "Apple Safari"
+    },
+    {
+      "type": "p",
+      "text": "Safari a été le dernier des grands navigateurs à franchir le pas, ajoutant AVIF dans la version 16.4 (mars 2023). Cette mise à jour a apporté la compatibilité à macOS (Ventura et versions ultérieures) ainsi qu'à iOS (16.4 et supérieur). L'implémentation de Safari prend en charge les profondeurs de couleur 8 et 10 bits, la transparence alpha et le contenu HDR."
+    },
+    {
+      "type": "h3",
+      "text": "Microsoft Edge"
+    },
+    {
+      "type": "p",
+      "text": "Basé sur Chromium, Edge a hérité du support AVIF de Chrome et l'a officialisé avec la version 121 (janvier 2024). Partageant le même moteur de rendu, ses capacités AVIF sont identiques à celles de Chrome."
+    },
+    {
+      "type": "h2",
+      "text": "Compatibilité sur mobile"
+    },
+    {
+      "type": "p",
+      "text": "Le support mobile suit de très près celui du bureau. Chrome sur Android prend en charge AVIF depuis la version 85, et Safari sur iOS depuis la version 16.4. La grande majorité des smartphones commercialisés à partir de 2023 peuvent donc afficher des images AVIF sans aucun module complémentaire."
+    },
+    {
+      "type": "p",
+      "text": "Un point à ne pas négliger : même si le navigateur supporte AVIF, la visionneuse d'images native du système d'exploitation peut ne pas en faire autant. Si un utilisateur télécharge une image AVIF, il est possible qu'il ne puisse pas l'ouvrir depuis la galerie de son téléphone. Convertir les fichiers AVIF en JPG ou PNG avant de les partager reste donc une bonne habitude."
+    },
+    {
+      "type": "h2",
+      "text": "Stratégies de repli pour AVIF"
+    },
+    {
+      "type": "h3",
+      "text": "1. L'élément HTML 'picture'"
+    },
+    {
+      "type": "p",
+      "text": "La stratégie de repli la plus fiable repose sur l'élément HTML 'picture', qui permet au navigateur de choisir le meilleur format qu'il supporte. Le navigateur teste la première source compatible et ignore les autres. Placez AVIF en premier, puis WebP, et enfin JPG comme dernier recours."
+    },
+    {
+      "type": "h3",
+      "text": "2. Négociation de contenu (en-tête Accept)"
+    },
+    {
+      "type": "p",
+      "text": "Des CDN comme Cloudflare, Fastly ou AWS CloudFront peuvent servir automatiquement le meilleur format selon l'en-tête Accept du navigateur. Quand un navigateur envoie 'Accept: image/avif', le CDN sert l'AVIF ; sinon, il bascule vers WebP ou JPG. Cette approche ne nécessite aucune modification du HTML et fonctionne avec les balises <img> existantes."
+    },
+    {
+      "type": "h3",
+      "text": "3. Détection du support en JavaScript"
+    },
+    {
+      "type": "p",
+      "text": "Il est possible de détecter le support AVIF en JavaScript en essayant de décoder une minuscule image AVIF. Si le navigateur y parvient, AVIF est disponible. Cette technique est particulièrement utile dans les applications à page unique, où les images sont chargées dynamiquement."
+    },
+    {
+      "type": "h2",
+      "text": "Support AVIF dans les outils de traitement d'images"
+    },
+    {
+      "type": "table",
+      "headers": ["Outil", "Support AVIF", "Notes"],
+      "rows": [
+        ["Adobe Photoshop", "2024+", "Partiel — certains profils couleur peuvent poser problème"],
+        ["GIMP", "2.10.32+", "Support complet via plugin"],
+        ["ImageMagick", "7.0.25+", "Support complet"],
+        ["Sharp (Node.js)", "0.29+", "Support complet via libvips"],
+        ["Squoosh", "Oui", "Support complet en ligne"],
+        ["WordPress", "6.5+", "Import natif de fichiers AVIF"],
+        ["Figma", "Limité", "Import possible, export limité"],
+        ["Canva", "Non", "Export non supporté"]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Que faire quand AVIF n'est pas supporté"
+    },
+    {
+      "type": "p",
+      "text": "Si vous travaillez avec des fichiers AVIF et devez les partager avec quelqu'un qui ne peut pas les ouvrir, la solution la plus simple est de les convertir en JPG ou PNG. Vous garantissez ainsi une compatibilité universelle, quel que soit l'appareil ou le logiciel utilisé."
+    },
+    {
+      "type": "p",
+      "text": "Notre convertisseur gratuit en ligne vous permet de transformer des fichiers AVIF dans n'importe quel format en quelques secondes. La conversion s'effectue entièrement dans votre navigateur : vos images restent privées et sécurisées."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Mon navigateur supporte-t-il AVIF ?",
+          "answer": "Si vous utilisez Chrome 85 ou supérieur, Firefox 93+, Safari 16.4+ ou Edge 121+, votre navigateur prend en charge AVIF. Vous pouvez le vérifier sur notre page {link:/avif-viewer|Visionneuse AVIF} en chargeant un fichier AVIF."
+        },
+        {
+          "question": "Puis-je utiliser AVIF sur mon site web ?",
+          "answer": "Oui, AVIF est prêt pour la production sur la plupart des sites. Avec plus de 95 % de couverture et des stratégies de repli simples via l'élément 'picture', vous pouvez servir des images AVIF en toute sérénité, tout en proposant JPG ou WebP pour les navigateurs plus anciens."
+        },
+        {
+          "question": "AVIF va-t-il remplacer JPG et WebP ?",
+          "answer": "AVIF a de bonnes chances de s'imposer comme format dominant sur le web grâce à sa compression supérieure. Cela dit, JPG restera incontournable pour des raisons de compatibilité, et WebP constitue un bon compromis. Les trois formats coexisteront encore longtemps."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Besoin de convertir des fichiers AVIF ?",
+      "subtitle": "Convertissez AVIF en JPG, PNG ou WebP directement dans votre navigateur. Gratuit, instantané et confidentiel.",
+      "button": {
+        "text": "Convertir AVIF maintenant",
+        "link": "/avif-to-jpg"
+      }
+    }
+  ]
+}

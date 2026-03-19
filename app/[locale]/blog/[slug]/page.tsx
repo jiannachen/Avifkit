@@ -18,6 +18,7 @@ interface BlogArticleMeta {
   readingTime: number;
   category: string;
   keywords: string;
+  image?: string;
   content: any[];
 }
 
@@ -60,8 +61,9 @@ export async function generateMetadata({
     };
   }
 
-  const url = `https://avifkit.com/blog/${slug}`;
-  const imageUrl = `https://avifkit.com/blog/${slug}.jpg`;
+  const localePath = locale === 'en' ? '' : `/${locale}`;
+  const url = `https://avifkit.com${localePath}/blog/${slug}`;
+  const imageUrl = article.image || `https://img.avifkit.com/blog/what-is-avif-guide.webp`;
 
   return {
     title: article.title + ' | AvifKit Blog',
@@ -71,11 +73,12 @@ export async function generateMetadata({
       title: article.title,
       description: article.description,
       url,
-      siteName: 'Avifkit',
+      siteName: 'AvifKit',
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.date,
-      authors: ['Avifkit Team'],
+      authors: ['AvifKit Team'],
+      locale: locale === 'en' ? 'en_US' : locale === 'es' ? 'es_ES' : locale === 'ja' ? 'ja_JP' : 'fr_FR',
       images: [
         {
           url: imageUrl,
@@ -93,6 +96,13 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: url,
+      languages: {
+        'en': `https://avifkit.com/blog/${slug}`,
+        'es': `https://avifkit.com/es/blog/${slug}`,
+        'ja': `https://avifkit.com/ja/blog/${slug}`,
+        'fr': `https://avifkit.com/fr/blog/${slug}`,
+        'x-default': `https://avifkit.com/blog/${slug}`,
+      },
     },
   };
 }
@@ -113,8 +123,9 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
-  const url = `https://avifkit.com/blog/${slug}`;
-  const imageUrl = `https://avifkit.com/blog/${slug}.jpg`;
+  const localePath = locale === 'en' ? '' : `/${locale}`;
+  const url = `https://avifkit.com${localePath}/blog/${slug}`;
+  const imageUrl = article.image || `https://img.avifkit.com/blog/what-is-avif-guide.webp`;
 
   return (
     <div className="min-h-screen bg-white">

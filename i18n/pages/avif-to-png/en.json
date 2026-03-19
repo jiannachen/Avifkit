@@ -2,7 +2,7 @@
   "title_prefix": "Convert",
   "title_gradient": "AVIF to PNG",
   "title_suffix": "Online",
-  "subtitle": "Convert AVIF files to high-quality PNGs while preserving transparency. 100% free and secure client-side conversion.",
+  "subtitle": "The best free AVIF to PNG converter. Preserve transparency and get high-quality lossless output. 100% secure client-side conversion.",
   "seo": {
     "title": "AVIF to PNG Converter - Transparent & No Upload | AvifKit",
     "description": "Convert AVIF to PNG with transparency support. Free online tool, no server upload, instant conversion. Preserve alpha channel quality.",
@@ -10,30 +10,143 @@
     "h2_how": "How to Convert AVIF to PNG Without Losing Quality?",
     "h2_why": "Why Use AvifKit to Convert AVIF to PNG?"
   },
-  "howto": {
-    "steps": {
-      "upload": {
-        "title": "Upload AVIF",
-        "description": "Drag and drop your .avif files into the box above."
-      },
-      "select": {
-        "title": "Select Format",
-        "description": "Choose JPG, PNG, or WebP and adjust quality settings."
-      },
-      "download": {
-        "title": "Download",
-        "description": "Get your converted images instantly, individually or as a ZIP."
-      }
-    }
-  },
   "schemas": {
     "howto": {
       "name": "How to convert AVIF to PNG",
       "description": "Learn how to convert AVIF images to PNG format using our free online converter."
-    },
-    "software": {
-      "name": "Avifkit",
-      "description": "Convert AVIF to JPG, PNG, and WebP locally in your browser"
     }
+  },
+  "hero": {
+    "privacy_banner": "Privacy Verified: Files never leave your device",
+    "badges": {
+      "privacy": "100% Private",
+      "speed": "Instant Speed",
+      "bulk": "Bulk Support"
+    }
+  },
+  "features": {
+    "title": "Why Convert AVIF to PNG with Avifkit?",
+    "subtitle": "Preserve transparency and quality in every conversion.",
+    "privacy_title": "Client-side Privacy",
+    "privacy_desc": "Your AVIF files are converted to PNG entirely in your browser. No images are uploaded to any server – your data stays private.",
+    "speed_title": "Blazing Fast",
+    "speed_desc": "Zero upload time. Zero download wait. Our WebAssembly engine handles the conversion instantly with full alpha channel support.",
+    "quality_title": "Lossless PNG Quality",
+    "quality_desc": "PNG is a lossless format – every pixel is preserved perfectly. Transparency (alpha channel) from your AVIF files is maintained in the PNG output."
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Upload AVIF Files",
+        "description": "Drag and drop your .avif files into the converter box above, or click to browse. You can upload up to 30 AVIF files at once for batch conversion to PNG."
+      },
+      "select": {
+        "title": "Confirm PNG Output",
+        "description": "PNG is a lossless format, so there's no quality slider to adjust. Your AVIF images will be converted to PNG with perfect quality and full transparency preserved."
+      },
+      "download": {
+        "title": "Download PNG Files",
+        "description": "Once conversion completes, download each PNG file individually or save all files as a ZIP archive. Transparency is fully preserved in every PNG output."
+      }
+    }
+  },
+  "sections": {
+    "beforeAfter": {
+      "title": "See the Difference: AVIF vs PNG",
+      "description": "AVIF achieves much smaller file sizes than PNG. Converting to PNG gives you lossless quality with full transparency support for design work.",
+      "original_label": "Original (AVIF)",
+      "compressed_label": "Converted (PNG)",
+      "smaller": "smaller",
+      "loading": "Generating comparison...",
+      "drag_hint": "Drag the slider to compare image quality",
+      "avif_label": "AVIF (Source)",
+      "result_label": "PNG (Converted)",
+      "size_reduction": "Converted with lossless quality",
+      "quality_note": "PNG output is always lossless – transparency preserved"
+    },
+    "useCases": {
+      "title": "When Do You Need PNG Format?",
+      "items": [
+        {
+          "title": "Transparent Graphics",
+          "description": "Logos, icons, and UI elements with transparent backgrounds need PNG format. The conversion preserves the alpha channel perfectly."
+        },
+        {
+          "title": "Design & Editing",
+          "description": "Photoshop, Figma, Sketch, and other design tools have full PNG support. Convert your AVIF files for seamless integration into your design workflow."
+        },
+        {
+          "title": "Screenshots & Documentation",
+          "description": "PNG's lossless compression makes it ideal for screenshots, diagrams, and technical documentation where text clarity matters."
+        },
+        {
+          "title": "Print-Ready Graphics",
+          "description": "PNG preserves every detail without compression artifacts. Convert AVIF graphics to PNG when you need pixel-perfect output for printing."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "AVIF vs PNG – What's the Difference?",
+      "description": "Choose the right format based on your specific needs.",
+      "headers": ["Feature", "AVIF", "PNG"],
+      "rows": [
+        ["Compression", "Lossy & lossless (AV1)", "Lossless only"],
+        ["File Size", "30-50% smaller", "Larger (uncompressed pixels)"],
+        ["Transparency", "Yes (alpha channel)", "Yes (alpha channel)"],
+        ["Quality", "Adjustable", "Always lossless"],
+        ["Browser Support", "Chrome, Firefox, Edge, Safari 16.4+", "Universal"],
+        ["Software Support", "Limited", "Universal"],
+        ["Best For", "Web delivery & storage", "Graphics, logos, screenshots"],
+        ["Color Depth", "8-bit, 10-bit, 12-bit", "8-bit, 16-bit"]
+      ]
+    },
+    "specs": {
+      "title": "Tool Specifications",
+      "items": [
+        { "label": "Max File Size", "value": "10 MB per file" },
+        { "label": "Batch Limit", "value": "30 files per session" },
+        { "label": "Output Format", "value": "PNG (lossless)" },
+        { "label": "Input Format", "value": "AVIF" },
+        { "label": "Processing", "value": "100% client-side (browser)" },
+        { "label": "Transparency", "value": "Fully preserved (alpha channel)" },
+        { "label": "Quality", "value": "Lossless – no compression artifacts" },
+        { "label": "Cost", "value": "Free, no registration required" }
+      ]
+    },
+    "relatedTools": {
+      "title": "Related Conversion Tools",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF to JPG", "description": "Convert AVIF images to universally compatible JPG format." },
+        "avif-to-png": { "title": "AVIF to PNG", "description": "Convert AVIF to PNG with full transparency support." },
+        "avif-to-webp": { "title": "AVIF to WebP", "description": "Convert AVIF to WebP for optimized web performance." },
+        "png-to-avif": { "title": "PNG to AVIF", "description": "Compress PNG images to smaller AVIF format." },
+        "jpg-to-avif": { "title": "JPG to AVIF", "description": "Convert JPG photos to next-gen AVIF format." },
+        "webp-to-avif": { "title": "WebP to AVIF", "description": "Upgrade WebP images to superior AVIF compression." },
+        "avif-to-gif": { "title": "AVIF to GIF", "description": "Convert AVIF images to GIF format." },
+        "avif-to-pdf": { "title": "AVIF to PDF", "description": "Embed AVIF images in PDF documents." },
+        "avif-viewer": { "title": "AVIF Viewer", "description": "Preview AVIF files and inspect metadata." }
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "Does converting AVIF to PNG preserve transparency?",
+    "a1": "Yes! PNG fully supports the alpha channel. All transparent areas in your AVIF images will be perfectly preserved in the PNG output.",
+    "q2": "Is PNG lossless?",
+    "a2": "Yes, PNG uses lossless compression. Every pixel is preserved exactly as-is. This makes PNG ideal for graphics, logos, and screenshots where quality matters most.",
+    "q3": "Is it safe to convert private photos here?",
+    "a3": "Absolutely. Avifkit uses client-side processing technology. Your images are converted directly within your web browser memory and are never uploaded to any external server.",
+    "q4": "Why is PNG file size larger than AVIF?",
+    "a4": "PNG uses lossless compression while AVIF uses advanced lossy compression (AV1). AVIF files are typically 30-50% smaller than PNG at similar visual quality. The trade-off is that PNG preserves every single pixel perfectly.",
+    "q5": "Can I convert AVIF to PNG on mobile?",
+    "a5": "Yes! Avifkit works in any modern mobile browser (Chrome, Safari, Firefox). The conversion happens on your device, so no data is transferred over the network.",
+    "q6": "What is the maximum file size I can convert?",
+    "a6": "Each file can be up to 10MB. Since processing happens entirely in your browser, larger files may take slightly longer depending on your device's performance.",
+    "q7": "Can I batch convert multiple AVIF files?",
+    "a7": "Yes! Upload up to 30 AVIF files at once. Click Convert All, then download them individually or as a ZIP archive. All conversions run in parallel for maximum speed.",
+    "q8": "Should I use PNG or WebP for transparent images?",
+    "a8": "Both support transparency. PNG is universally compatible and lossless, making it the safe choice. WebP offers smaller file sizes but with slightly less software support. For web use, WebP is often preferred; for design work, use PNG.",
+    "q9": "Do I need to create an account to use Avifkit?",
+    "a9": "No. Avifkit is completely free with no registration, no watermarks, and no usage limits. Just open the page and start converting."
   }
 }

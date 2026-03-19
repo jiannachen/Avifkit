@@ -1,39 +1,154 @@
 {
   "title_prefix": "Convertir",
   "title_gradient": "AVIF a JPG",
-  "title_suffix": "Online",
-  "subtitle": "Transforma imágenes AVIF a formato JPG estándar instantáneamente. Mejor para compatibilidad con dispositivos y software antiguos.",
+  "title_suffix": "Gratis en Línea",
+  "subtitle": "Convierte AVIF a JPG al instante en tu navegador — sin subidas, sin registro, sin marcas de agua. Tus archivos nunca salen de tu dispositivo. Rápido, privado y completamente gratis.",
   "seo": {
-    "title": "Convertir de AVIF a JPG Gratis - Sin subir archivos | AvifKit",
-    "description": "Convertidor de AVIF a JPG gratis. Pasar AVIF a JPG online sin servidor, conversión masiva rápida. Privacidad 100% garantizada.",
-    "h1": "Convertir de AVIF a JPG - 100% Gratis y Seguro",
-    "h2_how": "¿Cómo convertir de AVIF a JPG?",
-    "h2_why": "¿Por qué usar AvifKit para convertir de AVIF a JPG?"
+    "title": "Convertidor AVIF a JPG — Gratis, Online, Sin Subir Archivos | Avifkit",
+    "description": "Convierte AVIF a JPG gratis en tu navegador. Sin subir archivos, sin límite de tamaño, sin marcas de agua. Procesamiento 100% privado en el cliente. Sin registro.",
+    "h1": "Convertir AVIF a JPG Gratis en Línea",
+    "h2_how": "¿Cómo Convertir AVIF a JPG en Línea?",
+    "h2_why": "¿Por Qué Usar Avifkit para Convertir AVIF a JPG?"
+  },
+  "schemas": {
+    "howto": {
+      "name": "Cómo convertir AVIF a JPG en línea",
+      "description": "Convierte imágenes AVIF a formato JPG gratis en tu navegador. Sin subidas — los archivos nunca salen de tu dispositivo."
+    }
+  },
+  "hero": {
+    "privacy_banner": "Privacidad garantizada: los archivos nunca salen de tu dispositivo",
+    "badges": {
+      "privacy": "100% Privado",
+      "speed": "Velocidad Instantánea",
+      "bulk": "Conversión en Lote"
+    }
+  },
+  "features": {
+    "title": "¿Por Qué Usar Avifkit?",
+    "subtitle": "Privado, rápido y gratuito — diseñado para uso real.",
+    "privacy_title": "Totalmente Privado",
+    "privacy_desc": "Tus archivos se convierten localmente en tu navegador — nunca se suben a ningún servidor. Sin cuenta, sin rastreo, sin recopilación de datos.",
+    "speed_title": "Instantáneamente Rápido",
+    "speed_desc": "Cero tiempo de subida, cero esperas. La conversión comienza en el momento en que sueltas los archivos y termina en segundos.",
+    "quality_title": "Sin Restricciones",
+    "quality_desc": "Sin límite de tamaño de archivo, sin marcas de agua, sin registro. Ajusta la calidad de salida del 10% al 100% y convierte hasta 30 archivos a la vez."
   },
   "howto": {
     "steps": {
       "upload": {
-        "title": "Subir AVIF",
-        "description": "Arrastra y suelta tus archivos .avif en el cuadro de arriba."
+        "title": "Sube Tus Archivos",
+        "description": "Arrastra y suelta tus archivos AVIF en el convertidor de arriba, o haz clic para buscar en tu dispositivo. Puedes subir hasta 30 archivos a la vez para conversión en lote. Avifkit también acepta JPG, PNG y WebP."
       },
       "select": {
-        "title": "Seleccionar Formato",
-        "description": "Elige JPG, PNG o WebP y ajusta la calidad."
+        "title": "Elige Formato y Calidad de Salida",
+        "description": "Selecciona JPG como formato de salida en el menú desplegable. Ajusta el control deslizante de calidad para equilibrar el tamaño del archivo y la nitidez — el 85% de calidad funciona bien para la mayoría de los casos."
       },
       "download": {
-        "title": "Descargar",
-        "description": "Obtén tus imágenes convertidas al instante, individualmente o en ZIP."
+        "title": "Descarga Tus Archivos JPG",
+        "description": "Haz clic en Descargar para guardar cada archivo, o descarga todos los archivos convertidos como un archivo ZIP. Todo ocurre en tu navegador — ningún archivo se envía nunca a un servidor."
       }
     }
   },
-  "schemas": {
-    "howto": {
-      "name": "Cómo convertir AVIF a JPG",
-      "description": "Aprende a convertir imágenes AVIF a formato JPG usando nuestro convertidor online gratuito."
+  "sections": {
+    "beforeAfter": {
+      "title": "Observa la Diferencia: Original vs Convertido",
+      "description": "Sube cualquier imagen para ver cómo la conversión preserva la calidad mientras reduce el tamaño del archivo. AVIF ofrece una compresión superior comparada con los formatos tradicionales.",
+      "original_label": "Original",
+      "compressed_label": "Comprimido (AVIF)",
+      "smaller": "más pequeño",
+      "loading": "Generando comparación...",
+      "drag_hint": "Arrastra el control para comparar la calidad de imagen",
+      "avif_label": "AVIF (Fuente)",
+      "result_label": "Resultado Convertido",
+      "size_reduction": "Convertido con pérdida mínima de calidad",
+      "quality_note": "Calidad de salida ajustable del 10% al 100%"
     },
-    "software": {
-      "name": "Avifkit",
-      "description": "Convierte AVIF a JPG, PNG y WebP localmente en tu navegador"
+    "useCases": {
+      "title": "¿Cuándo Necesitas Convertir AVIF a JPG?",
+      "items": [
+        {
+          "title": "Compatibilidad Universal",
+          "description": "JPG es compatible con todos los dispositivos, sistemas operativos y aplicaciones. Convierte AVIF a JPG para compartir fotos en Windows, iPhones antiguos o apps que aún no soportan AVIF."
+        },
+        {
+          "title": "Email y Mensajería",
+          "description": "La mayoría de los clientes de correo y apps de mensajería manejan JPG sin problemas. Convertir garantiza que los destinatarios puedan ver las fotos sin necesidad de instalar nada extra."
+        },
+        {
+          "title": "Flujos de Diseño e Impresión",
+          "description": "Muchas herramientas de diseño y servicios de impresión aceptan JPG pero no AVIF. Convertir te permite usar imágenes directamente en Photoshop, Canva, Word o cualquier plantilla de impresión."
+        },
+        {
+          "title": "Subidas a CMS y Plataformas",
+          "description": "Algunos gestores de contenido y plataformas sociales aún no aceptan AVIF. Convertir a JPG garantiza subidas sin problemas a WordPress, Instagram y plataformas similares."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Comparación de Formatos de Imagen",
+      "description": "Entender las diferencias clave te ayuda a elegir el formato adecuado para tus necesidades.",
+      "headers": ["Característica", "AVIF", "JPG", "PNG", "WebP"],
+      "rows": [
+        ["Compresión", "Mejor (AV1)", "Buena (DCT)", "Sin pérdidas", "Muy buena (VP8)"],
+        ["Tamaño de archivo", "Menor", "Medio", "Mayor", "Pequeño"],
+        ["Transparencia", "Sí", "No", "Sí", "Sí"],
+        ["Soporte en navegadores", "Navegadores modernos", "Universal", "Universal", "La mayoría"],
+        ["Ideal para", "Web y almacenamiento", "Fotos", "Gráficos y logos", "Imágenes web"],
+        ["Soporte HDR", "Sí", "No", "No", "No"],
+        ["Animación", "Sí", "No", "No (APNG)", "Sí"],
+        ["Modo sin pérdidas", "Sí", "No", "Sí", "Sí"]
+      ]
+    },
+    "specs": {
+      "title": "Especificaciones de la Herramienta",
+      "items": [
+        { "label": "Tamaño máximo por archivo", "value": "10 MB por archivo" },
+        { "label": "Límite de lote", "value": "30 archivos por sesión" },
+        { "label": "Formatos de salida", "value": "JPG, PNG, WebP, AVIF, GIF, PDF" },
+        { "label": "Formatos de entrada", "value": "AVIF, JPG, PNG, WebP" },
+        { "label": "Procesamiento", "value": "100% en el cliente (en tu navegador)" },
+        { "label": "Control de calidad", "value": "Ajustable del 10% al 100%" },
+        { "label": "Transparencia", "value": "Preservada para salida PNG y WebP" },
+        { "label": "Coste", "value": "Gratis, sin registro requerido" }
+      ]
+    },
+    "relatedTools": {
+      "title": "Herramientas de Conversión Relacionadas",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF a JPG", "description": "Convierte imágenes AVIF al formato JPG de compatibilidad universal." },
+        "avif-to-png": { "title": "AVIF a PNG", "description": "Convierte AVIF a PNG con soporte completo de transparencia." },
+        "avif-to-webp": { "title": "AVIF a WebP", "description": "Convierte AVIF a WebP para un rendimiento web optimizado." },
+        "png-to-avif": { "title": "PNG a AVIF", "description": "Comprime imágenes PNG al formato AVIF más ligero." },
+        "jpg-to-avif": { "title": "JPG a AVIF", "description": "Convierte fotos JPG al formato AVIF de nueva generación." },
+        "webp-to-avif": { "title": "WebP a AVIF", "description": "Mejora imágenes WebP a la compresión superior de AVIF." },
+        "avif-to-gif": { "title": "AVIF a GIF", "description": "Convierte imágenes AVIF a formato GIF." },
+        "avif-to-pdf": { "title": "AVIF a PDF", "description": "Incorpora imágenes AVIF en documentos PDF." },
+        "avif-viewer": { "title": "Visor AVIF", "description": "Previsualiza archivos AVIF e inspecciona metadatos." }
+      }
     }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Es seguro convertir fotos privadas aquí?",
+    "a1": "Sí. Tus archivos se convierten localmente en tu navegador y nunca se suben a ningún servidor. Nadie más puede acceder a tus imágenes — ni siquiera nosotros.",
+    "q2": "¿Se pierde calidad al convertir AVIF a JPG?",
+    "a2": "Se produce cierta pérdida de calidad porque JPG utiliza compresión con pérdida. Al 85% de calidad (nuestra configuración predeterminada), la diferencia apenas es visible al ojo humano. Puedes ajustar el control deslizante de calidad del 10% al 100%.",
+    "q3": "¿Cómo abro archivos AVIF en Windows 10 u 11?",
+    "a3": "Windows 10 y 11 pueden abrir archivos AVIF si instalas la extensión gratuita 'AV1 Video Extension' desde la Microsoft Store. Alternativamente, usa Avifkit para convertir AVIF a JPG y abrirlo en cualquier visor de fotos.",
+    "q4": "¿Puedo abrir AVIF en iPhone o iOS?",
+    "a4": "Los iPhones con iOS 16 o posterior admiten AVIF de forma nativa en Safari y la app Fotos. En versiones anteriores de iOS, convierte el archivo a JPG primero con Avifkit para garantizar la compatibilidad.",
+    "q5": "¿Mac admite AVIF de forma nativa?",
+    "a5": "macOS Ventura (13) y versiones posteriores admiten AVIF en Vista Previa y Safari. En versiones anteriores de macOS, usa Avifkit para convertir archivos AVIF a JPG o PNG antes de abrirlos.",
+    "q6": "¿Qué navegadores admiten AVIF?",
+    "a6": "Chrome 85+, Firefox 93+, Edge 121+, Opera 71+ y Safari 16.4+ admiten AVIF de forma nativa. Para navegadores o apps más antiguos, convierte a JPG para compatibilidad universal.",
+    "q7": "¿Es AVIF mejor que JPG?",
+    "a7": "AVIF generalmente produce archivos un 30–50% más pequeños que JPG con la misma calidad visual. También admite transparencia, HDR y animación — características que JPG no tiene. Sin embargo, JPG tiene compatibilidad universal que AVIF aún no alcanza en plataformas antiguas.",
+    "q8": "¿La conversión de AVIF a JPG preserva la transparencia?",
+    "a8": "JPG no admite transparencia. Las áreas transparentes en tu archivo AVIF se rellenarán con fondo blanco al convertir a JPG. Si necesitas preservar la transparencia, convierte a PNG o WebP.",
+    "q9": "¿Cuál es el tamaño máximo de archivo que puedo convertir?",
+    "a9": "Cada archivo puede tener hasta 10 MB. Dado que todo el procesamiento ocurre en tu navegador, los archivos más grandes pueden tardar un poco más dependiendo de tu dispositivo.",
+    "q10": "¿Puedo convertir varios archivos AVIF a la vez?",
+    "a10": "Sí. Avifkit admite la conversión en lote de hasta 30 archivos a la vez. Suelta todos tus archivos de una vez, haz clic en Convertir Todo y descárgalos individualmente o como un archivo ZIP."
   }
 }

@@ -7,7 +7,7 @@
   "readingTime": 4,
   "category": "Tutorial",
   "keywords": "batch convert avif, bulk avif converter, convert multiple avif files, avif batch processing",
-  "image": "https://img.avifkit.com/blog/blog05.webp",
+  "image": "https://img.avifkit.com/blog/batch-convert-100-avif.webp",
   "content": [
     {
       "type": "lead",
@@ -126,7 +126,7 @@
       "items": [
         {
           "question": "Is there a file size limit?",
-          "answer": "Individual files up to 50MB, 30 files per batch. If you need to convert larger files or more files at once, just split into multiple batches."
+          "answer": "Individual files up to 10MB, 30 files per batch. If you need to convert larger files or more files at once, just split into multiple batches."
         },
         {
           "question": "Can I convert an entire folder?",

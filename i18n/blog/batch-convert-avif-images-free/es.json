@@ -7,7 +7,7 @@
   "readingTime": 4,
   "category": "Tutorial",
   "keywords": "convertir avif por lotes, convertidor masivo avif, convertir múltiples archivos avif",
-  "image": "https://img.avifkit.com/blog/blog05.webp",
+  "image": "https://img.avifkit.com/blog/batch-convert-100-avif.webp",
   "content": [
     {
       "type": "lead",
@@ -44,7 +44,7 @@
       "items": [
         {
           "question": "¿Hay un límite de tamaño de archivo?",
-          "answer": "Archivos individuales hasta 50MB, 30 archivos por lote. Si necesitas convertir archivos más grandes, solo divídelos en múltiples lotes."
+          "answer": "Archivos individuales hasta 10MB, 30 archivos por lote. Si necesitas convertir archivos más grandes, solo divídelos en múltiples lotes."
         }
       ]
     },

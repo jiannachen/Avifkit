@@ -64,14 +64,9 @@ export function WebsiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Avifkit',
+    name: 'AvifKit',
     url: 'https://avifkit.com',
     description: 'Convert AVIF to JPG, PNG, and WebP locally in your browser. 100% Private, Blazing Fast, No Server Uploads.',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://avifkit.com/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   return (
@@ -86,9 +81,9 @@ export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Avifkit',
+    name: 'AvifKit',
     url: 'https://avifkit.com',
-    logo: 'https://avifkit.com/logo.png',
+    logo: 'https://avifkit.com/logo.svg',
     description: 'Secure client-side AVIF image converter',
     sameAs: [
       // Add social media links if available
@@ -166,10 +161,10 @@ export function BlogPostSchema({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Avifkit',
+      name: 'AvifKit',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://avifkit.com/logo.png',
+        url: 'https://avifkit.com/logo.svg',
       },
     },
     mainEntityOfPage: {

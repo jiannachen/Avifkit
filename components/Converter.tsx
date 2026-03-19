@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { UploadCloud, X, Download, RefreshCw, Settings, AlertCircle } from 'lucide-react';
+import { UploadCloud, X, Download, RefreshCw, AlertCircle, Eye, ChevronDown } from 'lucide-react';
 import { ProcessedFile, ConversionStatus, TargetFormat } from '../types';
 import { convertImageFile, formatBytes, getExtensionFromMime } from '../services/conversionService';
 import {
@@ -13,8 +13,10 @@ import {
   MAX_BATCH_SIZE,
   MAX_FILE_SIZE_BYTES
 } from '../services/fileValidationService';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from '@/i18n/routing';
 import { ToastContainer, ToastMessage } from './Toast';
+import { ImageComparisonSlider } from './ImageComparisonSlider';
 import JSZip from 'jszip';
 
 // Helper to download blob without external dependency
@@ -29,12 +31,30 @@ const saveBlob = (blob: Blob, fileName: string) => {
   URL.revokeObjectURL(url);
 };
 
+// Map format to corresponding page route
+const formatToRoute: Record<string, string> = {
+  'image/jpeg': '/avif-to-jpg',
+  'image/png': '/avif-to-png',
+  'image/webp': '/avif-to-webp',
+  'image/avif': '/',
+  'image/gif': '/avif-to-gif',
+  'application/pdf': '/avif-to-pdf',
+};
+
+// Pages that convert TO AVIF (reverse conversion pages)
+const reversePages = new Set(['png-to-avif', 'jpg-to-avif', 'webp-to-avif']);
+
+type PageKey = 'home' | 'jpg' | 'png' | 'webp' | 'png-to-avif' | 'jpg-to-avif' | 'webp-to-avif' | 'avif-to-gif' | 'avif-to-pdf' | 'avif-viewer';
+
 interface ConverterProps {
   defaultOutputFormat?: TargetFormat;
+  pageKey?: PageKey;
 }
 
-export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'image/jpeg' }) => {
+export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'image/jpeg', pageKey }) => {
   const t = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
   const [files, setFiles] = useState<ProcessedFile[]>([]);
   const [globalTargetFormat, setGlobalTargetFormat] = useState<TargetFormat>(defaultOutputFormat);
   const [quality, setQuality] = useState<number>(0.85);
@@ -42,10 +62,14 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const [dropZoneError, setDropZoneError] = useState(false);
   const [isConverting, setIsConverting] = useState(false);
+  const [expandedFileId, setExpandedFileId] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const filesRef = useRef(files);
   filesRef.current = files;
+
+  // Determine if this is a reverse conversion page
+  const isReversePage = pageKey && reversePages.has(pageKey);
 
   // Update format if prop changes (e.g. navigation)
   useEffect(() => {
@@ -102,27 +126,23 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
 
   // Get alternative format for "Convert instead?" action
   const getAlternativeFormat = (targetFormat: TargetFormat): TargetFormat => {
-    // Simple rotation: JPG -> PNG -> WebP -> JPG
     const formats: TargetFormat[] = ['image/jpeg', 'image/png', 'image/webp'];
     const currentIndex = formats.indexOf(targetFormat);
     const nextIndex = (currentIndex + 1) % formats.length;
-    return formats[nextIndex];
+    return formats[nextIndex >= 0 ? nextIndex : 0];
   };
 
   // -- File Handling --
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       addFiles(Array.from(e.target.files));
-      // Reset input so same file can be selected again if needed
       e.target.value = '';
     }
   };
 
   const addFiles = (newFiles: File[]) => {
-    // Reset error states
     setDropZoneError(false);
 
-    // 1. Check Batch Size Limit
     if (filesRef.current.length + newFiles.length > MAX_BATCH_SIZE) {
       addToast(t('converter.errors.batch_limit'), 'warning');
       setDropZoneError(true);
@@ -139,7 +159,6 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
       if (validation.error === FileValidationError.SAME_FORMAT) {
         sameFormatFiles.push({ file, format: validation.sourceFormat || 'Unknown' });
       } else if (validation.error === FileValidationError.CORRUPTED) {
-        // Allow corrupted files to enter the queue but mark them
         validFiles.push({ file, sourceFormat: validation.sourceFormat || 'Unknown' });
       } else if (!validation.isValid) {
         rejectedFiles.push({ file, error: validation.error! });
@@ -148,18 +167,14 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
       }
     });
 
-    // Handle rejected files
     if (rejectedFiles.length > 0) {
       setDropZoneError(true);
-
-      // Group errors by type
       const errorGroups = rejectedFiles.reduce((acc, { error }) => {
         acc[error] = (acc[error] || 0) + 1;
         return acc;
       }, {} as Record<FileValidationError, number>);
 
-      // Show toast for each error type
-      Object.entries(errorGroups).forEach(([error, count]) => {
+      Object.entries(errorGroups).forEach(([error]) => {
         let message = '';
         let type: ToastMessage['type'] = 'error';
 
@@ -182,7 +197,6 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
       });
     }
 
-    // Handle same-format files
     if (sameFormatFiles.length > 0) {
       const altFormat = getAlternativeFormat(globalTargetFormat);
       const altFormatName = getFormatName(altFormat);
@@ -203,7 +217,6 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
 
     if (validFiles.length === 0) return;
 
-    // Add valid files to queue
     const processedFiles: ProcessedFile[] = validFiles.map(({ file, sourceFormat }) => {
       const isCorrupted = file.size === 0;
       return {
@@ -220,7 +233,6 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
 
     setFiles(prev => [...prev, ...processedFiles]);
 
-    // Show toast if corrupted files were added
     const corruptedCount = validFiles.filter(({ file }) => file.size === 0).length;
     if (corruptedCount > 0) {
       addToast(t('converter.toast.corrupted_added'), 'warning');
@@ -257,9 +269,15 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
 
   // -- Format Control --
   const handleGlobalFormatChange = (newFormat: TargetFormat) => {
-    setGlobalTargetFormat(newFormat);
+    // Navigate to the corresponding tool page when format changes
+    const route = formatToRoute[newFormat];
+    if (route && !isReversePage) {
+      router.push(route);
+      return;
+    }
 
-    // Update all files that don't have local override
+    // For reverse pages, just change the format state
+    setGlobalTargetFormat(newFormat);
     setFiles(prev => prev.map(file => {
       if (!file.isFormatOverride) {
         return { ...file, targetFormat: undefined };
@@ -289,7 +307,7 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
   const convertAll = async () => {
     const filesToConvert = files.filter(f =>
       (f.status === ConversionStatus.IDLE || f.status === ConversionStatus.ERROR) &&
-      f.originalFile.size > 0 // Skip corrupted files
+      f.originalFile.size > 0
     );
 
     if (filesToConvert.length === 0) return;
@@ -317,12 +335,11 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
         console.error(err);
         updateFileStatus(fileData.id, {
           status: ConversionStatus.ERROR,
-          errorMessage: t('converter.errors.generic')
+          errorMessage: err instanceof Error ? err.message : t('converter.errors.generic')
         });
       }
     };
 
-    // Run with concurrency pool (max 3 at a time to avoid freezing)
     const CONCURRENCY = 3;
     const queue = [...filesToConvert];
     const runNext = async (): Promise<void> => {
@@ -366,28 +383,55 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
     saveBlob(content, 'avifkit_converted.zip');
   };
 
+  // Determine which format options to show
+  const getFormatOptions = () => {
+    if (isReversePage) {
+      return (
+        <option value="image/avif">{t('converter.settings.format_avif')}</option>
+      );
+    }
+    return (
+      <>
+        <option value="image/jpeg">{t('converter.settings.format_jpg')}</option>
+        <option value="image/png">{t('converter.settings.format_png')}</option>
+        <option value="image/webp">{t('converter.settings.format_webp')}</option>
+        <option value="image/avif">{t('converter.settings.format_avif')}</option>
+        <option value="image/gif">{t('converter.settings.format_gif')}</option>
+        <option value="application/pdf">{t('converter.settings.format_pdf')}</option>
+      </>
+    );
+  };
+
+  // Determine accepted input formats
+  const getAcceptedFormats = () => {
+    if (isReversePage) {
+      // Reverse pages accept specific source formats
+      if (pageKey === 'png-to-avif') return 'image/png';
+      if (pageKey === 'jpg-to-avif') return 'image/jpeg';
+      if (pageKey === 'webp-to-avif') return 'image/webp';
+    }
+    return 'image/avif,image/jpeg,image/png,image/webp,image/gif';
+  };
+
   return (
     <>
       <ToastContainer toasts={toasts} onDismiss={dismissToast} />
 
       <div id="converter" className="w-full max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl shadow-blue-900/10 overflow-hidden border border-slate-100">
 
-        {/* Hidden Input - Always rendered so it works for both initial and "Add More" */}
         <input
           type="file"
           ref={fileInputRef}
           onChange={handleFileSelect}
           className="hidden"
           multiple
-          accept="image/avif,image/jpeg,image/png,image/webp"
+          accept={getAcceptedFormats()}
         />
 
         {/* 1. Settings Bar */}
         <div className="bg-slate-50 border-b border-slate-100 p-4 sm:p-5 md:p-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            {/* Settings Controls */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              {/* Format Selector */}
               <div className="flex-shrink-0">
                 <label className="text-xs font-medium text-slate-500 mb-1.5 block">
                   {t('converter.settings.global_format')}
@@ -397,14 +441,11 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                   onChange={(e) => handleGlobalFormatChange(e.target.value as TargetFormat)}
                   className="appearance-none bg-white border border-slate-200 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-auto min-w-[140px] p-2.5 pr-8 font-medium"
                 >
-                  <option value="image/jpeg">{t('converter.settings.format_jpg')}</option>
-                  <option value="image/png">{t('converter.settings.format_png')}</option>
-                  <option value="image/webp">{t('converter.settings.format_webp')}</option>
+                  {getFormatOptions()}
                 </select>
               </div>
 
-              {/* Quality Slider - hidden for PNG (lossless) */}
-              {globalTargetFormat !== 'image/png' && (
+              {globalTargetFormat !== 'image/png' && globalTargetFormat !== 'image/gif' && globalTargetFormat !== 'application/pdf' && (
               <div className="flex-grow sm:flex-grow-0 sm:min-w-[200px]">
                 <label className="text-xs font-medium text-slate-500 mb-1.5 block">
                   {t('converter.settings.quality')}: {Math.round(quality * 100)}%
@@ -422,7 +463,6 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
               )}
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                {files.some(f => f.status === ConversionStatus.COMPLETED) && (
                  <button
@@ -479,11 +519,22 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                <button onClick={() => { setFiles([]); }} className="text-xs text-red-500 hover:text-red-700 font-medium">{t('converter.clear_all')}</button>
              </div>
 
-             <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2">
-               {files.map(file => (
-                 <div key={file.id} className="group relative flex items-center gap-4 p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all bg-white">
-                    {/* Thumbnail */}
-                    <div className="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0 border border-slate-200">
+             <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2">
+               {files.map(file => {
+                 const isExpanded = expandedFileId === file.id;
+                 const isCompleted = file.status === ConversionStatus.COMPLETED;
+                 const savings = isCompleted && file.outputSize
+                   ? Math.round((1 - file.outputSize / file.originalFile.size) * 100)
+                   : 0;
+                 const sizeIncreased = savings < 0;
+
+                 return (
+                 <div key={file.id} className="rounded-xl border border-slate-100 hover:border-blue-200 transition-all bg-white overflow-hidden">
+                   <div className="group relative flex items-center gap-4 p-3">
+                    <div
+                      className={`w-12 h-12 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0 border border-slate-200 ${isCompleted ? 'cursor-pointer' : ''}`}
+                      onClick={() => isCompleted && setExpandedFileId(isExpanded ? null : file.id)}
+                    >
                       {file.previewUrl ? (
                         <img src={file.previewUrl} alt="" className="w-full h-full object-cover" />
                       ) : (
@@ -493,27 +544,34 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                       )}
                     </div>
 
-                    {/* Info */}
                     <div className="flex-grow min-w-0">
                       <p className="text-sm font-medium text-slate-900 truncate max-w-[200px]">{file.originalFile.name}</p>
-                      <div className="flex items-center gap-2 text-xs text-slate-500 mt-0.5">
+                      <div className="flex items-center gap-2 text-xs text-slate-500 mt-0.5 flex-wrap">
                         <span>{formatBytes(file.originalFile.size)}</span>
                         {file.sourceFormat && file.sourceFormat !== 'Unknown' && (
                           <span className="px-2 py-0.5 bg-slate-200 text-slate-600 rounded text-xs font-medium">
                             {t('converter.source_format')}: {file.sourceFormat}
                           </span>
                         )}
-                        {file.status === ConversionStatus.COMPLETED && (
+                        {isCompleted && (
                           <>
-                            <span>→</span>
+                            <span>&rarr;</span>
                             <span className="font-bold text-emerald-600">{formatBytes(file.outputSize || 0)}</span>
+                            {savings !== 0 && (
+                              <span className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
+                                sizeIncreased
+                                  ? 'bg-amber-50 text-amber-700 border border-amber-200'
+                                  : 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                              }`}>
+                                {sizeIncreased ? '+' : '-'}{Math.abs(savings)}%
+                              </span>
+                            )}
                           </>
                         )}
                       </div>
                     </div>
 
-                    {/* Format Selector (for non-corrupted files) */}
-                    {file.originalFile.size > 0 && file.status !== ConversionStatus.COMPLETED && (
+                    {file.originalFile.size > 0 && !isCompleted && (
                       <div className="flex-shrink-0">
                         <select
                           value={getEffectiveFormat(file)}
@@ -527,12 +585,14 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                           <option value="image/jpeg">JPG</option>
                           <option value="image/png">PNG</option>
                           <option value="image/webp">WebP</option>
+                          <option value="image/avif">AVIF</option>
+                          <option value="image/gif">GIF</option>
+                          <option value="application/pdf">PDF</option>
                         </select>
                       </div>
                     )}
 
-                    {/* Status & Action */}
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 flex items-center gap-1.5">
                       {file.status === ConversionStatus.IDLE && <span className="text-xs text-slate-400 font-medium px-2 py-1 bg-slate-100 rounded">{t('converter.ready')}</span>}
                       {file.status === ConversionStatus.PROCESSING && (
                         <div className="flex items-center gap-2">
@@ -543,29 +603,70 @@ export const Converter: React.FC<ConverterProps> = ({ defaultOutputFormat = 'ima
                         </div>
                       )}
                       {file.status === ConversionStatus.ERROR && (
-                        <span className="text-xs text-red-500 font-medium px-2 py-1 bg-red-50 rounded">
+                        <span className="text-xs text-red-500 font-medium px-2 py-1 bg-red-50 rounded max-w-[150px] truncate inline-block">
                           {file.errorMessage || t('converter.error')}
                         </span>
                       )}
-                      {file.status === ConversionStatus.COMPLETED && (
-                         <button
-                          onClick={() => downloadFile(file)}
-                          className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 text-white rounded-lg text-xs font-medium hover:bg-emerald-700 shadow-sm shadow-emerald-200"
-                         >
-                           <Download className="w-3 h-3" /> {t('converter.download')}
-                         </button>
+                      {isCompleted && (
+                        <>
+                          <button
+                            onClick={() => setExpandedFileId(isExpanded ? null : file.id)}
+                            className="flex items-center gap-1 px-2 py-1.5 text-slate-500 hover:text-blue-600 rounded-lg text-xs font-medium hover:bg-blue-50 transition-colors"
+                            title={t('converter.preview')}
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                            <ChevronDown className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                          </button>
+                          <button
+                            onClick={() => downloadFile(file)}
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 text-white rounded-lg text-xs font-medium hover:bg-emerald-700 shadow-sm shadow-emerald-200"
+                          >
+                            <Download className="w-3 h-3" /> {t('converter.download')}
+                          </button>
+                        </>
                       )}
                     </div>
 
-                    {/* Remove Button - always visible on mobile, hover on desktop */}
                     <button
                       onClick={() => removeFile(file.id)}
                       className="flex-shrink-0 w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-red-500 hover:border-red-200 hover:bg-red-50 transition-all md:opacity-0 md:group-hover:opacity-100"
                     >
                       <X className="w-3.5 h-3.5" />
                     </button>
+                   </div>
+
+                   {/* Expanded preview with comparison */}
+                   {isExpanded && isCompleted && file.previewUrl && file.convertedUrl && (
+                     <div className="border-t border-slate-100 bg-slate-50 p-4 space-y-3">
+                       {/* Compression progress bar */}
+                       <div className="flex items-center gap-3">
+                         <span className="text-xs text-slate-500 flex-shrink-0">{formatBytes(file.originalFile.size)}</span>
+                         <div className="flex-grow h-2 bg-slate-200 rounded-full overflow-hidden">
+                           <div
+                             className={`h-full rounded-full transition-all duration-500 ${sizeIncreased ? 'bg-amber-400' : 'bg-emerald-500'}`}
+                             style={{ width: `${Math.min(100, Math.max(5, (file.outputSize || 0) / file.originalFile.size * 100))}%` }}
+                           />
+                         </div>
+                         <span className="text-xs font-bold text-emerald-600 flex-shrink-0">{formatBytes(file.outputSize || 0)}</span>
+                       </div>
+
+                       {/* Side by side or slider comparison */}
+                       {getEffectiveFormat(file) !== 'application/pdf' && (
+                         <ImageComparisonSlider
+                           beforeSrc={file.previewUrl}
+                           afterSrc={file.convertedUrl}
+                           beforeLabel={t('converter.original')}
+                           afterLabel={t('converter.converted')}
+                           beforeSize={formatBytes(file.originalFile.size)}
+                           afterSize={formatBytes(file.outputSize || 0)}
+                           className="max-h-[300px]"
+                         />
+                       )}
+                     </div>
+                   )}
                  </div>
-               ))}
+                 );
+               })}
              </div>
 
              <div className="mt-6 flex justify-center">

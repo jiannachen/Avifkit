@@ -13,6 +13,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+const DEFAULT_OG_IMAGE = 'https://img.avifkit.com/blog/what-is-avif-guide.webp';
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,20 +23,23 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
+  const title = t('site.title');
+  const description = t('site.description');
+
   return {
     metadataBase: new URL('https://avifkit.com'),
-    title: t('site.title'),
-    description: t('site.description'),
+    title,
+    description,
     openGraph: {
-      title: t('site.title'),
-      description: t('site.description'),
+      title,
+      description,
       url: 'https://avifkit.com',
-      siteName: 'Avifkit',
+      siteName: 'AvifKit',
       type: 'website',
       locale: locale === 'en' ? 'en_US' : locale === 'es' ? 'es_ES' : locale === 'ja' ? 'ja_JP' : 'fr_FR',
       images: [
         {
-          url: '/og-image.png',
+          url: DEFAULT_OG_IMAGE,
           width: 1200,
           height: 630,
           alt: t('site.og_image_alt'),
@@ -43,9 +48,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: t('site.title'),
-      description: t('site.description'),
-      images: ['/og-image.png'],
+      title,
+      description,
+      images: [DEFAULT_OG_IMAGE],
     },
     robots: {
       index: true,
@@ -61,14 +66,12 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://avifkit.com${locale === 'en' ? '' : '/' + locale}`,
       languages: {
-        'en': '/',
-        'es': '/es',
-        'ja': '/ja',
-        'fr': '/fr',
+        'en': 'https://avifkit.com/',
+        'es': 'https://avifkit.com/es',
+        'ja': 'https://avifkit.com/ja',
+        'fr': 'https://avifkit.com/fr',
+        'x-default': 'https://avifkit.com/',
       },
-    },
-    verification: {
-      google: 'your-google-verification-code', // TODO: Add your verification code
     },
   };
 }

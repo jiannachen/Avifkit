@@ -1,39 +1,154 @@
 {
-  "title_prefix": "AVIFを",
-  "title_gradient": "JPGに変換",
-  "title_suffix": "",
-  "subtitle": "AVIF画像を標準のJPG形式に即座に変換。古いデバイスやソフトウェアとの互換性に最適。",
+  "title_prefix": "変換",
+  "title_gradient": "AVIF → JPG",
+  "title_suffix": "無料・オンライン",
+  "subtitle": "AVIFをJPGにブラウザ上で即変換。アップロード不要、登録不要、透かしなし。ファイルはデバイスから一切外に出ません。高速・完全プライベート・完全無料。",
   "seo": {
-    "title": "AVIF JPG 変換 - インストール不要・完全無料 | AvifKit",
-    "description": "AVIF JPG 変換サイト。ブラウザ上で完結、アップロード不要、瞬時に変換。プライバシー保護で安全なAVIF画像変換ツール。",
-    "h1": "AVIF JPG 変換 - 完全無料・サーバーレス",
-    "h2_how": "AVIFをJPGに変換する方法",
-    "h2_why": "AvifKitでAVIF JPG変換を選ぶ理由"
+    "title": "AVIF→JPG変換 — 無料・オンライン・アップロード不要 | Avifkit",
+    "description": "AVIFをJPGへブラウザで無料変換。ファイル送信なし、容量制限なし、透かしなし。100%プライベートなクライアントサイド処理。登録不要。",
+    "h1": "AVIFをJPGに無料オンライン変換",
+    "h2_how": "AVIFをJPGにオンラインで変換する方法",
+    "h2_why": "AvifkitでAVIF→JPG変換をする理由"
+  },
+  "schemas": {
+    "howto": {
+      "name": "AVIFをJPGにオンラインで変換する方法",
+      "description": "ブラウザ上でAVIF画像をJPG形式に無料変換。アップロード不要 — ファイルはデバイスから外に出ません。"
+    }
+  },
+  "hero": {
+    "privacy_banner": "プライバシー保護：ファイルはデバイスから外に出ません",
+    "badges": {
+      "privacy": "完全プライベート",
+      "speed": "即時変換",
+      "bulk": "一括変換対応"
+    }
+  },
+  "features": {
+    "title": "Avifkitを使う理由",
+    "subtitle": "プライベート・高速・無料 — 実際の用途に即した設計。",
+    "privacy_title": "完全プライベート",
+    "privacy_desc": "ファイルはブラウザ内でローカル変換されます。サーバーへの送信は一切なし。アカウント不要、トラッキングなし、データ収集なし。",
+    "speed_title": "瞬時に高速",
+    "speed_desc": "アップロード待ち時間ゼロ。ファイルをドロップした瞬間に変換が始まり、数秒で完了します。",
+    "quality_title": "制限なし",
+    "quality_desc": "ファイルサイズ制限なし、透かしなし、登録不要。出力品質を10〜100%で調整でき、最大30ファイルを一括変換可能。"
   },
   "howto": {
     "steps": {
       "upload": {
-        "title": "AVIFアップロード",
-        "description": ".avifファイルを上のボックスにドラッグ&ドロップしてください。"
+        "title": "ファイルをアップロード",
+        "description": "上のコンバーターにAVIFファイルをドラッグ＆ドロップするか、クリックしてデバイスからファイルを選択します。一括変換は最大30ファイルまで対応。JPG・PNG・WebPも受け付けます。"
       },
       "select": {
-        "title": "フォーマット選択",
-        "description": "JPG、PNG、またはWebPを選択し、品質設定を調整してください。"
+        "title": "出力形式と品質を選択",
+        "description": "ドロップダウンから出力形式にJPGを選択します。品質スライダーでファイルサイズと画質のバランスを調整 — ほとんどの用途で品質85%が最適です。"
       },
       "download": {
-        "title": "ダウンロード",
-        "description": "変換された画像を個別またはZIPで即座にダウンロードできます。"
+        "title": "JPGファイルをダウンロード",
+        "description": "ダウンロードボタンで1ファイルずつ保存するか、変換済みファイルをまとめてZIPでダウンロードできます。すべての処理はブラウザ内で完結 — ファイルはサーバーに送信されません。"
       }
     }
   },
-  "schemas": {
-    "howto": {
-      "name": "AVIFをJPGに変換する方法",
-      "description": "無料のオンラインコンバーターを使用してAVIF画像をJPG形式に変換する方法を学びましょう。"
+  "sections": {
+    "beforeAfter": {
+      "title": "変換前後の比較：オリジナル vs 変換後",
+      "description": "画像をアップロードして、品質を保ちながらファイルサイズを削減する様子を確認できます。AVIFは従来の形式と比べて優れた圧縮性能を持ちます。",
+      "original_label": "オリジナル",
+      "compressed_label": "圧縮後（AVIF）",
+      "smaller": "軽量化",
+      "loading": "比較を生成中...",
+      "drag_hint": "スライダーをドラッグして画質を比較",
+      "avif_label": "AVIF（変換前）",
+      "result_label": "変換後",
+      "size_reduction": "品質の劣化を最小限に抑えて変換",
+      "quality_note": "出力品質は10〜100%で調整可能"
     },
-    "software": {
-      "name": "Avifkit",
-      "description": "ブラウザ内でローカルにAVIFをJPG、PNG、WebPに変換"
+    "useCases": {
+      "title": "AVIFをJPGに変換するのはどんなとき？",
+      "items": [
+        {
+          "title": "幅広い互換性",
+          "description": "JPGはすべてのデバイス・OS・アプリで対応しています。AVIFをJPGに変換することで、Windows・古いiPhone・AVIFに未対応のアプリでも写真を共有できます。"
+        },
+        {
+          "title": "メール・メッセージ送信",
+          "description": "ほとんどのメールクライアントやメッセージアプリはJPGを問題なく処理できます。変換することで、受信者が何もインストールせずに写真を表示できます。"
+        },
+        {
+          "title": "デザイン・印刷ワークフロー",
+          "description": "多くのデザインツールや印刷サービスはJPGに対応していますが、AVIFは未対応の場合があります。変換することでPhotoshop・Canva・Word・印刷テンプレートにそのまま使用できます。"
+        },
+        {
+          "title": "CMS・プラットフォームへのアップロード",
+          "description": "一部のCMSやSNSはまだAVIFに対応していません。JPGに変換することで、WordPress・Instagramなどへのアップロードをスムーズに行えます。"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "画像フォーマット比較",
+      "description": "主要な違いを理解することで、用途に最適なフォーマットを選択できます。",
+      "headers": ["特徴", "AVIF", "JPG", "PNG", "WebP"],
+      "rows": [
+        ["圧縮性能", "最高（AV1）", "良好（DCT）", "可逆圧縮", "非常に良好（VP8）"],
+        ["ファイルサイズ", "最小", "中程度", "最大", "小さい"],
+        ["透明度", "対応", "非対応", "対応", "対応"],
+        ["ブラウザサポート", "モダンブラウザ", "すべて", "すべて", "ほとんど"],
+        ["最適用途", "Web・保存", "写真", "グラフィック・ロゴ", "Web画像"],
+        ["HDRサポート", "対応", "非対応", "非対応", "非対応"],
+        ["アニメーション", "対応", "非対応", "非対応（APNG）", "対応"],
+        ["可逆圧縮モード", "対応", "非対応", "対応", "対応"]
+      ]
+    },
+    "specs": {
+      "title": "ツール仕様",
+      "items": [
+        { "label": "最大ファイルサイズ", "value": "1ファイルあたり10MB" },
+        { "label": "一括変換上限", "value": "1セッション30ファイル" },
+        { "label": "出力形式", "value": "JPG, PNG, WebP, AVIF, GIF, PDF" },
+        { "label": "入力形式", "value": "AVIF, JPG, PNG, WebP" },
+        { "label": "処理方法", "value": "100%クライアントサイド（ブラウザ内）" },
+        { "label": "品質調整", "value": "10%〜100%で調整可能" },
+        { "label": "透明度", "value": "PNG・WebP出力時に保持" },
+        { "label": "費用", "value": "無料・登録不要" }
+      ]
+    },
+    "relatedTools": {
+      "title": "関連変換ツール",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF→JPG", "description": "AVIFをあらゆる環境で使えるJPG形式に変換。" },
+        "avif-to-png": { "title": "AVIF→PNG", "description": "透明度を完全保持してAVIFをPNGに変換。" },
+        "avif-to-webp": { "title": "AVIF→WebP", "description": "Web最適化のためAVIFをWebPに変換。" },
+        "png-to-avif": { "title": "PNG→AVIF", "description": "PNG画像を軽量なAVIF形式に圧縮。" },
+        "jpg-to-avif": { "title": "JPG→AVIF", "description": "JPG写真を次世代のAVIF形式に変換。" },
+        "webp-to-avif": { "title": "WebP→AVIF", "description": "WebP画像をより優れたAVIF圧縮にアップグレード。" },
+        "avif-to-gif": { "title": "AVIF→GIF", "description": "AVIF画像をGIF形式に変換。" },
+        "avif-to-pdf": { "title": "AVIF→PDF", "description": "AVIF画像をPDFドキュメントに埋め込み。" },
+        "avif-viewer": { "title": "AVIFビューアー", "description": "AVIFファイルのプレビューとメタデータ確認。" }
+      }
     }
+  },
+  "faq": {
+    "title": "よくある質問",
+    "q1": "プライベートな写真を変換しても安全ですか？",
+    "a1": "安全です。ファイルはブラウザ内でローカル変換され、サーバーにアップロードされることはありません。私たちを含め、誰もあなたの画像にアクセスできません。",
+    "q2": "AVIFをJPGに変換すると画質が劣化しますか？",
+    "a2": "JPGは非可逆圧縮を使用するため、多少の画質低下が生じます。デフォルトの品質85%では、人の目にはほとんど違いが分かりません。品質スライダーで10〜100%の範囲で調整できます。",
+    "q3": "Windows 10・11でAVIFファイルを開くには？",
+    "a3": "Microsoft StoreからAV1 Video Extension（無料）をインストールすることで、Windows 10・11でAVIFを直接開けるようになります。または、Avifkitを使ってJPGに変換してから任意の画像ビューアーで開くこともできます。",
+    "q4": "iPhoneやiOSでAVIFを開けますか？",
+    "a4": "iOS 16以降のiPhoneはSafariおよび写真アプリでAVIFをネイティブサポートしています。それ以前のiOSバージョンでは、Avifkitを使って先にJPGに変換することで確実に開くことができます。",
+    "q5": "MacはAVIFをネイティブサポートしていますか？",
+    "a5": "macOS Ventura（13）以降はプレビューとSafariでAVIFに対応しています。それより古いmacOSバージョンでは、Avifkitを使ってAVIFをJPGまたはPNGに変換してから開いてください。",
+    "q6": "AVIFをサポートしているブラウザはどれですか？",
+    "a6": "Chrome 85以降、Firefox 93以降、Edge 121以降、Opera 71以降、Safari 16.4以降がAVIFをネイティブサポートしています。旧バージョンのブラウザやアプリではJPGに変換すると確実に表示できます。",
+    "q7": "AVIFはJPGより優れていますか？",
+    "a7": "AVIFは同等の画質でJPGより30〜50%小さいファイルを生成します。また透明度・HDR・アニメーションにも対応しており、JPGにはないメリットがあります。ただし古いプラットフォームでの汎用互換性は、まだJPGの方が優れています。",
+    "q8": "AVIF→JPG変換で透明度は保持されますか？",
+    "a8": "JPGは透明度をサポートしていません。AVIF内の透明部分はJPGに変換すると白背景で塗りつぶされます。透明度を保持したい場合はPNGまたはWebPに変換してください。",
+    "q9": "変換できる最大ファイルサイズは？",
+    "a9": "1ファイルあたり最大10MBです。処理はすべてブラウザ内で行われるため、大きいファイルはデバイスの性能によって多少時間がかかる場合があります。",
+    "q10": "複数のAVIFファイルを一括変換できますか？",
+    "a10": "はい。Avifkitは最大30ファイルの一括変換に対応しています。ファイルをまとめてドロップし、「すべて変換」をクリックして、個別またはZIPでダウンロードできます。"
   }
 }

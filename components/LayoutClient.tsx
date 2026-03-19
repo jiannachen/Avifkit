@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, Globe, ChevronDown, X, ShieldCheck } from 'lucide-react';
+import { Menu, Globe, ChevronDown, X, ShieldCheck, Mail } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { useLocalizedLink } from '@/hooks/useLocalizedLink';
@@ -22,7 +22,6 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
   const toolsRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
 
-  // Click outside to close dropdowns
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
@@ -59,7 +58,7 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href={getLink('home')} className="flex items-center gap-2 group" onClick={closeMobileMenu}>
+              <Link href={getLink('avif-to-jpg')} className="flex items-center gap-2 group" onClick={closeMobileMenu}>
                 <Image
                   src="/logo.svg"
                   alt="Avifkit Logo"
@@ -74,7 +73,7 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-8">
-              {/* Tools Dropdown - unified click interaction */}
+              {/* Tools Dropdown */}
               <div className="relative" ref={toolsRef}>
                 <button
                   onClick={() => { setIsToolsMenuOpen(!isToolsMenuOpen); setIsLangMenuOpen(false); }}
@@ -84,11 +83,21 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
                 </button>
 
                 {isToolsMenuOpen && (
-                  <div className="absolute top-full left-0 w-56 pt-2">
+                  <div className="absolute top-full left-0 w-64 pt-2">
                     <div className="bg-white rounded-lg shadow-xl border border-slate-100 p-2">
+                      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-4 py-1">{t('nav.avif_to_others')}</div>
                       <Link href={getLink('avif-to-jpg')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to JPG</Link>
-                      <Link href={getLink('avif-to-webp')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md bg-blue-50/50 font-medium text-blue-700">AVIF to WebP <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1">Hot</span></Link>
                       <Link href={getLink('avif-to-png')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to PNG</Link>
+                      <Link href={getLink('avif-to-webp')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md bg-blue-50/50 font-medium text-blue-700">AVIF to WebP <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1">Hot</span></Link>
+                      <Link href={getLink('avif-to-gif')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to GIF</Link>
+                      <Link href={getLink('avif-to-pdf')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to PDF</Link>
+                      <div className="h-px bg-slate-100 my-1"></div>
+                      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-4 py-1">{t('nav.others_to_avif')}</div>
+                      <Link href={getLink('jpg-to-avif')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">JPG to AVIF</Link>
+                      <Link href={getLink('png-to-avif')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">PNG to AVIF</Link>
+                      <Link href={getLink('webp-to-avif')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">WebP to AVIF</Link>
+                      <div className="h-px bg-slate-100 my-1"></div>
+                      <Link href={getLink('avif-viewer')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">{t('nav.viewer')}</Link>
                     </div>
                   </div>
                 )}
@@ -96,7 +105,7 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
               <Link href={getLink('blog')} className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">{t('nav.blog')}</Link>
 
-              {/* Language Switcher - unified click interaction */}
+              {/* Language Switcher */}
               <div className="relative" ref={langRef}>
                 <button
                   onClick={() => { setIsLangMenuOpen(!isLangMenuOpen); setIsToolsMenuOpen(false); }}
@@ -133,12 +142,22 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
           </div>
         </div>
 
-        {/* Mobile Menu with transition */}
-        <div className={`md:hidden bg-white border-b border-slate-200 overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 border-b-0'}`}>
+        {/* Mobile Menu */}
+        <div className={`md:hidden bg-white border-b border-slate-200 overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 border-b-0'}`}>
           <div className="px-4 pt-2 pb-6 space-y-1">
+            <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-1">{t('nav.avif_to_others')}</div>
             <Link href={getLink('avif-to-jpg')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to JPG</Link>
             <Link href={getLink('avif-to-png')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to PNG</Link>
             <Link href={getLink('avif-to-webp')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to WebP</Link>
+            <Link href={getLink('avif-to-gif')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to GIF</Link>
+            <Link href={getLink('avif-to-pdf')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to PDF</Link>
+            <div className="h-px bg-slate-100 my-2"></div>
+            <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-1">{t('nav.others_to_avif')}</div>
+            <Link href={getLink('jpg-to-avif')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">JPG to AVIF</Link>
+            <Link href={getLink('png-to-avif')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">PNG to AVIF</Link>
+            <Link href={getLink('webp-to-avif')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">WebP to AVIF</Link>
+            <div className="h-px bg-slate-100 my-2"></div>
+            <Link href={getLink('avif-viewer')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">{t('nav.viewer')}</Link>
             <div className="h-px bg-slate-100 my-2"></div>
             <div className="flex gap-4 px-3 py-2">
               <button onClick={() => changeLang('en')} className={`text-sm font-bold ${locale === 'en' ? 'text-blue-600' : 'text-slate-500'}`}>EN</button>
@@ -158,7 +177,7 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
       {/* Footer */}
       <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
             {/* Brand Column */}
             <div className="space-y-4">
@@ -176,17 +195,30 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
               </p>
               <div className="flex items-center gap-2 text-emerald-600 text-sm font-medium">
                 <ShieldCheck className="w-4 h-4" />
-                <span>{t('hero.privacy_banner').split(':')[0]}</span>
+                <span>{t('footer.privacy_badge')}</span>
               </div>
             </div>
 
-            {/* Tools & Resources */}
+            {/* AVIF to Others */}
             <div>
-              <h3 className="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">{t('footer.headers.tools')}</h3>
+              <h3 className="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">{t('nav.avif_to_others')}</h3>
               <ul className="space-y-3">
-                <li><Link href={getLink('avif-to-webp')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to WebP</Link></li>
-                <li><Link href={getLink('avif-to-png')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to PNG</Link></li>
                 <li><Link href={getLink('avif-to-jpg')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to JPG</Link></li>
+                <li><Link href={getLink('avif-to-png')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to PNG</Link></li>
+                <li><Link href={getLink('avif-to-webp')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to WebP</Link></li>
+                <li><Link href={getLink('avif-to-gif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to GIF</Link></li>
+                <li><Link href={getLink('avif-to-pdf')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to PDF</Link></li>
+                <li><Link href={getLink('avif-viewer')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('nav.viewer')}</Link></li>
+              </ul>
+            </div>
+
+            {/* Others to AVIF & Resources */}
+            <div>
+              <h3 className="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">{t('nav.others_to_avif')}</h3>
+              <ul className="space-y-3">
+                <li><Link href={getLink('jpg-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">JPG to AVIF</Link></li>
+                <li><Link href={getLink('png-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">PNG to AVIF</Link></li>
+                <li><Link href={getLink('webp-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">WebP to AVIF</Link></li>
                 <li><Link href={getLink('blog')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.blog')}</Link></li>
               </ul>
             </div>
@@ -203,6 +235,10 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
           <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-slate-400">{t('footer.copyright')}</p>
+            <a href="mailto:support@avifkit.com" className="text-sm text-slate-400 hover:text-blue-600 transition-colors flex items-center gap-1.5">
+              <Mail className="w-4 h-4" />
+              support@avifkit.com
+            </a>
           </div>
         </div>
       </footer>

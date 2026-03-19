@@ -6,8 +6,8 @@ export const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 export const MAX_BATCH_SIZE = 30;
 
 // Supported formats
-const SUPPORTED_IMAGE_FORMATS = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/avif'];
-const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.avif'];
+const SUPPORTED_IMAGE_FORMATS = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/avif', 'image/gif'];
+const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.avif', '.gif'];
 
 export enum FileValidationError {
   NON_IMAGE = 'non_image',
@@ -36,7 +36,8 @@ export const detectSourceFormat = (file: File): string => {
       'image/jpg': 'JPG',
       'image/png': 'PNG',
       'image/webp': 'WebP',
-      'image/avif': 'AVIF'
+      'image/avif': 'AVIF',
+      'image/gif': 'GIF'
     };
     if (mimeToFormat[file.type.toLowerCase()]) {
       return mimeToFormat[file.type.toLowerCase()];
@@ -49,6 +50,7 @@ export const detectSourceFormat = (file: File): string => {
   if (fileName.endsWith('.png')) return 'PNG';
   if (fileName.endsWith('.webp')) return 'WebP';
   if (fileName.endsWith('.avif')) return 'AVIF';
+  if (fileName.endsWith('.gif')) return 'GIF';
 
   return 'Unknown';
 };
@@ -60,7 +62,9 @@ export const isSameFormat = (sourceFormat: string, targetFormat: TargetFormat): 
   const formatMap: Record<string, TargetFormat> = {
     'JPG': 'image/jpeg',
     'PNG': 'image/png',
-    'WebP': 'image/webp'
+    'WebP': 'image/webp',
+    'AVIF': 'image/avif',
+    'GIF': 'image/gif'
   };
 
   return formatMap[sourceFormat] === targetFormat;
@@ -99,8 +103,8 @@ export const validateFile = (file: File, targetFormat: TargetFormat): Validation
   // 5. Detect source format
   const sourceFormat = detectSourceFormat(file);
 
-  // 6. Check if source and target formats are the same
-  if (isSameFormat(sourceFormat, targetFormat)) {
+  // 6. Check if source and target formats are the same (skip for PDF since no image is "already a PDF")
+  if (targetFormat !== 'application/pdf' && isSameFormat(sourceFormat, targetFormat)) {
     return { isValid: false, error: FileValidationError.SAME_FORMAT, sourceFormat };
   }
 
@@ -114,7 +118,10 @@ export const getFormatName = (mimeType: TargetFormat): string => {
   const formatMap: Record<TargetFormat, string> = {
     'image/jpeg': 'JPG',
     'image/png': 'PNG',
-    'image/webp': 'WebP'
+    'image/webp': 'WebP',
+    'image/avif': 'AVIF',
+    'image/gif': 'GIF',
+    'application/pdf': 'PDF'
   };
   return formatMap[mimeType] || 'Unknown';
 };

@@ -7,7 +7,7 @@
   "readingTime": 4,
   "category": "チュートリアル",
   "keywords": "一括 avif 変換, 複数 avif ファイル 変換, avif 一括処理",
-  "image": "https://img.avifkit.com/blog/blog05.webp",
+  "image": "https://img.avifkit.com/blog/batch-convert-100-avif.webp",
   "content": [
     {
       "type": "lead",
@@ -126,7 +126,7 @@
       "items": [
         {
           "question": "ファイルサイズの制限はありますか？",
-          "answer": "個別ファイルは最大50MB、バッチあたり30ファイル。より大きなファイルやより多くのファイルを一度に変換する必要がある場合は、複数のバッチに分割してください。"
+          "answer": "個別ファイルは最大10MB、バッチあたり30ファイル。より大きなファイルやより多くのファイルを一度に変換する必要がある場合は、複数のバッチに分割してください。"
         },
         {
           "question": "フォルダ全体を変換できますか？",

@@ -1,0 +1,173 @@
+{
+  "slug": "avif-browser-support",
+  "title": "AVIF Browser Support in 2026: Complete Compatibility Guide",
+  "description": "Complete guide to AVIF browser support. Check which browsers support AVIF, minimum versions required, and fallback strategies for maximum compatibility.",
+  "excerpt": "Which browsers support AVIF? What versions do you need? What fallback strategies work? Everything you need to know.",
+  "date": "2025-12-25",
+  "readingTime": 6,
+  "category": "Guide",
+  "keywords": "avif browser support, avif compatibility, avif format support, can i use avif, avif fallback",
+  "image": "https://img.avifkit.com/blog/browser-support-2026.webp",
+  "content": [
+    {
+      "type": "lead",
+      "text": "AVIF browser support has grown significantly since the format was introduced in 2019. As of 2026, over 95% of global web users can view AVIF images natively. Here's the complete breakdown of which browsers support AVIF, what versions you need, and how to handle the remaining compatibility gaps."
+    },
+    {
+      "type": "h2",
+      "text": "Current AVIF Browser Support (2026)"
+    },
+    {
+      "type": "table",
+      "headers": ["Browser", "AVIF Support Since", "Minimum Version", "Status"],
+      "rows": [
+        ["Google Chrome", "August 2020", "85", "Full support"],
+        ["Mozilla Firefox", "October 2021", "93", "Full support"],
+        ["Microsoft Edge", "January 2024", "121", "Full support"],
+        ["Apple Safari", "March 2023", "16.4", "Full support"],
+        ["Opera", "August 2020", "71", "Full support"],
+        ["Samsung Internet", "October 2021", "16.0", "Full support"],
+        ["Chrome Android", "August 2020", "85", "Full support"],
+        ["Safari iOS", "March 2023", "16.4", "Full support"],
+        ["Firefox Android", "October 2021", "93", "Full support"],
+        ["Internet Explorer", "Never", "N/A", "No support"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "According to Can I Use data, AVIF now has approximately 95.5% global browser support. The main gap is older versions of Safari (pre-16.4) and some niche browsers. For most websites, this coverage is sufficient for production use."
+    },
+    {
+      "type": "h2",
+      "text": "Desktop Browser Support Details"
+    },
+    {
+      "type": "h3",
+      "text": "Google Chrome"
+    },
+    {
+      "type": "p",
+      "text": "Chrome was the first major browser to support AVIF, adding it in version 85 (August 2020). Chrome supports all AVIF features including lossy/lossless compression, alpha channel, 10-bit and 12-bit color depth, HDR, and animated AVIF sequences. Chrome also supports AVIF in CSS background images and canvas elements."
+    },
+    {
+      "type": "h3",
+      "text": "Mozilla Firefox"
+    },
+    {
+      "type": "p",
+      "text": "Firefox added AVIF support in version 93 (October 2021). Initially, animated AVIF support was limited, but Firefox 113+ provides full animated AVIF support. Firefox uses the dav1d decoder, which is known for its excellent performance."
+    },
+    {
+      "type": "h3",
+      "text": "Apple Safari"
+    },
+    {
+      "type": "p",
+      "text": "Safari was the last major browser to add AVIF support, doing so in version 16.4 (March 2023). This brought AVIF support to both macOS (Ventura and later) and iOS (16.4 and later). Safari's AVIF implementation supports 8-bit and 10-bit color depth, alpha transparency, and HDR content."
+    },
+    {
+      "type": "h3",
+      "text": "Microsoft Edge"
+    },
+    {
+      "type": "p",
+      "text": "Edge, being Chromium-based, inherited Chrome's AVIF support but officially confirmed it in version 121 (January 2024). Since Edge follows Chrome's rendering engine, AVIF support is identical to Chrome's."
+    },
+    {
+      "type": "h2",
+      "text": "Mobile Browser Support"
+    },
+    {
+      "type": "p",
+      "text": "Mobile AVIF support mirrors desktop support closely. Chrome on Android has supported AVIF since version 85, and Safari on iOS added support in iOS 16.4. This means the vast majority of smartphones sold in 2023 and later can display AVIF images natively."
+    },
+    {
+      "type": "p",
+      "text": "One important consideration: while the browser may support AVIF, the operating system's native image viewer might not. If a user downloads an AVIF image, they may not be able to open it in their phone's gallery app. This is why converting AVIF to JPG or PNG before sharing remains a good practice."
+    },
+    {
+      "type": "h2",
+      "text": "Fallback Strategies for AVIF"
+    },
+    {
+      "type": "h3",
+      "text": "1. The HTML 'picture' Element"
+    },
+    {
+      "type": "p",
+      "text": "The most reliable fallback strategy uses the HTML 'picture' element, which lets browsers choose the best format they support. The browser will try the first source it supports and ignore the rest. Place AVIF first, then WebP, then JPG as the final fallback."
+    },
+    {
+      "type": "h3",
+      "text": "2. Content Negotiation (Accept Header)"
+    },
+    {
+      "type": "p",
+      "text": "CDNs like Cloudflare, Fastly, and AWS CloudFront can automatically serve the best image format based on the browser's Accept header. When a browser sends 'Accept: image/avif', the CDN serves AVIF; otherwise, it falls back to WebP or JPG. This approach requires no HTML changes and works with existing <img> tags."
+    },
+    {
+      "type": "h3",
+      "text": "3. JavaScript Feature Detection"
+    },
+    {
+      "type": "p",
+      "text": "You can detect AVIF support in JavaScript by attempting to decode a tiny AVIF image. If the browser can decode it, you know AVIF is supported. This approach is useful for single-page applications where you need to dynamically load images."
+    },
+    {
+      "type": "h2",
+      "text": "AVIF Support in Image Processing Tools"
+    },
+    {
+      "type": "table",
+      "headers": ["Tool", "AVIF Support", "Notes"],
+      "rows": [
+        ["Adobe Photoshop", "2024+", "Partial - some color profiles may fail"],
+        ["GIMP", "2.10.32+", "Full support via plugin"],
+        ["ImageMagick", "7.0.25+", "Full support"],
+        ["Sharp (Node.js)", "0.29+", "Full support via libvips"],
+        ["Squoosh", "Yes", "Full web-based support"],
+        ["WordPress", "6.5+", "Native upload support"],
+        ["Figma", "Limited", "Can import, limited export"],
+        ["Canva", "No", "Not supported for export"]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "What to Do When AVIF Isn't Supported"
+    },
+    {
+      "type": "p",
+      "text": "If you're working with AVIF files and need to share them with someone who can't open them, the simplest solution is to convert them to JPG or PNG. This ensures universal compatibility across all devices and software."
+    },
+    {
+      "type": "p",
+      "text": "You can use our free online converter to quickly convert AVIF files to any format. The conversion happens entirely in your browser, so your images remain private and secure."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Does my browser support AVIF?",
+          "answer": "If you're using Chrome 85+, Firefox 93+, Safari 16.4+, or Edge 121+, your browser supports AVIF. You can test by visiting our {link:/avif-viewer|AVIF Viewer} page and loading an AVIF file."
+        },
+        {
+          "question": "Can I use AVIF on my website?",
+          "answer": "Yes, AVIF is production-ready for most websites. With 95%+ browser support and easy fallback strategies using the 'picture' element, you can safely serve AVIF images while providing JPG/WebP fallbacks for older browsers."
+        },
+        {
+          "question": "Will AVIF replace JPG and WebP?",
+          "answer": "AVIF is likely to become the dominant web image format over time due to its superior compression. However, JPG will remain important for compatibility, and WebP serves as a good middle ground. All three formats will coexist for the foreseeable future."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Need to Convert AVIF Files?",
+      "subtitle": "Convert AVIF to JPG, PNG, or WebP in your browser. Free, instant, and private.",
+      "button": {
+        "text": "Convert AVIF Now",
+        "link": "/avif-to-jpg"
+      }
+    }
+  ]
+}

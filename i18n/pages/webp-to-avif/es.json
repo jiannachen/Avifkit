@@ -1,0 +1,177 @@
+{
+  "locale": "es",
+  "slug": "webp-to-avif",
+  "canonical": "https://avifkit.com/es/webp-to-avif",
+  "hreflang": {
+    "x-default": "https://avifkit.com/webp-to-avif",
+    "en": "https://avifkit.com/webp-to-avif",
+    "ja": "https://avifkit.com/ja/webp-to-avif",
+    "es": "https://avifkit.com/es/webp-to-avif",
+    "fr": "https://avifkit.com/fr/webp-to-avif"
+  },
+  "title_prefix": "Convierte",
+  "title_gradient": "WebP a AVIF",
+  "title_suffix": "Online Gratis",
+  "subtitle": "Conversor gratuito de WebP a AVIF. Actualiza tus imágenes a la compresión de nueva generación con archivos más pequeños — sin subida de archivos, sin registro.",
+  "seo": {
+    "title": "Convertir WebP a AVIF — Gratis, Online, Sin Subida | Avifkit",
+    "description": "Convierte WebP a AVIF gratis en tu navegador. Sin subida de archivos, sin límites de tamaño, sin marcas de agua. Archivos 10–20% más pequeños con procesamiento 100% privado en el cliente.",
+    "h1": "Convierte WebP a AVIF Online Gratis",
+    "h2_how": "Cómo Convertir WebP a AVIF",
+    "h2_why": "¿Por qué Convertir WebP a AVIF?"
+  },
+  "schemas": {
+    "webApplication": {
+      "@type": "WebApplication",
+      "name": "Convertidor de WebP a AVIF",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web Browser",
+      "description": "Convierte WebP a AVIF online gratis. Procesamiento en el cliente — los archivos nunca se suben a ningún servidor.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    "howto": {
+      "name": "Cómo convertir WebP a AVIF online",
+      "description": "Convierte imágenes WebP a formato AVIF al instante en tu navegador — gratis, privado, sin subida de archivos."
+    }
+  },
+  "hero": {
+    "privacy_banner": "Privacidad garantizada: tus archivos se convierten localmente, nunca se suben a ningún servidor",
+    "badges": {
+      "privacy": "100% Privado",
+      "speed": "Conversión Instantánea",
+      "bulk": "Conversión en Lote"
+    }
+  },
+  "features": {
+    "title": "¿Por qué Convertir WebP a AVIF?",
+    "subtitle": "Actualiza al formato de imagen más avanzado disponible hoy.",
+    "privacy_title": "Tus Archivos Nunca Salen del Navegador",
+    "privacy_desc": "Tus imágenes WebP se convierten a AVIF completamente en tu navegador mediante procesamiento local. Ningún archivo se sube a ningún servidor — tus imágenes permanecen privadas en tu dispositivo.",
+    "speed_title": "Conversión Instantánea, Sin Esperas",
+    "speed_desc": "Sin tiempo de subida, sin cola del servidor. La conversión comienza de inmediato en tu navegador, procesando incluso lotes grandes en segundos.",
+    "quality_title": "Compresión de Nueva Generación",
+    "quality_desc": "AVIF utiliza la tecnología de compresión AV1, produciendo archivos 10–20% más pequeños que WebP con la misma calidad visual. También es compatible con HDR y amplia gama de colores."
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Sube tus Archivos WebP",
+        "description": "Arrastra y suelta tus archivos .webp en el conversor, o haz clic para buscarlos. Sube hasta 30 archivos WebP a la vez para conversión en lote."
+      },
+      "select": {
+        "title": "Ajusta la Calidad AVIF",
+        "description": "Mueve el control deslizante de calidad para la salida AVIF. Un ajuste de 60–75% ofrece excelentes resultados con un ahorro significativo de tamaño respecto a WebP."
+      },
+      "download": {
+        "title": "Descarga los Archivos AVIF",
+        "description": "Descarga cada archivo AVIF individualmente o guárdalos todos como un archivo ZIP. Listos para usar de inmediato, sin necesidad de cuenta."
+      }
+    }
+  },
+  "platform_compatibility": {
+    "title": "Compatibilidad de AVIF con Navegadores y Plataformas",
+    "body": "AVIF es compatible con Chrome 85+, Firefox 93+, Edge 121+ y Safari 16.4+, cubriendo aproximadamente el 93% de los usuarios globales. En Windows 10/11, AVIF se puede abrir de forma nativa en Fotos tras instalar la extensión de vídeo AV1 desde Microsoft Store. En Mac, macOS Ventura (13) y versiones posteriores soportan AVIF de forma nativa en Vista Previa y Quick Look. En iPhone y iPad, iOS 16+ soporta AVIF en Safari y la app Fotos. Para usuarios con navegadores más antiguos, sirve AVIF junto con un fallback WebP o JPG usando el elemento HTML 'picture' para máxima compatibilidad."
+  },
+  "sections": {
+    "beforeAfter": {
+      "title": "WebP vs AVIF: Compara la Diferencia",
+      "description": "AVIF lleva la compresión más allá. Compara tamaño de archivo y calidad visual lado a lado.",
+      "original_label": "Original (WebP)",
+      "compressed_label": "Convertido (AVIF)",
+      "smaller": "más pequeño",
+      "loading": "Generando comparación...",
+      "drag_hint": "Arrastra el control para comparar",
+      "avif_label": "WebP (Origen)",
+      "result_label": "AVIF (Convertido)",
+      "size_reduction": "Comprimido aún más con AVIF",
+      "quality_note": "Calidad de salida ajustable del 10% al 100%"
+    },
+    "useCases": {
+      "title": "¿Cuándo Deberías Cambiar a AVIF?",
+      "items": [
+        {
+          "title": "Moderniza tu Pipeline de Imágenes",
+          "description": "AVIF es el siguiente paso después de WebP — 10–20% más de compresión gracias a la tecnología AV1. Convierte tu biblioteca WebP al estándar más reciente hoy."
+        },
+        {
+          "title": "Reduce Costes de Ancho de Banda y Almacenamiento",
+          "description": "¿Ya usas WebP? AVIF te permite ahorrar aún más. Una imagen WebP de 100 KB puede reducirse a 80–90 KB en AVIF con idéntica calidad visual."
+        },
+        {
+          "title": "HDR y Amplia Gama de Colores",
+          "description": "WebP está limitado a color de 8 bits. AVIF soporta contenido HDR de 10 y 12 bits, ideal para fotografía de alto rango dinámico y pantallas modernas."
+        },
+        {
+          "title": "Prepara tus Recursos para el Futuro",
+          "description": "La adopción de AVIF en los navegadores crece rápidamente. Convertir tus imágenes WebP a AVIF ahora asegura que tus recursos estén en el formato más preparado para el futuro."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "WebP vs AVIF — Comparación Completa",
+      "description": "AVIF mejora las fortalezas de WebP con la tecnología AV1.",
+      "headers": ["Característica", "WebP", "AVIF"],
+      "rows": [
+        ["Algoritmo de Compresión", "VP8 / VP9", "AV1"],
+        ["Tamaño vs JPG", "~25–35% más pequeño", "~50% más pequeño"],
+        ["Tamaño vs WebP", "Referencia", "10–20% más pequeño"],
+        ["Calidad Visual", "Buena", "Mejor al mismo tamaño"],
+        ["Transparencia (Alfa)", "Sí", "Sí"],
+        ["Soporte HDR", "No (solo 8 bits)", "Sí (10 bits, 12 bits)"],
+        ["Animación", "Sí (WebP animado)", "Sí (secuencia AVIF)"],
+        ["Soporte en Navegadores", "Chrome 32+, Safari 14+", "Chrome 85+, Safari 16.4+"]
+      ]
+    },
+    "specs": {
+      "title": "Especificaciones de la Herramienta",
+      "items": [
+        { "label": "Tamaño Máx. por Archivo", "value": "10 MB" },
+        { "label": "Límite por Lote", "value": "30 archivos por sesión" },
+        { "label": "Formato de Salida", "value": "AVIF (AV1 Image File Format)" },
+        { "label": "Formato de Entrada", "value": "WebP" },
+        { "label": "Procesamiento", "value": "100% local (solo navegador)" },
+        { "label": "Rango de Calidad", "value": "10% – 100% ajustable" },
+        { "label": "Ahorro Esperado", "value": "10–20% más pequeño que WebP" },
+        { "label": "Coste", "value": "Gratis — sin registro requerido" }
+      ]
+    },
+    "relatedTools": {
+      "title": "Herramientas de Conversión Relacionadas",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF a JPG", "description": "Convierte AVIF al formato JPG, compatible universalmente." },
+        "avif-to-png": { "title": "AVIF a PNG", "description": "Convierte AVIF a PNG con soporte completo de transparencia." },
+        "avif-to-webp": { "title": "AVIF a WebP", "description": "Convierte AVIF a WebP para mayor compatibilidad." },
+        "png-to-avif": { "title": "PNG a AVIF", "description": "Comprime imágenes PNG al formato AVIF más ligero." },
+        "jpg-to-avif": { "title": "JPG a AVIF", "description": "Convierte fotos JPG al formato AVIF de nueva generación." },
+        "avif-to-gif": { "title": "AVIF a GIF", "description": "Convierte imágenes AVIF a formato GIF." },
+        "avif-to-pdf": { "title": "AVIF a PDF", "description": "Incrusta imágenes AVIF en documentos PDF." },
+        "avif-viewer": { "title": "Visor AVIF", "description": "Previsualiza archivos AVIF e inspecciona metadatos de imagen." }
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Es AVIF realmente mejor que WebP?",
+    "a1": "Sí. AVIF generalmente consigue archivos 10–20% más pequeños que WebP a la misma calidad visual, gracias al algoritmo de compresión AV1, más avanzado. AVIF también soporta color HDR (10 bits, 12 bits), algo que WebP no admite.",
+    "q2": "¿Se preserva la transparencia al convertir WebP a AVIF?",
+    "a2": "Sí. AVIF soporta completamente el canal alfa. Cualquier zona transparente en tus imágenes WebP se conservará perfectamente en la salida AVIF convertida.",
+    "q3": "¿Es seguro convertir imágenes privadas aquí?",
+    "a3": "Totalmente. Avifkit utiliza procesamiento local — tus imágenes se convierten completamente en la memoria de tu navegador y nunca se suben a ningún servidor. Tus archivos nunca salen de tu dispositivo.",
+    "q4": "¿Funcionará AVIF en todos los navegadores?",
+    "a4": "AVIF es compatible con Chrome 85+, Firefox 93+, Edge 121+ y Safari 16.4+, lo que cubre aproximadamente el 93% de los usuarios globales. Para navegadores más antiguos, usa el elemento HTML 'picture' para servir AVIF con un fallback WebP o JPG.",
+    "q5": "¿Cuánto más pequeño será AVIF en comparación con WebP?",
+    "a5": "Los archivos AVIF son típicamente 10–20% más pequeños que WebP a calidad visual equivalente. El ahorro es más pronunciado en contenido fotográfico e imágenes complejas con muchos detalles.",
+    "q6": "¿Hay un límite de tamaño de archivo?",
+    "a6": "Cada archivo puede pesar hasta 10 MB. Como todo el procesamiento ocurre en tu navegador, los archivos más grandes pueden tardar un poco más según el rendimiento de tu dispositivo, pero no hay restricciones del lado del servidor.",
+    "q7": "¿Puedo convertir varios archivos WebP a la vez?",
+    "a7": "Sí. Sube hasta 30 archivos WebP a la vez para conversión en lote. Una vez convertidos, descárgalos individualmente o como un único archivo ZIP.",
+    "q8": "¿Debería cambiar de WebP a AVIF en mi sitio web?",
+    "a8": "Si tu audiencia usa principalmente navegadores modernos, sí. Usa AVIF como formato principal y proporciona fallbacks en WebP o JPG mediante el elemento 'picture'. Ganarás un 10–20% adicional de ahorro en ancho de banda sin diferencia de calidad perceptible.",
+    "q9": "¿Necesito crear una cuenta o instalar algo?",
+    "a9": "No. Avifkit funciona completamente en tu navegador — sin registro, sin instalación de software, sin marcas de agua y sin límites de uso. Solo abre la página y empieza a convertir."
+  }
+}

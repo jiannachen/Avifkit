@@ -1,0 +1,156 @@
+{
+  "title_prefix": "AVIFを",
+  "title_gradient": "PDFに変換",
+  "title_suffix": "無料オンライン",
+  "subtitle": "AVIFをPDFにオンラインで無料変換 — アップロード不要、登録不要、透かしなし。ブラウザ内で即座にAVIF画像を印刷対応のPDFドキュメントに変換します。",
+  "seo": {
+    "title": "AVIF PDF 変換 — 無料・オンライン・アップロード不要 | Avifkit",
+    "description": "AVIFをPDFにブラウザで無料変換。ファイルアップロード不要、サイズ制限なし、透かしなし。100%プライベートなクライアントサイド処理で印刷対応PDFを作成。",
+    "h1": "AVIFをPDFに無料でオンライン変換",
+    "h2_how": "AVIFをPDFに変換する方法",
+    "h2_why": "AVIFをPDFに変換する理由"
+  },
+  "schemas": {
+    "howto": {
+      "name": "AVIFをPDFに変換する方法",
+      "description": "無料のオンラインコンバーターを使用してAVIF画像をPDFドキュメントに変換する方法を学びましょう。"
+    }
+  },
+  "hero": {
+    "privacy_banner": "プライバシー保証：ファイルはデバイスから外に出ません",
+    "badges": {
+      "privacy": "100%プライベート",
+      "speed": "瞬時に変換",
+      "bulk": "一括変換対応"
+    }
+  },
+  "features": {
+    "title": "AvifkitでAVIF PDF変換を選ぶ理由",
+    "subtitle": "画像からプロフェッショナルなPDFドキュメントを作成 — プライベート、瞬時、制限なし。",
+    "privacy_title": "クライアントサイドのプライバシー",
+    "privacy_desc": "画像はすべてブラウザ内でPDFに変換されます。ファイルはサーバーにアップロードされることはなく、ドキュメントは完全にデバイス上でプライベートに保たれます。",
+    "speed_title": "超高速変換",
+    "speed_desc": "アップロード待ち時間ゼロ。WebAssemblyエンジンがAVIF画像をブラウザ内で即座にPDFドキュメントに埋め込みます。",
+    "quality_title": "印刷対応PDF",
+    "quality_desc": "元の解像度を完全に保持した高品質PDFドキュメントを生成。印刷、アーカイブ、プロフェッショナルなドキュメント共有に最適です。"
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "AVIFファイルをアップロード",
+        "description": ".avifファイルをコンバーターにドラッグ&ドロップするか、クリックして選択してください。最大30ファイルまで同時にPDFドキュメントを作成できます。"
+      },
+      "select": {
+        "title": "PDF出力を設定",
+        "description": "各AVIF画像はフル解像度で個別のPDFドキュメントに埋め込まれます。PDFは元の画像サイズと画質を保持します。"
+      },
+      "download": {
+        "title": "PDFドキュメントをダウンロード",
+        "description": "各PDFを個別にダウンロードするか、すべてをZIPアーカイブとして保存できます。ファイルはブラウザ内でローカル変換されます — サーバーにアップロードされることはありません。"
+      }
+    }
+  },
+  "sections": {
+    "beforeAfter": {
+      "title": "画像からドキュメントへ：AVIF to PDF",
+      "description": "AVIF画像を印刷、アーカイブ、正式なドキュメント共有に適したプロフェッショナルなPDFドキュメントに変換します。",
+      "original_label": "オリジナル (AVIF)",
+      "compressed_label": "PDFドキュメント",
+      "smaller": "小さい",
+      "loading": "比較を生成中...",
+      "drag_hint": "スライダーをドラッグして比較",
+      "avif_label": "AVIF (ソース)",
+      "result_label": "PDF (ドキュメント)",
+      "size_reduction": "PDF形式に埋め込み",
+      "quality_note": "PDF出力でフル解像度を保持"
+    },
+    "useCases": {
+      "title": "AVIF PDF変換が必要な場面",
+      "items": [
+        {
+          "title": "プロフェッショナル印刷",
+          "description": "印刷業者はPDFを広く受け付けています。AVIF画像をPDFに変換して、Windows、Mac、あらゆるプラットフォームで高品質な印刷出力を実現しましょう。"
+        },
+        {
+          "title": "ドキュメントアーカイブ",
+          "description": "PDFは長期保存のゴールドスタンダードです。AVIF画像をPDF/A互換ドキュメントに変換して、将来の閲覧性を保証するアーカイブ用途に活用しましょう。"
+        },
+        {
+          "title": "クロスプラットフォーム共有",
+          "description": "AVIFファイルを開けない環境は多くあります — 古いWindows 10 PC、一部のiPhone、多くのアプリがAVIF非対応です。PDFとして共有すれば、特別なソフトなしであらゆるデバイスで閲覧できます。"
+        },
+        {
+          "title": "正式なドキュメント作成",
+          "description": "報告書、提案書、公式ドキュメントに画像を含めましょう。PDFはすべてのデバイスとOSで一貫したフォーマットを保証します。"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "AVIF画像 vs PDFドキュメント",
+      "description": "各フォーマットの特性を理解して最適な出力を選びましょう。",
+      "headers": ["特徴", "AVIF (画像)", "PDF (ドキュメント)"],
+      "rows": [
+        ["用途", "Web表示・保存", "印刷・アーカイブ・共有"],
+        ["編集性", "画像エディタ", "PDFエディタ・リーダー"],
+        ["複数ページ", "非対応", "対応"],
+        ["テキスト対応", "非対応", "対応"],
+        ["印刷品質", "ビューアーに依存", "一貫性があり信頼性が高い"],
+        ["ファイルサイズ", "コンパクト (AV1圧縮)", "コンテンツにより異なる"],
+        ["ビューアー対応", "最新ブラウザのみ", "あらゆるPDFリーダー"],
+        ["アーカイブ標準", "非対応", "対応 (PDF/A)"]
+      ]
+    },
+    "specs": {
+      "title": "ツール仕様",
+      "items": [
+        { "label": "最大ファイルサイズ", "value": "1ファイルあたり10MB" },
+        { "label": "一括処理上限", "value": "1セッション30ファイル" },
+        { "label": "出力形式", "value": "PDFドキュメント" },
+        { "label": "入力形式", "value": "AVIF" },
+        { "label": "処理方式", "value": "100%クライアントサイド (ブラウザ)" },
+        { "label": "解像度", "value": "元の解像度を完全に保持" },
+        { "label": "ページサイズ", "value": "画像サイズに自動適合" },
+        { "label": "料金", "value": "無料、登録不要" }
+      ]
+    },
+    "relatedTools": {
+      "title": "関連変換ツール",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF JPG 変換", "description": "AVIF画像をユニバーサルなJPG形式に変換。" },
+        "avif-to-png": { "title": "AVIF PNG 変換", "description": "AVIFをPNGに変換、透過完全サポート。" },
+        "avif-to-webp": { "title": "AVIF WebP 変換", "description": "AVIFをWebPに変換してWeb性能を最適化。" },
+        "png-to-avif": { "title": "PNG AVIF 変換", "description": "PNG画像をより小さいAVIF形式に圧縮。" },
+        "jpg-to-avif": { "title": "JPG AVIF 変換", "description": "JPG写真を次世代AVIF形式に変換。" },
+        "webp-to-avif": { "title": "WebP AVIF 変換", "description": "WebP画像を優れたAVIF圧縮にアップグレード。" },
+        "avif-to-gif": { "title": "AVIF GIF 変換", "description": "AVIF画像をGIFに変換してユニバーサル共有。" },
+        "avif-to-pdf": { "title": "AVIF PDF 変換", "description": "AVIF画像をPDFドキュメントに埋め込み。" },
+        "avif-viewer": { "title": "AVIFビューアー", "description": "AVIFファイルをプレビューしメタデータを確認。" }
+      }
+    }
+  },
+  "faq": {
+    "title": "よくある質問",
+    "q1": "ここでのプライベート画像のPDF変換は安全ですか？",
+    "a1": "はい、安全です。AVIF PDF変換はすべてブラウザ内で完結します。画像が外部サーバーにアップロードされることはなく、ファイルは常にデバイス上に保持されます。",
+    "q2": "PDFは元の画質を保持しますか？",
+    "a2": "はい。AVIF画像はフル解像度でPDFに埋め込まれます。PDFの画質は追加圧縮なしで元のAVIFソースと一致します。",
+    "q3": "WindowsでAVIFファイルを開くには？",
+    "a3": "Windows 11はAVIFをネイティブサポートしています。Windows 10では、Microsoft Storeから無料の「AV1 Video Extension」をインストールしてください。または、AvifkitでAVIFファイルをPDFに変換すれば簡単に閲覧・印刷できます。",
+    "q4": "iPhoneやMacでAVIFを開けますか？",
+    "a4": "macOS VenturaおよびiOS 16以降はAVIFをネイティブサポートしています。旧バージョンのAppleデバイスでは、AvifkitでAVIFをPDFに変換するのが最も簡単な閲覧・共有方法です。",
+    "q5": "PDFを直接印刷できますか？",
+    "a5": "はい。生成されたPDFは印刷対応です。Adobe Acrobat、Macのプレビュー、Chrome、Edgeなど、あらゆるPDFリーダーで開いてフル解像度で直接印刷できます。",
+    "q6": "PDFのページサイズはどうなりますか？",
+    "a6": "PDFのページサイズはAVIF画像のサイズに自動的に一致するため、トリミングや引き伸ばしは発生しません。",
+    "q7": "変換できる最大ファイルサイズは？",
+    "a7": "各ファイル最大10MBまで対応しています。処理はすべてブラウザ内で行われるため、大きなファイルはデバイスの性能に応じて少し時間がかかる場合があります。",
+    "q8": "AVIFファイルを一括でPDFに変換できますか？",
+    "a8": "はい。最大30ファイルのAVIFを一度にアップロードできます。各ファイルは個別のPDFドキュメントに変換されます。個別またはZIPアーカイブとしてダウンロードできます。",
+    "q9": "AVIF形式とは何ですか？",
+    "a9": "AVIF（AV1 Image File Format）はJPGやWebPよりも優れた圧縮率を持つ最新の画像形式です。Chrome、Firefox、Edge、Safari 16.4+でサポートされていますが、すべてのアプリで開けるわけではありません。PDFに変換すればユニバーサルな互換性が得られます。",
+    "q10": "アカウント登録は必要ですか？",
+    "a10": "いいえ。Avifkitは完全無料で、登録不要、透かしなし、使用制限もありません。ページを開くだけですぐに変換を開始できます。",
+    "q11": "複数のAVIF画像を1つのPDFにまとめられますか？",
+    "a11": "現在、各AVIF画像は個別のPDFドキュメントに変換されます。複数の画像を1つの複数ページPDFにまとめるには、個別に変換した後、PDF結合ツールをご利用ください。"
+  }
+}

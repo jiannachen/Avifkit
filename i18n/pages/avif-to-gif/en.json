@@ -1,0 +1,180 @@
+{
+  "title_prefix": "Convert",
+  "title_gradient": "AVIF to GIF",
+  "title_suffix": "Online Free",
+  "subtitle": "Convert AVIF to GIF free in your browser. No file uploads, no registration — your images stay private on your device with instant client-side processing.",
+  "seo": {
+    "title": "AVIF to GIF Converter — Free, Online, No Upload | Avifkit",
+    "description": "Convert AVIF to GIF online free in your browser. No file uploads, no size limits, no watermarks. 100% private client-side processing with instant results.",
+    "h1": "Convert AVIF to GIF Online Free",
+    "h2_how": "How to Convert AVIF to GIF?",
+    "h2_why": "Why Convert AVIF to GIF?"
+  },
+  "schemas": {
+    "howto": {
+      "name": "How to convert AVIF to GIF",
+      "description": "Learn how to convert AVIF images to GIF format using our free online converter."
+    }
+  },
+  "hero": {
+    "privacy_banner": "Privacy Verified: Files never leave your device",
+    "badges": {
+      "privacy": "100% Private",
+      "speed": "Instant Speed",
+      "bulk": "Bulk Support"
+    }
+  },
+  "features": {
+    "title": "Why Convert AVIF to GIF with Avifkit?",
+    "subtitle": "Make your images shareable everywhere — privately and instantly.",
+    "privacy_title": "100% Private Conversion",
+    "privacy_desc": "Your images are converted entirely in your browser. No files are uploaded to any server — your photos stay private on your device throughout the entire process.",
+    "speed_title": "Instant Conversion",
+    "speed_desc": "No upload wait, no server queue. Your browser handles the conversion directly, so you get GIF files in seconds regardless of your internet speed.",
+    "quality_title": "No Restrictions",
+    "quality_desc": "No file size limits, no watermarks, no registration required. Convert as many AVIF images to GIF as you need, completely free."
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "Upload AVIF Files",
+        "description": "Drag and drop your .avif files into the converter, or click to browse. Upload up to 30 AVIF files at once for batch conversion to GIF."
+      },
+      "select": {
+        "title": "Choose GIF Settings",
+        "description": "GIF uses a fixed 256-color palette. The converter automatically optimizes color selection to preserve the most visual detail from your AVIF images. Your files never leave your browser during this process."
+      },
+      "download": {
+        "title": "Download GIF Files",
+        "description": "Download each GIF file individually or save all as a ZIP archive. GIF files are ready to share on social media, messaging apps, or embed in emails."
+      }
+    }
+  },
+  "sections": {
+    "beforeAfter": {
+      "title": "See the Difference: AVIF vs GIF",
+      "description": "AVIF offers superior quality and compression, while GIF provides universal compatibility for sharing. Convert when you need maximum reach.",
+      "original_label": "Original (AVIF)",
+      "compressed_label": "Converted (GIF)",
+      "smaller": "smaller",
+      "loading": "Generating comparison...",
+      "drag_hint": "Drag the slider to compare image quality",
+      "avif_label": "AVIF (Source)",
+      "result_label": "GIF (Converted)",
+      "size_reduction": "Converted for universal sharing",
+      "quality_note": "GIF uses 256-color palette optimization"
+    },
+    "useCases": {
+      "title": "When Do You Need GIF Format?",
+      "items": [
+        {
+          "title": "Social Media Reactions",
+          "description": "Twitter, Reddit, and forums widely support GIF. Convert AVIF images to GIF for reaction images, memes, and visual responses that display everywhere."
+        },
+        {
+          "title": "Messaging Apps",
+          "description": "WhatsApp, Telegram, Slack, and Discord all support GIF natively. Convert your AVIF images to GIF for easy sharing in group chats."
+        },
+        {
+          "title": "Email Signatures",
+          "description": "GIF is the most widely supported image format in email clients. Use GIF for email signatures and inline images that render correctly everywhere."
+        },
+        {
+          "title": "Legacy Platforms",
+          "description": "Older websites, forums, and content management systems may only support GIF. Convert your AVIF images for compatibility with legacy systems."
+        }
+      ]
+    },
+    "compatibility": {
+      "title": "AVIF Support Across Platforms",
+      "description": "AVIF is a newer format, so not all platforms support it yet. Here's where you might need to convert AVIF to GIF.",
+      "items": [
+        {
+          "platform": "Windows 10/11",
+          "detail": "Requires the free 'AV1 Video Extension' from Microsoft Store to view AVIF natively. Without it, convert to GIF for instant viewing."
+        },
+        {
+          "platform": "macOS",
+          "detail": "macOS Ventura (13.0+) and later support AVIF in Preview and Safari. Older Mac versions need conversion to GIF or other formats."
+        },
+        {
+          "platform": "iPhone / iOS",
+          "detail": "iOS 16+ supports AVIF in Safari and Photos. For sharing with users on older iOS versions, convert to GIF for guaranteed compatibility."
+        },
+        {
+          "platform": "Browsers",
+          "detail": "Chrome 85+, Firefox 93+, Edge 121+, and Safari 16.4+ support AVIF. For broader reach including older browsers, GIF works everywhere."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "AVIF vs GIF — What's the Difference?",
+      "description": "Understanding format capabilities helps you choose the right one.",
+      "headers": ["Feature", "AVIF", "GIF"],
+      "rows": [
+        ["Compression", "Superior (AV1-based)", "Basic (LZW)"],
+        ["Colors", "16.7M+ (true color)", "256 colors max"],
+        ["File Size", "Much smaller", "Can be very large"],
+        ["Transparency", "Full alpha channel", "Binary (on/off)"],
+        ["Animation", "Yes (AVIF sequence)", "Yes (classic GIF animation)"],
+        ["Browser Support", "Modern browsers only", "Universal (all browsers)"],
+        ["Quality", "Photographic quality", "Limited by color palette"],
+        ["Best For", "Web delivery", "Sharing & compatibility"]
+      ]
+    },
+    "specs": {
+      "title": "Tool Specifications",
+      "items": [
+        { "label": "Max File Size", "value": "10 MB per file" },
+        { "label": "Batch Limit", "value": "30 files per session" },
+        { "label": "Output Format", "value": "GIF (256 colors)" },
+        { "label": "Input Format", "value": "AVIF" },
+        { "label": "Processing", "value": "100% client-side (browser)" },
+        { "label": "Color Palette", "value": "Optimized 256-color selection" },
+        { "label": "Transparency", "value": "Binary transparency supported" },
+        { "label": "Cost", "value": "Free, no registration required" }
+      ]
+    },
+    "relatedTools": {
+      "title": "Related Conversion Tools",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF to JPG", "description": "Convert AVIF images to universally compatible JPG format." },
+        "avif-to-png": { "title": "AVIF to PNG", "description": "Convert AVIF to PNG with full transparency support." },
+        "avif-to-webp": { "title": "AVIF to WebP", "description": "Convert AVIF to WebP for optimized web performance." },
+        "png-to-avif": { "title": "PNG to AVIF", "description": "Compress PNG images to smaller AVIF format." },
+        "jpg-to-avif": { "title": "JPG to AVIF", "description": "Convert JPG photos to next-gen AVIF format." },
+        "webp-to-avif": { "title": "WebP to AVIF", "description": "Upgrade WebP images to superior AVIF compression." },
+        "avif-to-gif": { "title": "AVIF to GIF", "description": "Convert AVIF images to GIF for universal sharing." },
+        "avif-to-pdf": { "title": "AVIF to PDF", "description": "Embed AVIF images in PDF documents." },
+        "avif-viewer": { "title": "AVIF Viewer", "description": "Preview AVIF files and inspect metadata." }
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "Will converting AVIF to GIF reduce image quality?",
+    "a1": "GIF is limited to 256 colors, so photographic images will lose some color detail. For simple graphics, icons, and illustrations, the quality difference is minimal. For photos where quality matters most, consider JPG or PNG instead.",
+    "q2": "Does GIF support transparency?",
+    "a2": "GIF supports binary transparency — pixels are either fully transparent or fully opaque. It does not support semi-transparency or smooth alpha gradients. For images with smooth transparent edges, convert to PNG or WebP instead.",
+    "q3": "Is it safe to convert private photos here?",
+    "a3": "Yes. Avifkit converts images entirely in your browser using client-side technology. Your files are never uploaded to any server — they stay on your device throughout the entire conversion process.",
+    "q4": "Is AVIF better than GIF?",
+    "a4": "AVIF is far superior in compression, color depth, and quality. However, GIF has universal compatibility — every browser, email client, and messaging app supports it. Convert to GIF when you need guaranteed display across all platforms.",
+    "q5": "How do I open AVIF files on Windows?",
+    "a5": "Windows 10 and 11 can display AVIF after installing the free 'AV1 Video Extension' from the Microsoft Store. Alternatively, convert your AVIF images to GIF here for instant viewing without installing anything.",
+    "q6": "Can I open AVIF on iPhone or Mac?",
+    "a6": "iOS 16+ and macOS Ventura (13.0+) support AVIF natively. For older Apple devices, convert to GIF for universal compatibility across all iOS and macOS versions.",
+    "q7": "Why are GIF files sometimes larger than AVIF?",
+    "a7": "GIF uses basic LZW compression from the 1980s, while AVIF uses modern AV1 compression. For complex images with many colors, GIF files can be significantly larger. GIF works best for simple graphics with few colors.",
+    "q8": "What is the maximum file size I can convert?",
+    "a8": "Each file can be up to 10 MB. Since processing happens entirely in your browser, larger files may take slightly longer depending on your device's performance.",
+    "q9": "Can I batch convert multiple AVIF files to GIF?",
+    "a9": "Yes! Upload up to 30 AVIF files at once. Click Convert All, then download each file individually or as a ZIP archive.",
+    "q10": "What is AVIF format?",
+    "a10": "AVIF (AV1 Image File Format) is a modern image format based on the AV1 video codec. It offers excellent compression and quality but isn't supported everywhere yet. Converting to GIF ensures your images can be viewed on any device or platform.",
+    "q11": "Do I need to create an account?",
+    "a11": "No. Avifkit is completely free with no registration, no watermarks, and no usage limits. Just open the page and start converting.",
+    "q12": "How fast is the AVIF to GIF conversion?",
+    "a12": "Conversion is nearly instant since it happens directly in your browser — there's no upload or download wait. Speed depends on your device, but most images convert in under a second."
+  }
+}

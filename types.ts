@@ -6,7 +6,7 @@ export enum ConversionStatus {
   ERROR = 'error'
 }
 
-export type TargetFormat = 'image/jpeg' | 'image/png' | 'image/webp';
+export type TargetFormat = 'image/jpeg' | 'image/png' | 'image/webp' | 'image/avif' | 'image/gif' | 'application/pdf';
 
 export interface ProcessedFile {
   id: string;

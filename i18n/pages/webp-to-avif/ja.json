@@ -1,0 +1,177 @@
+{
+  "locale": "ja",
+  "slug": "webp-to-avif",
+  "canonical": "https://avifkit.com/ja/webp-to-avif",
+  "hreflang": {
+    "x-default": "https://avifkit.com/webp-to-avif",
+    "en": "https://avifkit.com/webp-to-avif",
+    "ja": "https://avifkit.com/ja/webp-to-avif",
+    "es": "https://avifkit.com/es/webp-to-avif",
+    "fr": "https://avifkit.com/fr/webp-to-avif"
+  },
+  "title_prefix": "無料で",
+  "title_gradient": "WebP を AVIF に変換",
+  "title_suffix": "オンライン",
+  "subtitle": "無料のWebP→AVIF変換ツール。次世代圧縮でさらに小さいファイルサイズへ — ファイルのアップロード不要、登録不要。",
+  "seo": {
+    "title": "WebP を AVIF に変換 — 無料・オンライン・アップロード不要 | Avifkit",
+    "description": "WebPをAVIFにブラウザで無料変換。ファイルのアップロードなし、サイズ制限なし、透かしなし。クライアントサイド処理で10〜20%の軽量化、完全プライベート。",
+    "h1": "WebP を AVIF にオンライン無料変換",
+    "h2_how": "WebP を AVIF に変換する方法",
+    "h2_why": "なぜ WebP を AVIF に変換するのか？"
+  },
+  "schemas": {
+    "webApplication": {
+      "@type": "WebApplication",
+      "name": "WebP から AVIF への変換ツール",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web Browser",
+      "description": "WebPをAVIFにオンラインで無料変換。クライアントサイド処理 — ファイルはサーバーに一切送信されません。",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    "howto": {
+      "name": "WebP を AVIF にオンライン変換する方法",
+      "description": "WebP画像をAVIF形式に、ブラウザ上で即時変換 — 無料・プライベート・アップロード不要。"
+    }
+  },
+  "hero": {
+    "privacy_banner": "プライバシー保証：ファイルはブラウザ内でのみ処理され、サーバーに送信されません",
+    "badges": {
+      "privacy": "完全プライベート",
+      "speed": "即時変換",
+      "bulk": "一括変換対応"
+    }
+  },
+  "features": {
+    "title": "なぜ WebP を AVIF に変換するのか？",
+    "subtitle": "今日利用可能な最先端の画像フォーマットへアップグレード。",
+    "privacy_title": "ファイルはブラウザの外に出ません",
+    "privacy_desc": "WebP画像はブラウザ内でのクライアントサイド処理によって完全にAVIFに変換されます。ファイルはいかなるサーバーにも送信されず、画像はデバイス上でプライベートに保たれます。",
+    "speed_title": "アップロード不要・即時変換",
+    "speed_desc": "アップロード待ちも、サーバーの順番待ちもなし。変換はブラウザ内ですぐに始まり、大量のファイルでも数秒で処理できます。",
+    "quality_title": "次世代圧縮技術",
+    "quality_desc": "AVIFはAV1圧縮技術を使用し、同等の画質でWebPより10〜20%小さいファイルを実現します。HDRおよびワイドカラーガモットにも対応しています。"
+  },
+  "howto": {
+    "steps": {
+      "upload": {
+        "title": "WebPファイルをアップロード",
+        "description": ".webpファイルを変換ツールにドラッグ＆ドロップするか、クリックして選択してください。一括変換のために最大30ファイルを同時にアップロードできます。"
+      },
+      "select": {
+        "title": "AVIF品質を設定",
+        "description": "AVIF出力の品質スライダーを調整します。60〜75%の設定で、WebPと比較して大幅なサイズ削減と優れた画質が得られます。"
+      },
+      "download": {
+        "title": "AVIFファイルをダウンロード",
+        "description": "AVIFファイルを個別にダウンロードするか、ZIPアーカイブとしてまとめて保存できます。アカウント不要で、すぐにご利用いただけます。"
+      }
+    }
+  },
+  "platform_compatibility": {
+    "title": "AVIFのブラウザ・プラットフォーム対応状況",
+    "body": "AVIFはChrome 85以降、Firefox 93以降、Edge 121以降、Safari 16.4以降でサポートされており、世界のユーザーの約93%をカバーしています。Windows 10/11では、Microsoft StoreからAV1ビデオ拡張機能をインストールすることで、フォトアプリでAVIFをネイティブに開けます。Macでは、macOS Ventura（13）以降でプレビューとクイックルックがAVIFをネイティルサポートしています。iPhoneとiPadでは、iOS 16以降のSafariとフォトアプリでAVIFに対応しています。古いブラウザのユーザーには、HTMLの'picture'要素を使ってAVIFとWebPまたはJPGのフォールバックを両方提供することをお勧めします。"
+  },
+  "sections": {
+    "beforeAfter": {
+      "title": "WebP vs AVIF：違いを比較",
+      "description": "AVIFはさらに進んだ圧縮を実現。ファイルサイズと画質を並べて比較できます。",
+      "original_label": "元の画像（WebP）",
+      "compressed_label": "変換後（AVIF）",
+      "smaller": "小さくなった",
+      "loading": "比較を生成中...",
+      "drag_hint": "スライダーをドラッグして比較",
+      "avif_label": "WebP（元データ）",
+      "result_label": "AVIF（変換後）",
+      "size_reduction": "AVIFでさらに圧縮",
+      "quality_note": "出力品質は10%〜100%で調整可能"
+    },
+    "useCases": {
+      "title": "AVIFへの切り替えが必要なタイミング",
+      "items": [
+        {
+          "title": "画像パイプラインをアップグレード",
+          "description": "AVIFはWebPの次のステップ — AV1技術による10〜20%の追加圧縮。WebPライブラリを最新の標準に移行しましょう。"
+        },
+        {
+          "title": "帯域コストとストレージを削減",
+          "description": "すでにWebPを使用していますか？AVIFはさらに節約できます。100KBのWebP画像は、同等の画質でAVIFでは80〜90KBになる場合があります。"
+        },
+        {
+          "title": "HDRとワイドカラーガモット",
+          "description": "WebPは8ビット色深度に限定されています。AVIFは10ビット・12ビットHDRコンテンツをサポートし、HDR写真や最新ディスプレイに最適です。"
+        },
+        {
+          "title": "将来に向けた資産の保護",
+          "description": "ブラウザでのAVIF採用は急速に拡大しています。WebP画像を今すぐAVIFに変換することで、最も将来性の高いフォーマットで資産を管理できます。"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "WebP vs AVIF — 詳細比較",
+      "description": "AVIFはAV1技術でWebPの強みをさらに発展させます。",
+      "headers": ["機能", "WebP", "AVIF"],
+      "rows": [
+        ["圧縮アルゴリズム", "VP8 / VP9", "AV1"],
+        ["JPGとのファイルサイズ比較", "約25〜35%小さい", "約50%小さい"],
+        ["WebPとのファイルサイズ比較", "基準", "10〜20%小さい"],
+        ["画質", "良好", "同サイズでより高品質"],
+        ["透明度（アルファ）", "対応", "対応"],
+        ["HDRサポート", "非対応（8ビットのみ）", "対応（10ビット、12ビット）"],
+        ["アニメーション", "対応（アニメーションWebP）", "対応（AVIFシーケンス）"],
+        ["ブラウザサポート", "Chrome 32以降、Safari 14以降", "Chrome 85以降、Safari 16.4以降"]
+      ]
+    },
+    "specs": {
+      "title": "ツールの仕様",
+      "items": [
+        { "label": "最大ファイルサイズ", "value": "1ファイルあたり10MB" },
+        { "label": "一括処理の上限", "value": "1セッションあたり30ファイル" },
+        { "label": "出力フォーマット", "value": "AVIF（AV1 Image File Format）" },
+        { "label": "入力フォーマット", "value": "WebP" },
+        { "label": "処理方式", "value": "100%クライアントサイド（ブラウザのみ）" },
+        { "label": "品質の範囲", "value": "10%〜100%で調整可能" },
+        { "label": "期待される削減効果", "value": "WebPより10〜20%小さい" },
+        { "label": "料金", "value": "無料 — 登録不要" }
+      ]
+    },
+    "relatedTools": {
+      "title": "関連する変換ツール",
+      "items": {
+        "avif-to-jpg": { "title": "AVIF → JPG", "description": "AVIFを汎用性の高いJPG形式に変換。" },
+        "avif-to-png": { "title": "AVIF → PNG", "description": "透明度を完全サポートしてAVIFをPNGに変換。" },
+        "avif-to-webp": { "title": "AVIF → WebP", "description": "より広い互換性のためにAVIFをWebPに変換。" },
+        "png-to-avif": { "title": "PNG → AVIF", "description": "PNG画像をより小さいAVIF形式に圧縮。" },
+        "jpg-to-avif": { "title": "JPG → AVIF", "description": "JPG写真を次世代のAVIF形式に変換。" },
+        "avif-to-gif": { "title": "AVIF → GIF", "description": "AVIF画像をGIF形式に変換。" },
+        "avif-to-pdf": { "title": "AVIF → PDF", "description": "AVIF画像をPDFドキュメントに埋め込み。" },
+        "avif-viewer": { "title": "AVIFビューアー", "description": "AVIFファイルのプレビューとメタデータ確認。" }
+      }
+    }
+  },
+  "faq": {
+    "title": "よくある質問",
+    "q1": "AVIFは本当にWebPより優れていますか？",
+    "a1": "はい。AVIFは、より高度なAV1圧縮アルゴリズムにより、同等の画質でWebPより一般的に10〜20%小さいファイルサイズを実現します。また、AVIFはWebPが対応していないHDR（10ビット、12ビット）カラーデプスもサポートしています。",
+    "q2": "WebPをAVIFに変換すると透明度は保持されますか？",
+    "a2": "はい。AVIFはアルファチャンネルに完全対応しています。WebP画像の透明な部分は、変換後のAVIF出力でも完全に保持されます。",
+    "q3": "プライベートな画像をここで変換しても安全ですか？",
+    "a3": "まったく安全です。Avifkitはクライアントサイド処理を使用しており、画像はブラウザのメモリ内でのみ変換され、いかなるサーバーにもアップロードされません。ファイルはデバイスの外に出ることはありません。",
+    "q4": "AVIFはすべてのブラウザで動作しますか？",
+    "a4": "AVIFはChrome 85以降、Firefox 93以降、Edge 121以降、Safari 16.4以降でサポートされており、世界のユーザーの約93%をカバーしています。古いブラウザのユーザーには、HTMLの'picture'要素を使ってAVIFとWebPまたはJPGのフォールバックを組み合わせてください。",
+    "q5": "AVIFはWebPと比べてどのくらい小さくなりますか？",
+    "a5": "同等の画質で、AVIFファイルは通常WebPより10〜20%小さくなります。特に写真やディテールの多い複雑な画像で節約効果が顕著です。",
+    "q6": "ファイルサイズの制限はありますか？",
+    "a6": "1ファイルあたり最大10MBまで対応しています。すべての処理はブラウザ内で行われるため、大きなファイルはデバイスの性能によって多少時間がかかる場合がありますが、サーバー側の制限はありません。",
+    "q7": "複数のWebPファイルをまとめて変換できますか？",
+    "a7": "はい。最大30ファイルを一度にアップロードして一括変換できます。変換後は、ファイルを個別にダウンロードするか、ZIPアーカイブとしてまとめてダウンロードできます。",
+    "q8": "ウェブサイトでWebPからAVIFに切り替えるべきですか？",
+    "a8": "ターゲットユーザーが主にモダンブラウザを使用している場合は、はい。AVIFをプライマリフォーマットとして使用し、'picture'要素でWebPやJPGのフォールバックを提供してください。画質の違いなく、帯域幅をさらに10〜20%削減できます。",
+    "q9": "アカウントの作成やソフトウェアのインストールは必要ですか？",
+    "a9": "いいえ。Avifkitは完全にブラウザ上で動作します — 登録不要、インストール不要、透かしなし、使用制限なし。ページを開いてすぐに変換を始められます。"
+  }
+}

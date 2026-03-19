@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     'ja': 'ja_JP',
     'fr': 'fr_FR'
   };
+  const ogImage = 'https://img.avifkit.com/blog/what-is-avif-guide.webp';
 
   return {
     title: t('title'),
@@ -25,9 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t('description'),
       type: 'website',
       url: privacyUrl,
-      siteName: 'Avifkit',
+      siteName: 'AvifKit',
       locale: localeMap[locale] || 'en_US',
-      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: t('title') }],
     },
 
     // Twitter Card tags
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['/og-image.png'],
+      images: [ogImage],
     },
 
     // Robots directives
@@ -54,10 +55,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: privacyUrl,
       languages: {
-        'en': '/privacy-policy',
-        'es': '/es/privacy-policy',
-        'ja': '/ja/privacy-policy',
-        'fr': '/fr/privacy-policy',
+        'en': 'https://avifkit.com/privacy-policy',
+        'es': 'https://avifkit.com/es/privacy-policy',
+        'ja': 'https://avifkit.com/ja/privacy-policy',
+        'fr': 'https://avifkit.com/fr/privacy-policy',
+        'x-default': 'https://avifkit.com/privacy-policy',
       },
     },
   };

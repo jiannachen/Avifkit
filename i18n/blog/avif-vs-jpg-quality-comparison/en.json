@@ -1,17 +1,17 @@
 {
   "slug": "avif-vs-jpg-quality-comparison",
   "title": "AVIF vs JPG: Which One Actually Looks Better at the Same File Size?",
-  "description": "Real-world quality comparison between AVIF and JPG at identical file sizes. See the compression difference yourself with side-by-side examples.",
-  "excerpt": "I compressed the same sunset photo to exactly 100KB in both formats. Opened them side by side. The quality difference caught me off guard.",
+  "description": "A hands-on quality comparison between AVIF and JPG at identical file sizes. Side-by-side examples included — judge for yourself.",
+  "excerpt": "I compressed the same sunset photo to exactly 100KB in both formats. Opened them side by side. The difference caught me off guard.",
   "date": "2025-11-20",
   "readingTime": 5,
   "category": "Comparison",
   "keywords": "avif vs jpg quality, image format comparison, file size comparison, compression quality",
-  "image": "https://img.avifkit.com/blog/blog04.webp",
+  "image": "https://img.avifkit.com/blog/avif-vs-jpg-quality.webp",
   "content": [
     {
       "type": "lead",
-      "text": "I took the same sunset photo and compressed it to exactly 100KB in both AVIF and JPG. Opened them side by side on a 4K monitor. The quality difference was more noticeable than I expected."
+      "text": "Same sunset photo. Same 100KB target. Two formats. I pulled both up on a 4K monitor and looked. The gap was bigger than I thought it'd be."
     },
     {
       "type": "h2",
@@ -19,28 +19,28 @@
     },
     {
       "type": "p",
-      "text": "Forget the technical specs for a minute. I wanted to see the real difference, not just read benchmark charts. So I ran a simple test:"
+      "text": "I didn't want to read another benchmark chart. I wanted to actually see it. So I kept it simple:"
     },
     {
       "type": "ul",
       "items": [
-        "Source image: 24MP landscape photo (6000×4000 pixels)",
-        "Target file size: Exactly 100KB for both formats",
-        "Adjusted quality settings until both hit 100KB",
-        "Viewed at 100% zoom on a calibrated display"
+        "Source: 24MP landscape photo, 6000×4000px",
+        "Target: exactly 100KB in both formats",
+        "Quality dialed until each hit 100KB",
+        "Compared at 100% zoom on a calibrated display"
       ]
     },
     {
       "type": "h2",
-      "text": "What I Found: AVIF Wins, But..."
+      "text": "What I Found: AVIF Wins — With One Caveat"
     },
     {
       "type": "p",
-      "text": "At 100KB, the AVIF version retained way more detail. The JPG showed noticeable compression artifacts - blocky patterns in the sky, color banding in gradients, and that classic \"mosquito noise\" around sharp edges."
+      "text": "At 100KB, AVIF held onto a lot more detail. The JPG had that familiar chunky sky, banding in the gradients, mosquito noise around sharp edges. The usual."
     },
     {
       "type": "p",
-      "text": "AVIF looked smooth. Almost like the original. The compression was there if you pixel-peeped, but it degraded gracefully - no weird blocks or banding."
+      "text": "AVIF looked clean. The compression was still there if you zoomed in hard enough, but it fell apart gently — no blocks, no banding."
     },
     {
       "type": "h3",
@@ -48,7 +48,7 @@
     },
     {
       "type": "p",
-      "text": "When I tried to open the AVIF file on my older laptop (Windows 10, no extensions installed), it failed. Windows Photos just showed an error. The JPG opened instantly everywhere - old phone, work computer, even my parents' ancient desktop."
+      "text": "Tried to open the AVIF on my older laptop — Windows 10, no codec extensions installed. Nothing. Windows Photos threw an error. The JPG? Opened everywhere without a second thought. Old phone, work PC, my parents' ancient desktop."
     },
     {
       "type": "h2",
@@ -56,15 +56,15 @@
     },
     {
       "type": "p",
-      "text": "Use AVIF if:"
+      "text": "Go with AVIF if:"
     },
     {
       "type": "ul",
       "items": [
-        "You're serving images on a modern website (can detect browser support and serve fallbacks)",
-        "You control the viewing environment (internal tools, apps)",
-        "File size matters more than compatibility (bandwidth-limited users)",
-        "You're storing images for future use (when AVIF support becomes universal)"
+        "You're serving images on a modern site (detect support, serve fallbacks)",
+        "You control the viewing environment — internal tools, apps",
+        "Bandwidth matters more than compatibility",
+        "You're archiving images for the future (AVIF support will only grow)"
       ]
     },
     {
@@ -78,24 +78,24 @@
     {
       "type": "ul",
       "items": [
-        "You're sharing photos with non-technical people",
-        "You need to open files on multiple devices without hassle",
-        "You're working with older software (Photoshop CS6, legacy apps)",
-        "You're emailing images (email clients have spotty AVIF support)",
-        "You just want something that works everywhere, every time"
+        "You're sharing with non-technical people",
+        "Files need to open on multiple devices without any setup",
+        "You're working with older software like Photoshop CS6",
+        "You're emailing images — AVIF support in email clients is still patchy",
+        "You just want something that works, every time, no surprises"
       ]
     },
     {
       "type": "h2",
-      "text": "The Practical Solution: Convert When Needed"
+      "text": "The Practical Fix: Convert When You Need To"
     },
     {
       "type": "p",
-      "text": "Here's what I actually do: if someone sends me an AVIF file and I can't open it, I just convert it to JPG. Takes 2 seconds with {link:/avif-to-jpg|AvifKit's converter}. No installation, no account signup, works in the browser."
+      "text": "When someone sends me an AVIF I can't open, I just convert it. Two seconds with {link:/avif-to-jpg|AvifKit}. No install, no account, runs in the browser."
     },
     {
       "type": "p",
-      "text": "Yeah, I lose some quality in the conversion. But honestly? For viewing photos, sharing on social media, or printing at normal sizes, the difference is invisible."
+      "text": "Sure, some quality gets left behind. But for casual viewing, social media, or printing at normal sizes? You won't notice."
     },
     {
       "type": "h2",
@@ -106,19 +106,19 @@
       "items": [
         {
           "question": "Is AVIF always smaller than JPG?",
-          "answer": "At the same visual quality, yes - AVIF is typically 30-50% smaller. But if you crank up JPG compression, you can match file sizes. The quality just won't be as good."
+          "answer": "At the same visual quality, yes — typically 30–50% smaller. Crank up JPG compression and you can match file sizes, but the image quality won't hold up."
         },
         {
-          "question": "Why doesn't everyone use AVIF then?",
-          "answer": "Compatibility. AVIF only works in modern browsers and apps. JPG works everywhere - old phones, email clients, legacy software, printing services. Universal support beats better compression for most use cases."
+          "question": "Why doesn't everyone just use AVIF then?",
+          "answer": "Compatibility. AVIF only works in modern browsers and apps. JPG works everywhere — old phones, email clients, legacy software, your local print shop. For most people, that still matters more than better compression."
         },
         {
-          "question": "Will converting AVIF to JPG make the file smaller?",
-          "answer": "Usually, no. AVIF is already more compressed. Converting to JPG will likely result in a larger file, unless you apply heavy JPG compression (which degrades quality further)."
+          "question": "Will converting AVIF to JPG shrink the file?",
+          "answer": "Usually the opposite — AVIF is already leaner. Converting to JPG tends to produce a larger file, unless you apply heavy compression (which hurts quality)."
         },
         {
           "question": "Can I convert JPG to AVIF to save space?",
-          "answer": "You can, but it won't help much. JPG is already lossy compressed. Converting lossy to lossy just adds more degradation. AVIF works best when you're compressing from a lossless source (PNG, TIFF, RAW)."
+          "answer": "You can, but it's mostly pointless. JPG is already lossy. Converting lossy-to-lossy just stacks up more degradation. AVIF really shines when you start from a lossless source — PNG, TIFF, RAW."
         }
       ]
     },
@@ -128,12 +128,12 @@
     },
     {
       "type": "p",
-      "text": "AVIF has better compression, no question. But JPG has better compatibility, also no question. For now, convert AVIF to JPG when you need things to just work. Use AVIF when you control the environment and need smaller files."
+      "text": "AVIF compresses better. JPG opens everywhere. For now: convert AVIF to JPG when it needs to just work. Use AVIF when you own the environment and file size is what you're optimizing for."
     },
     {
       "type": "cta",
-      "title": "Need to open an AVIF file right now?",
-      "subtitle": "Convert to JPG in seconds. Works on any device, any app, anywhere.",
+      "title": "Got an AVIF that won't open?",
+      "subtitle": "Convert to JPG in seconds. Works on any device, in any app.",
       "button": {
         "text": "Convert AVIF to JPG",
         "link": "/avif-to-jpg"

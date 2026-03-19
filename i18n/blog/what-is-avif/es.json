@@ -1,0 +1,133 @@
+{
+  "slug": "what-is-avif",
+  "title": "¿Qué es AVIF? Guía completa del formato de imagen de próxima generación",
+  "description": "Aprende qué es AVIF, cómo funciona y por qué genera archivos un 50% más pequeños que JPG. Guía completa del formato AV1 Image File Format: ventajas, desventajas y compatibilidad.",
+  "excerpt": "AVIF genera archivos un 50% más pequeños que JPG con la misma calidad. Descubre qué es, cómo funciona y si deberías usarlo.",
+  "date": "2025-12-15",
+  "readingTime": 8,
+  "category": "Guía",
+  "keywords": "qué es avif, qué es un archivo avif, formato avif, formato de imagen avif, imagen av1",
+  "image": "https://img.avifkit.com/blog/what-is-avif-guide.webp",
+  "content": [
+    {
+      "type": "lead",
+      "text": "AVIF (AV1 Image File Format) es un formato de imagen moderno que genera archivos mucho más pequeños que JPG y PNG sin sacrificar calidad visual. Desarrollado por la Alliance for Open Media, se está convirtiendo rápidamente en el formato de referencia para la optimización del rendimiento web."
+    },
+    {
+      "type": "h2",
+      "text": "¿Qué significa AVIF?"
+    },
+    {
+      "type": "p",
+      "text": "AVIF son las siglas de AV1 Image File Format. Utiliza la tecnología de compresión del códec de vídeo AV1 para codificar imágenes estáticas. AV1 fue desarrollado por la Alliance for Open Media — un consorcio que incluye Google, Apple, Microsoft, Mozilla, Netflix y Amazon — y el formato se lanzó por primera vez en febrero de 2019."
+    },
+    {
+      "type": "p",
+      "text": "La idea central es sencilla: reutilizar la compresión de vídeo para imágenes fijas. Los códecs de vídeo son muy eficientes eliminando datos visuales redundantes, y AVIF aplica esa misma lógica para obtener ratios de compresión que JPG e incluso WebP no pueden igualar."
+    },
+    {
+      "type": "h2",
+      "text": "¿Cómo funciona la compresión AVIF?"
+    },
+    {
+      "type": "p",
+      "text": "AVIF usa la codificación intra-frame de AV1 — cada imagen se trata como un único fotograma de vídeo. Internamente, ocurren cuatro cosas en secuencia:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Particionado en bloques: La imagen se divide en bloques de tamaño variable (de 4×4 a 128×128 px), lo que permite al codificador asignar más detalle donde hace falta.",
+        "Predicción: El codificador predice los valores de los píxeles a partir de los bloques vecinos y solo almacena la diferencia entre la predicción y la realidad.",
+        "Transformada y cuantización: Esa diferencia se convierte al dominio de la frecuencia y se cuantiza — aquí es donde ocurre realmente la compresión con pérdida.",
+        "Codificación entrópica: La codificación aritmética comprime los datos cuantizados todo lo posible."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "El resultado: archivos AVIF un 30-50% más pequeños que JPG y un 20-30% más pequeños que WebP a calidad equivalente. En la práctica, eso se traduce en páginas más rápidas y menor consumo de ancho de banda, sin degradación visible."
+    },
+    {
+      "type": "h2",
+      "text": "Qué soporta AVIF"
+    },
+    {
+      "type": "p",
+      "text": "Más allá de la compresión, AVIF cubre terrenos que los formatos más antiguos no alcanzan:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Compresión con y sin pérdida: elige entre máxima compresión o fidelidad perfecta.",
+        "Transparencia con canal alfa: soporte completo, a diferencia de JPG.",
+        "HDR: profundidad de color de 10 y 12 bits, con funciones de transferencia PQ y HLG.",
+        "Gama de color amplia: Display P3 y Rec. 2020 junto al sRGB estándar.",
+        "Animación: secuencias multi-fotograma, como WebP animado o GIF.",
+        "Síntesis de grano de película: almacena el grano por separado de la imagen, lo que codifica fotos con ruido de forma mucho más eficiente."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Pros y contras"
+    },
+    {
+      "type": "h3",
+      "text": "Lo que AVIF hace bien"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Compresión líder: un 30-50% más ligero que JPG, un 20-30% más ligero que WebP.",
+        "HDR y gama amplia para fotografía profesional y pantallas modernas.",
+        "Sin royalties — sin costes de licencia, a diferencia de HEIF/HEIC.",
+        "Soporte completo de transparencia."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Donde AVIF se queda corto"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Codificación lenta: notablemente más lenta que JPG o WebP, sobre todo con ajustes de alta calidad.",
+        "Huecos de software: muchos editores de imagen, CMS y herramientas de diseño aún no lo soportan.",
+        "Límite de tamaño de tile: la especificación AV1 limita los tiles individuales a 8192×4352 px (el tiling lo puede sortear, pero añade complejidad).",
+        "Compatibilidad: los navegadores y dispositivos más antiguos necesitan imágenes de respaldo."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Compatibilidad con navegadores"
+    },
+    {
+      "type": "p",
+      "text": "En 2026, todos los navegadores principales soportan AVIF: Chrome 85+ (agosto 2020), Firefox 93+ (octubre 2021), Edge 121+ (enero 2024), Safari 16.4+ (marzo 2023) y Opera 71+. Eso suma aproximadamente el 95% del uso global de navegadores. Para el 5% restante, el elemento HTML 'picture' hace que los fallbacks sean triviales."
+    },
+    {
+      "type": "h2",
+      "text": "Cuándo usar AVIF"
+    },
+    {
+      "type": "p",
+      "text": "Si desarrollas para la web y el peso de los archivos importa, AVIF debería ser tu primera opción para contenido fotográfico. Para logotipos y gráficos con bordes geométricos nítidos, SVG o PNG siguen siendo la mejor elección."
+    },
+    {
+      "type": "p",
+      "text": "Fuera del navegador — adjuntos de correo, documentos, impresión — convierte a JPG o PNG antes de compartir. El soporte de AVIF en aplicaciones nativas y software de escritorio sigue siendo irregular."
+    },
+    {
+      "type": "tip",
+      "title": "Consejo rápido:",
+      "text": "¿Necesitas convertir un archivo AVIF a algo más compatible? Nuestro conversor gratuito lo gestiona todo en tu navegador — tus archivos nunca salen de tu dispositivo."
+    },
+    {
+      "type": "cta",
+      "title": "¿Necesitas convertir archivos AVIF?",
+      "subtitle": "Convierte AVIF a JPG, PNG o WebP al instante en tu navegador. Gratis, privado, sin registro.",
+      "button": {
+        "text": "Convertir AVIF ahora",
+        "link": "/avif-to-jpg"
+      }
+    }
+  ]
+}

@@ -8,12 +8,6 @@ export type Locale = (typeof i18n)['locales'][number];
 // Route configurations for homepage and other pages
 // English (default locale) has no prefix, other languages have /{lang} prefix
 export const routes = {
-  home: {
-    en: '/',
-    ja: '/ja',
-    es: '/es',
-    fr: '/fr',
-  },
   'avif-to-jpg': {
     en: '/avif-to-jpg',
     ja: '/ja/avif-to-jpg',
@@ -31,6 +25,42 @@ export const routes = {
     ja: '/ja/avif-to-webp',
     es: '/es/avif-to-webp',
     fr: '/fr/avif-to-webp',
+  },
+  'png-to-avif': {
+    en: '/png-to-avif',
+    ja: '/ja/png-to-avif',
+    es: '/es/png-to-avif',
+    fr: '/fr/png-to-avif',
+  },
+  'jpg-to-avif': {
+    en: '/jpg-to-avif',
+    ja: '/ja/jpg-to-avif',
+    es: '/es/jpg-to-avif',
+    fr: '/fr/jpg-to-avif',
+  },
+  'webp-to-avif': {
+    en: '/webp-to-avif',
+    ja: '/ja/webp-to-avif',
+    es: '/es/webp-to-avif',
+    fr: '/fr/webp-to-avif',
+  },
+  'avif-to-gif': {
+    en: '/avif-to-gif',
+    ja: '/ja/avif-to-gif',
+    es: '/es/avif-to-gif',
+    fr: '/fr/avif-to-gif',
+  },
+  'avif-to-pdf': {
+    en: '/avif-to-pdf',
+    ja: '/ja/avif-to-pdf',
+    es: '/es/avif-to-pdf',
+    fr: '/fr/avif-to-pdf',
+  },
+  'avif-viewer': {
+    en: '/avif-viewer',
+    ja: '/ja/avif-viewer',
+    es: '/es/avif-viewer',
+    fr: '/fr/avif-viewer',
   },
   blog: {
     en: '/blog',
