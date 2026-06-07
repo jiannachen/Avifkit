@@ -8,8 +8,11 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: 'en',
 
-  // The default locale does not use a prefix (e.g. `/` instead of `/en`)
-  localePrefix: 'as-needed'
+  // Keep middleware rewrites stable; public default-locale URLs are normalized in middleware.
+  localePrefix: 'always',
+
+  // HTML metadata and sitemap own hreflang output so HTTP headers don't drift from canonicals.
+  alternateLinks: false,
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

@@ -12,8 +12,22 @@ interface ContentBlock {
   rows?: string[][];
 }
 
+function localizePath(path: string, locale: string) {
+  if (
+    locale === 'en' ||
+    path.startsWith('http://') ||
+    path.startsWith('https://') ||
+    path.startsWith('#') ||
+    /^\/(en|ja|es|fr)(\/|$)/.test(path)
+  ) {
+    return path;
+  }
+
+  return path.startsWith('/') ? `/${locale}${path}` : path;
+}
+
 // Parse link syntax {link:/path|Text} and convert to Link component
-function parseTextWithLinks(text: string) {
+function parseTextWithLinks(text: string, locale: string) {
   const parts = text.split(/(\{link:[^}]+\})/g);
 
   return parts.map((part, index) => {
@@ -23,7 +37,7 @@ function parseTextWithLinks(text: string) {
       return (
         <Link
           key={index}
-          href={path}
+          href={localizePath(path, locale)}
           className="text-blue-600 hover:underline font-semibold"
         >
           {linkText}
@@ -34,7 +48,7 @@ function parseTextWithLinks(text: string) {
   });
 }
 
-export function BlogContent({ content }: { content: ContentBlock[] }) {
+export function BlogContent({ content, locale }: { content: ContentBlock[]; locale: string }) {
   return (
     <article className="prose prose-lg max-w-none">
       {content.map((block, index) => {
@@ -63,7 +77,7 @@ export function BlogContent({ content }: { content: ContentBlock[] }) {
           case 'p':
             return (
               <p key={index} className="text-slate-700 leading-relaxed my-4">
-                {parseTextWithLinks(block.text || '')}
+                {parseTextWithLinks(block.text || '', locale)}
               </p>
             );
 
@@ -71,7 +85,7 @@ export function BlogContent({ content }: { content: ContentBlock[] }) {
             return (
               <ul key={index} className="list-disc list-inside space-y-2 my-4 text-slate-700">
                 {(block.items as string[])?.map((item, i) => (
-                  <li key={i}>{parseTextWithLinks(item)}</li>
+                  <li key={i}>{parseTextWithLinks(item, locale)}</li>
                 ))}
               </ul>
             );
@@ -80,7 +94,7 @@ export function BlogContent({ content }: { content: ContentBlock[] }) {
             return (
               <ol key={index} className="list-decimal list-inside space-y-2 my-4 text-slate-700">
                 {(block.items as string[])?.map((item, i) => (
-                  <li key={i}>{parseTextWithLinks(item)}</li>
+                  <li key={i}>{parseTextWithLinks(item, locale)}</li>
                 ))}
               </ol>
             );
@@ -99,7 +113,7 @@ export function BlogContent({ content }: { content: ContentBlock[] }) {
                 {(block.items as Array<{question: string; answer: string}>)?.map((faq, i) => (
                   <div key={i} className="border-l-2 border-slate-200 pl-6">
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">{faq.question}</h3>
-                    <p className="text-slate-700">{parseTextWithLinks(faq.answer)}</p>
+                    <p className="text-slate-700">{parseTextWithLinks(faq.answer, locale)}</p>
                   </div>
                 ))}
               </div>
@@ -126,7 +140,7 @@ export function BlogContent({ content }: { content: ContentBlock[] }) {
                         <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
                           {row.map((cell, cellIdx) => (
                             <td key={cellIdx} className={`px-4 py-3 text-sm border-t border-slate-100 ${cellIdx === 0 ? 'font-medium text-slate-900' : 'text-slate-600'}`}>
-                              {parseTextWithLinks(cell)}
+                              {parseTextWithLinks(cell, locale)}
                             </td>
                           ))}
                         </tr>
@@ -143,7 +157,7 @@ export function BlogContent({ content }: { content: ContentBlock[] }) {
                 <h3 className="text-2xl font-bold mb-3 text-white">{block.title}</h3>
                 <p className="mb-6 text-blue-100">{block.subtitle}</p>
                 <Link
-                  href={block.button?.link || '/'}
+                  href={block.button?.link ? localizePath(block.button.link, locale) : '/'}
                   className="inline-block px-6 py-3 bg-white text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-colors"
                 >
                   {block.button?.text}

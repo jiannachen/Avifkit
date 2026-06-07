@@ -107,9 +107,15 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams({
+  params,
+}: {
+  params: { locale: string };
+}) {
   const slugs = getAllBlogSlugs();
+
   return slugs.map((slug) => ({
+    locale: params.locale,
     slug,
   }));
 }
@@ -142,7 +148,7 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
       <div className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Link
-            href={`/${locale}/blog`}
+            href={`${localePath}/blog`}
             className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -181,7 +187,7 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <BlogContent content={article.content} />
+        <BlogContent content={article.content} locale={locale} />
       </div>
     </div>
   );

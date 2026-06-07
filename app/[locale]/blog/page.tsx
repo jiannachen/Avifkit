@@ -126,6 +126,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const blogPosts = loadBlogPosts(locale);
   const t = await getTranslations({ locale, namespace: 'blog' });
+  const localePath = locale === 'en' ? '' : `/${locale}`;
 
   return (
     <div className="min-h-screen bg-white">
@@ -198,7 +199,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
                 {/* Title */}
                 <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  <Link href={`/${locale}/blog/${post.slug}`} className="hover:underline">
+                  <Link href={`${localePath}/blog/${post.slug}`} className="hover:underline">
                     {post.title}
                   </Link>
                 </h2>
@@ -210,7 +211,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
                 {/* Read More Link */}
                 <Link
-                  href={`/${locale}/blog/${post.slug}`}
+                  href={`${localePath}/blog/${post.slug}`}
                   className="inline-flex items-center gap-2 text-blue-600 font-medium text-sm group-hover:gap-3 transition-all"
                 >
                   {t('list.read_more')}
@@ -240,14 +241,14 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${locale}/avif-to-jpg`}
+              href={`${localePath}/avif-to-jpg`}
               className="px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center gap-2"
             >
               {t('cta.button_jpg')}
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
-              href={`/${locale}/avif-to-png`}
+              href={`${localePath}/avif-to-png`}
               className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors inline-flex items-center justify-center gap-2"
             >
               {t('cta.button_png')}
