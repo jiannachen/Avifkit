@@ -65,7 +65,7 @@ const Toast: React.FC<ToastProps> = ({ toast, onDismiss }) => {
   };
 
   return (
-    <div className={`${getToastStyle()} border rounded-lg shadow-lg p-4 flex items-center gap-3 min-w-[320px] max-w-md ${isExiting ? 'animate-slide-out' : 'animate-slide-in'}`}>
+    <div role={toast.type === 'error' ? 'alert' : 'status'} aria-live={toast.type === 'error' ? 'assertive' : 'polite'} className={`${getToastStyle()} flex w-full items-center gap-3 rounded-xl border p-4 shadow-md ${isExiting ? 'animate-slide-out' : 'animate-slide-in'}`}>
       {getIcon()}
       <p className="flex-grow text-sm font-medium">{toast.message}</p>
       {toast.actionLabel && toast.onAction && (
@@ -78,7 +78,8 @@ const Toast: React.FC<ToastProps> = ({ toast, onDismiss }) => {
       )}
       <button
         onClick={handleDismiss}
-        className="flex-shrink-0 hover:bg-black/5 rounded p-1 transition-colors"
+        className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md transition-colors hover:bg-black/5"
+        aria-label="Dismiss notification"
       >
         <X className="w-4 h-4" />
       </button>
@@ -97,7 +98,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toasts, onDismis
   const visibleToasts = toasts.slice(-MAX_VISIBLE_TOASTS);
 
   return (
-    <div className="fixed top-20 right-4 z-50 flex flex-col gap-2">
+    <div className="fixed left-4 right-4 top-20 z-50 flex flex-col gap-2 sm:left-auto sm:w-full sm:max-w-md">
       {visibleToasts.map(toast => (
         <Toast key={toast.id} toast={toast} onDismiss={onDismiss} />
       ))}

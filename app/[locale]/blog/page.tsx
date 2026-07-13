@@ -129,13 +129,13 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const localePath = locale === 'en' ? '' : `/${locale}`;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#fafafa]">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="paper-grid border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="text-center space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900">
-              {t('hero.title_prefix')} <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{t('hero.title_gradient')}</span>
+            <h1 className="display-title text-slate-950">
+              {t('hero.title_prefix')} <span className="text-blue-600">{t('hero.title_gradient')}</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600">
               {t('hero.subtitle')}
@@ -145,15 +145,15 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       </div>
 
       {/* Blog Posts Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="section-band mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {blogPosts.map((post) => (
             <article
               key={post.slug}
-              className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300"
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-[border-color,box-shadow] duration-300 hover:border-blue-200 hover:shadow-md"
             >
               {/* Image */}
-              <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden">
+              <div className="relative aspect-video overflow-hidden bg-slate-50">
                 {post.image ? (
                   <Image
                     src={post.image}
@@ -171,7 +171,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                 )}
                 {/* Category badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-blue-600 border border-blue-100">
+                  <span className="inline-block rounded-md border border-blue-100 bg-white/95 px-3 py-1 text-xs font-semibold text-blue-600">
                     {post.category}
                   </span>
                 </div>
@@ -231,25 +231,25 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16">
+      <div className="section-band border-y border-slate-200 bg-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="section-title text-slate-950">
             {t('cta.title')}
           </h2>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-slate-700">
             {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={`${localePath}/avif-to-jpg`}
-              className="px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center gap-2"
+              className="btn-primary px-8"
             >
               {t('cta.button_jpg')}
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href={`${localePath}/avif-to-png`}
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors inline-flex items-center justify-center gap-2"
+              className="btn-secondary bg-white px-8"
             >
               {t('cta.button_png')}
               <ArrowRight className="w-5 h-5" />

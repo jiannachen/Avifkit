@@ -47,15 +47,17 @@ export const BeforeAfterDemo: React.FC<{ pageKey?: string; demoStats?: ImageSize
   const current = demos[activeDemo];
   return (
     <div className="space-y-4">
-      <div className="flex justify-center gap-2">
+      <div className="flex flex-wrap justify-center gap-2" role="tablist" aria-label="Image examples">
         {BASE_IMAGES.map((demo, idx) => (
           <button
             key={demo.id}
             onClick={() => setActiveDemo(idx)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            role="tab"
+            aria-selected={idx === activeDemo}
+            className={`min-h-11 rounded-md border px-4 py-2 text-sm font-medium transition-colors ${
               idx === activeDemo
-                ? 'bg-blue-600 text-white shadow-md shadow-blue-200'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'border-blue-200 bg-blue-50 text-blue-700'
+                : 'border-slate-200 bg-white text-slate-700 hover:border-blue-200'
             }`}
           >
             {demo.label}
@@ -70,7 +72,7 @@ export const BeforeAfterDemo: React.FC<{ pageKey?: string; demoStats?: ImageSize
         afterLabel={t('sections.beforeAfter.compressed_label')}
         beforeSize={current.originalSize}
         afterSize={current.convertedSize}
-        className="shadow-xl"
+        className="shadow-md"
       />
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
@@ -81,20 +83,20 @@ export const BeforeAfterDemo: React.FC<{ pageKey?: string; demoStats?: ImageSize
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className={`w-3 h-3 rounded-full ${current.smaller ? 'bg-emerald-500' : 'bg-amber-500'}`} />
+          <div className={`w-3 h-3 rounded-full ${current.smaller ? 'bg-green-500' : 'bg-amber-500'}`} />
           <span className="text-slate-600">
             {t('sections.beforeAfter.compressed_label')}: <strong>{current.convertedSize}</strong>
           </span>
         </div>
-        <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border ${
+        <div className={`inline-flex items-center gap-1.5 rounded-md border px-3 py-1 ${
           current.smaller
-            ? 'bg-emerald-50 border-emerald-200'
+            ? 'bg-green-50 border-green-200'
             : 'bg-amber-50 border-amber-200'
         }`}>
-          <span className={`font-bold ${current.smaller ? 'text-emerald-700' : 'text-amber-700'}`}>
+          <span className={`font-bold ${current.smaller ? 'text-green-700' : 'text-amber-700'}`}>
             {current.savings}
           </span>
-          <span className={`text-xs ${current.smaller ? 'text-emerald-600' : 'text-amber-600'}`}>
+          <span className={`text-xs ${current.smaller ? 'text-green-700' : 'text-amber-600'}`}>
             {current.smaller ? '↓' : '↑'}
           </span>
         </div>

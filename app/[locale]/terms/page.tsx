@@ -70,14 +70,14 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
   const t = await getTranslations({ locale, namespace: 'legal.terms' });
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="legal-page min-h-screen">
       {/* Hero */}
-      <div className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="paper-grid border-b border-slate-200">
+        <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-3 mb-6">
             <FileText className="w-10 h-10 text-blue-600" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 text-center mb-4">
+          <h1 className="section-title mb-4 text-center text-slate-950 sm:text-5xl">
             {t('hero.title')}
           </h1>
           <p className="text-lg text-slate-600 text-center max-w-2xl mx-auto">
@@ -90,8 +90,8 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
       </div>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="prose prose-slate max-w-none">
+      <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="legal-document prose prose-slate max-w-none">
 
           {/* Acceptance of Terms */}
           <section className="mb-12">

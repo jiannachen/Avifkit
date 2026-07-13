@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import "../globals.css";
 import { LayoutClient } from "@/components/LayoutClient";
 import { routing } from "@/i18n/routing";
@@ -7,7 +7,12 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: '--font-newsreader',
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -107,7 +112,7 @@ export default async function LangLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head />
-      <body className={`${inter.className} bg-white text-slate-900 antialiased`}>
+      <body className={`${inter.variable} ${newsreader.variable} bg-[#fafafa] text-slate-900 antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <LayoutClient>{children}</LayoutClient>
         </NextIntlClientProvider>

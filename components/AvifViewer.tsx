@@ -92,31 +92,32 @@ export const AvifViewer: React.FC = () => {
       />
 
       {!fileInfo ? (
-        <div
+        <button
+          type="button"
           onClick={() => fileInputRef.current?.click()}
           onDragOver={onDragOver}
           onDragLeave={onDragLeave}
           onDrop={onDrop}
           className={`
-            cursor-pointer p-12 md:p-20 text-center transition-all duration-200 border-2 border-dashed rounded-3xl bg-white shadow-2xl shadow-blue-900/10
-            ${isDragging ? 'border-blue-500 bg-blue-50' : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50/50'}
+            floating-panel w-full cursor-pointer border-2 border-dashed p-12 text-center transition-colors duration-200 md:p-20
+            ${isDragging ? 'border-blue-500 bg-blue-50' : 'border-slate-200 hover:border-blue-200 hover:bg-slate-50/50'}
           `}
         >
-          <div className="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-blue-600">
             <UploadCloud className="w-10 h-10" />
           </div>
-          <h3 className="text-xl font-semibold text-slate-900 mb-2">{t('viewer.upload_title')}</h3>
-          <p className="text-slate-500 max-w-xs mx-auto">{t('viewer.upload_subtitle')}</p>
-        </div>
+          <span className="mb-2 block font-display text-2xl font-semibold text-slate-950">{t('viewer.upload_title')}</span>
+          <span className="mx-auto block max-w-xs text-slate-600">{t('viewer.upload_subtitle')}</span>
+        </button>
       ) : (
-        <div className="bg-white rounded-3xl shadow-2xl shadow-blue-900/10 overflow-hidden border border-slate-100">
+        <div className="floating-panel overflow-hidden">
           {/* Image Preview */}
           {fileInfo.previewUrl ? (
             <div className="bg-[#f0f0f0] p-4 flex items-center justify-center min-h-[300px] max-h-[500px]">
               <img
                 src={fileInfo.previewUrl}
                 alt={fileInfo.name}
-                className="max-w-full max-h-[480px] object-contain rounded-lg shadow-lg"
+                className="max-h-[480px] max-w-full rounded-md object-contain"
               />
             </div>
           ) : (
@@ -135,22 +136,22 @@ export const AvifViewer: React.FC = () => {
               <h3 className="font-bold text-slate-900">{t('viewer.file_info')}</h3>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-slate-50 p-3 rounded-xl">
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
                 <p className="text-xs text-slate-500 mb-1">{t('viewer.file_size')}</p>
                 <p className="font-semibold text-slate-900">{formatBytes(fileInfo.size)}</p>
               </div>
               {fileInfo.width > 0 && (
-                <div className="bg-slate-50 p-3 rounded-xl">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
                   <p className="text-xs text-slate-500 mb-1">{t('viewer.dimensions')}</p>
                   <p className="font-semibold text-slate-900">{fileInfo.width} x {fileInfo.height}</p>
                 </div>
               )}
-              <div className="bg-slate-50 p-3 rounded-xl">
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
                 <p className="text-xs text-slate-500 mb-1">{t('viewer.file_type')}</p>
                 <p className="font-semibold text-slate-900">{fileInfo.type}</p>
               </div>
               {fileInfo.width > 0 && (
-                <div className="bg-slate-50 p-3 rounded-xl">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
                   <p className="text-xs text-slate-500 mb-1">{t('viewer.color_depth')}</p>
                   <p className="font-semibold text-slate-900">8-bit</p>
                 </div>
@@ -163,13 +164,13 @@ export const AvifViewer: React.FC = () => {
               <div className="flex gap-3">
                 <Link
                   href={getLink('avif-to-jpg')}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+                  className="btn-primary px-4"
                 >
                   {t('viewer.convert_to_jpg')}
                 </Link>
                 <Link
                   href={getLink('avif-to-png')}
-                  className="px-4 py-2 bg-white text-blue-600 border border-blue-200 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
+                  className="btn-secondary px-4"
                 >
                   {t('viewer.convert_to_png')}
                 </Link>

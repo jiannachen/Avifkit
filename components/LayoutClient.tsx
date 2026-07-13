@@ -18,6 +18,9 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isToolsMenuOpen, setIsToolsMenuOpen] = useState(false);
+  const converterHref = pathname.includes('/blog') || pathname.includes('/privacy-policy') || pathname.includes('/terms') || pathname.includes('/avif-viewer')
+    ? `${getLink('avif-to-jpg')}#converter`
+    : '#converter';
 
   const toolsRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
@@ -50,11 +53,10 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-white selection:bg-blue-100">
-      {/* Sticky Navbar */}
-      <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+    <div className="min-h-screen flex flex-col font-sans bg-[#fafafa] selection:bg-blue-100">
+      <header className="sticky top-0 z-50 w-full px-3 pt-3 sm:px-6">
+        <div className="mx-auto max-w-[1120px] rounded-xl border border-slate-200 bg-white/95 px-3 shadow-[0_2px_8px_rgba(0,0,0,0.08)] backdrop-blur-md sm:px-5">
+          <div className="flex h-14 items-center justify-between">
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
@@ -67,24 +69,26 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
                   className="group-hover:opacity-80 transition-opacity"
                   priority
                 />
-                <span className="font-bold text-xl tracking-tight text-slate-900">Avifkit</span>
+                <span className="font-display text-xl font-semibold text-slate-950">Avifkit</span>
               </Link>
             </div>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
               {/* Tools Dropdown */}
               <div className="relative" ref={toolsRef}>
                 <button
                   onClick={() => { setIsToolsMenuOpen(!isToolsMenuOpen); setIsLangMenuOpen(false); }}
-                  className={`flex items-center text-sm font-medium py-2 transition-colors ${isToolsMenuOpen ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'}`}
+                  aria-expanded={isToolsMenuOpen}
+                  aria-controls="desktop-tools-menu"
+                  className={`flex min-h-11 items-center text-sm font-medium transition-colors ${isToolsMenuOpen ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'}`}
                 >
                   {t('nav.tools')} <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${isToolsMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
 
                 {isToolsMenuOpen && (
-                  <div className="absolute top-full left-0 w-64 pt-2">
-                    <div className="bg-white rounded-lg shadow-xl border border-slate-100 p-2">
+                  <div id="desktop-tools-menu" className="absolute left-0 top-full w-64 pt-2">
+                    <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-md">
                       <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-4 py-1">{t('nav.avif_to_others')}</div>
                       <Link href={getLink('avif-to-jpg')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to JPG</Link>
                       <Link href={getLink('avif-to-png')} onClick={() => setIsToolsMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md">AVIF to PNG</Link>
@@ -109,13 +113,16 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
               <div className="relative" ref={langRef}>
                 <button
                   onClick={() => { setIsLangMenuOpen(!isLangMenuOpen); setIsToolsMenuOpen(false); }}
-                  className={`flex items-center gap-1 transition-colors ${isLangMenuOpen ? 'text-blue-600' : 'text-slate-600 hover:text-black'}`}
+                  aria-expanded={isLangMenuOpen}
+                  aria-controls="desktop-language-menu"
+                  aria-label={`Language: ${locale}`}
+                  className={`flex min-h-11 items-center gap-1 transition-colors ${isLangMenuOpen ? 'text-blue-600' : 'text-slate-700 hover:text-black'}`}
                 >
                   <Globe className="w-5 h-5" />
                   <span className="text-xs font-semibold uppercase">{locale}</span>
                 </button>
                 {isLangMenuOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-32 bg-white rounded-lg shadow-xl border border-slate-100 py-1">
+                  <div id="desktop-language-menu" className="absolute right-0 top-full mt-2 w-36 rounded-xl border border-slate-200 bg-white py-1 shadow-md">
                      <button onClick={() => changeLang('en')} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${locale === 'en' ? 'text-blue-600 font-bold' : 'text-slate-700'}`}>English</button>
                      <button onClick={() => changeLang('ja')} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${locale === 'ja' ? 'text-blue-600 font-bold' : 'text-slate-700'}`}>日本語</button>
                      <button onClick={() => changeLang('es')} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${locale === 'es' ? 'text-blue-600 font-bold' : 'text-slate-700'}`}>Español</button>
@@ -126,8 +133,8 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
               {/* CTA */}
               <a
-                href="#converter"
-                className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full text-sm font-medium text-white bg-black hover:bg-slate-800 transition-all shadow-sm"
+                href={converterHref}
+                className="btn-primary"
               >
                 {t('nav.convert_now')}
               </a>
@@ -135,7 +142,13 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
 
             {/* Mobile Menu Button */}
             <div className="flex items-center md:hidden">
-              <button onClick={toggleMobileMenu} className="text-slate-600">
+              <button
+                onClick={toggleMobileMenu}
+                className="icon-button border-0"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
+                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              >
                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
@@ -143,8 +156,8 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden bg-white border-b border-slate-200 overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 border-b-0'}`}>
-          <div className="px-4 pt-2 pb-6 space-y-1">
+        <div id="mobile-navigation" className={`overflow-hidden md:hidden ${isMobileMenuOpen ? 'max-h-[calc(100dvh-88px)] overflow-y-auto border-t border-slate-200 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="space-y-1 px-3 pb-5 pt-3">
             <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-1">{t('nav.avif_to_others')}</div>
             <Link href={getLink('avif-to-jpg')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to JPG</Link>
             <Link href={getLink('avif-to-png')} onClick={closeMobileMenu} className="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">AVIF to PNG</Link>
@@ -175,7 +188,7 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
+      <footer className="border-t border-slate-200 bg-slate-50 pb-8 pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
@@ -188,12 +201,12 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
                   width={24}
                   height={24}
                 />
-                <span className="font-bold text-lg text-slate-900">Avifkit</span>
+                <span className="font-display text-xl font-semibold text-slate-950">Avifkit</span>
               </div>
               <p className="text-sm text-slate-500 leading-relaxed">
                 {t('footer.slogan')}
               </p>
-              <div className="flex items-center gap-2 text-emerald-600 text-sm font-medium">
+              <div className="flex items-center gap-2 text-slate-700 text-sm font-medium">
                 <ShieldCheck className="w-4 h-4" />
                 <span>{t('footer.privacy_badge')}</span>
               </div>

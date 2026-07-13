@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { BlogContent } from '@/components/BlogContent';
@@ -134,7 +135,7 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
   const imageUrl = article.image || `https://img.avifkit.com/blog/what-is-avif-guide.webp`;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#fafafa]">
       {/* Structured Data for Blog Post */}
       <BlogPostSchema
         title={article.title}
@@ -145,8 +146,8 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
         url={url}
       />
       {/* Header */}
-      <div className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="paper-grid border-b border-slate-200">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <Link
             href={`${localePath}/blog`}
             className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors mb-8"
@@ -157,7 +158,7 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="inline-block px-3 py-1 bg-blue-100 rounded-full text-xs font-semibold text-blue-600">
+              <span className="inline-block rounded-md border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
                 {article.category}
               </span>
               <div className="flex items-center gap-4 text-sm text-slate-500">
@@ -178,7 +179,7 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
               </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+            <h1 className="section-title max-w-3xl text-slate-950 md:text-5xl">
               {article.title}
             </h1>
           </div>
@@ -186,7 +187,10 @@ export default async function BlogArticle({ params }: { params: Promise<{ slug: 
       </div>
 
       {/* Article Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="floating-panel relative mb-14 aspect-[16/9] overflow-hidden p-2">
+          <Image src={imageUrl} alt={article.title} fill priority sizes="(max-width: 896px) 100vw, 896px" className="rounded-md object-cover p-2" />
+        </div>
         <BlogContent content={article.content} locale={locale} />
       </div>
     </div>

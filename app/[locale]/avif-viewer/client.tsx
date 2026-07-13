@@ -16,7 +16,7 @@ export default function AvifViewerClient() {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#fafafa]">
       <FAQSchema faqs={faqData} />
       <SoftwareAppSchema
         name="Avifkit AVIF Viewer"
@@ -24,32 +24,27 @@ export default function AvifViewerClient() {
         category="MultimediaApplication"
       />
 
-      <section className="relative pt-12 pb-20 md:pt-20 md:pb-32 px-4 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 pointer-events-none">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto text-center space-y-6 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-emerald-700 text-xs font-semibold mb-4 animate-fade-in-up">
+      <section className="paper-grid relative overflow-hidden px-4 pb-24 pt-20 md:pb-32 md:pt-28">
+        <div className="mx-auto mb-14 max-w-4xl space-y-6 text-center">
+          <div className="eyebrow animate-fade-in-up">
             <Shield className="w-3.5 h-3.5" />
             <span>{p('hero.privacy_banner')}</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+          <h1 className="display-title text-slate-950">
             {t('seo.avif-viewer.h1')}
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
             {p('subtitle')}
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2">
-            <div className="flex items-center gap-2 text-slate-600 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+            <div className="flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-slate-700">
               <Shield className="w-4 h-4 text-blue-600" />
               <span className="text-sm font-medium">{p('hero.badges.privacy')}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-600 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+            <div className="flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-slate-700">
               <Zap className="w-4 h-4 text-blue-600" />
               <span className="text-sm font-medium">{p('hero.badges.speed')}</span>
             </div>

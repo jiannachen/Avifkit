@@ -42,38 +42,43 @@ const ScrollReveal: React.FC<{ children: React.ReactNode; className?: string }> 
 };
 
 const TrustBadge: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, text }) => (
-  <div className="flex items-center gap-2 text-slate-600 bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
+  <div className="flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-slate-700">
     <div className="text-blue-600">{icon}</div>
     <span className="text-sm font-medium">{text}</span>
   </div>
 );
 
 const FeatureCard: React.FC<{ title: string; desc: string; icon: React.ReactNode }> = ({ title, desc, icon }) => (
-  <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+  <div className="canvas-card p-6 transition-colors hover:border-blue-200">
+    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md border border-blue-200 bg-blue-50 text-blue-600">
       {icon}
     </div>
-    <h3 className="text-lg font-bold text-slate-900 mb-2">{title}</h3>
-    <p className="text-slate-500 leading-relaxed text-sm">{desc}</p>
+    <h3 className="mb-2 text-xl font-semibold text-slate-950">{title}</h3>
+    <p className="text-sm leading-relaxed text-slate-600">{desc}</p>
   </div>
 );
 
 const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const panelId = React.useId();
   return (
-    <div className="border-b border-slate-100 last:border-0">
+    <div className="border-b border-slate-200 last:border-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-3 py-4 text-left"
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        className="flex min-h-14 w-full items-center justify-between gap-3 py-5 text-left"
       >
-        <h4 className="font-semibold text-slate-900 flex items-start gap-2">
+        <span className="flex items-start gap-3 font-medium text-slate-950">
           <HelpCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
           {question}
-        </h4>
+        </span>
         <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'}`}>
-        <p className="text-slate-600 text-sm leading-relaxed pl-7">{answer}</p>
+      <div id={panelId} className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+        <div className="overflow-hidden">
+          <p className="pb-5 pl-8 text-sm leading-relaxed text-slate-600">{answer}</p>
+        </div>
       </div>
     </div>
   );
@@ -97,9 +102,6 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
   const currentLocale = useLocale();
   const { getLink } = useLocalizedLink();
 
-  const titlePrefix = p('title_prefix');
-  const titleGradient = p('title_gradient');
-  const titleSuffix = p('title_suffix');
   const subtitle = p('subtitle');
 
   // Get SEO-optimized headings
@@ -154,7 +156,7 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
   });
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#fafafa]">
       {/* Structured Data */}
       <FAQSchema faqs={faqData} />
       <HowToSchema
@@ -175,31 +177,35 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       />
 
       {/* 1. Hero Section */}
-      <section className="relative pt-12 pb-20 md:pt-20 md:pb-32 px-4 overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 pointer-events-none">
-           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
-           <div className="absolute bottom-20 right-20 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl"></div>
+      <section className="paper-grid relative overflow-hidden px-4 pb-24 pt-20 md:pb-32 md:pt-28">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
+          <div className="floating-panel absolute left-[4%] top-28 w-36 -rotate-3 p-3">
+            <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-slate-50 text-2xl font-semibold text-blue-600">AVIF</div>
+            <div className="mt-3 h-2 w-16 rounded-full bg-slate-200" />
+          </div>
+          <div className="floating-panel absolute right-[5%] top-40 w-40 rotate-3 p-3">
+            <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-blue-50 text-2xl font-semibold text-blue-700">JPG</div>
+            <div className="mt-3 flex items-center gap-2"><span className="status-node" /><span className="h-2 w-20 rounded-full bg-slate-200" /></div>
+          </div>
         </div>
-
-        <div className="max-w-7xl mx-auto text-center space-y-6 mb-12">
+        <div className="relative z-10 mx-auto mb-14 max-w-4xl space-y-6 text-center">
 
           {/* Privacy Banner */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-full text-emerald-700 text-xs font-semibold mb-4 animate-fade-in-up">
+          <div className="eyebrow animate-fade-in-up">
             <Shield className="w-3.5 h-3.5" />
             <span>{p('hero.privacy_banner')}</span>
           </div>
 
           {/* SEO-Optimized H1 */}
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+          <h1 className="display-title text-slate-950">
             {h1Text}
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
             {subtitle}
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3 pt-2">
+          <div className="flex flex-wrap justify-center gap-2 pt-3">
             <TrustBadge icon={<Shield className="w-4 h-4"/>} text={p('hero.badges.privacy')} />
             <TrustBadge icon={<Zap className="w-4 h-4"/>} text={p('hero.badges.speed')} />
             <TrustBadge icon={<CheckCircle className="w-4 h-4"/>} text={p('hero.badges.bulk')} />
@@ -210,27 +216,27 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 2. How-To Section */}
-      <section className="py-16 bg-slate-50">
+      <section className="section-band bg-slate-50">
         <ScrollReveal>
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+          <h2 className="section-title mb-12 text-center text-slate-950">
             {h2HowText}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-slate-200 via-blue-200 to-slate-200 -z-10"></div>
+          <div className="relative grid gap-8 md:grid-cols-3">
+            <div className="absolute left-[16%] right-[16%] top-8 hidden h-px bg-blue-200 md:block"></div>
             <div className="text-center relative">
-               <div className="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">1</div>
+               <div className="relative z-10 mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-xl font-semibold text-blue-700">1</div>
                <h3 className="font-bold text-lg mb-2">{p('howto.steps.upload.title')}</h3>
                <p className="text-sm text-slate-500">{p('howto.steps.upload.description')}</p>
             </div>
             <div className="text-center relative">
-               <div className="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">2</div>
+               <div className="relative z-10 mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-xl font-semibold text-blue-700">2</div>
                <h3 className="font-bold text-lg mb-2">{p('howto.steps.select.title')}</h3>
                <p className="text-sm text-slate-500">{p('howto.steps.select.description')}</p>
             </div>
             <div className="text-center relative">
-               <div className="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">3</div>
+               <div className="relative z-10 mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-xl font-semibold text-blue-700">3</div>
                <h3 className="font-bold text-lg mb-2">{p('howto.steps.download.title')}</h3>
                <p className="text-sm text-slate-500">{p('howto.steps.download.description')}</p>
             </div>
@@ -240,11 +246,11 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 3. Features Grid */}
-      <section className="py-16 bg-white">
+      <section className="section-band bg-white">
         <ScrollReveal>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">
+            <h2 className="section-title text-slate-950">
               {h2WhyText}
             </h2>
             <p className="text-slate-500 mt-2">{p('features.subtitle')}</p>
@@ -272,10 +278,10 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 4. Before/After Section */}
-      <section className="py-16 bg-slate-50">
+      <section className="section-band bg-slate-50">
         <ScrollReveal>
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+          <h2 className="section-title mb-4 text-center text-slate-950">
             {p('sections.beforeAfter.title')}
           </h2>
           <p className="text-slate-500 text-center mb-10 max-w-2xl mx-auto">
@@ -287,16 +293,16 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 5. Use Cases Section */}
-      <section className="py-16 bg-white">
+      <section className="section-band bg-white">
         <ScrollReveal>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">
+          <h2 className="section-title mb-12 text-center text-slate-950">
             {p('sections.useCases.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {useCasesItems.map((item, idx) => (
-              <div key={idx} className="flex gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+              <div key={idx} className="canvas-card flex gap-4 p-6">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-600">
                   {useCaseIcons[idx % useCaseIcons.length]}
                 </div>
                 <div>
@@ -311,10 +317,10 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 6. Format Comparison Table */}
-      <section className="py-16 bg-slate-50">
+      <section className="section-band bg-slate-50">
         <ScrollReveal>
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+          <h2 className="section-title mb-4 text-center text-slate-950">
             {p('sections.comparison.title')}
           </h2>
           <p className="text-slate-500 text-center mb-10">
@@ -323,7 +329,7 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
           <div className="overflow-x-auto">
             <table className="w-full bg-white rounded-2xl border border-slate-200 overflow-hidden">
               <thead>
-                <tr className="bg-slate-900 text-white">
+                <tr className="border-b border-slate-200 bg-blue-50 text-slate-950">
                   {comparisonHeaders.map((header, idx) => (
                     <th key={idx} className="px-6 py-4 text-left text-sm font-semibold">
                       {header}
@@ -349,10 +355,10 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 7. Tool Specifications */}
-      <section className="py-16 bg-white">
+      <section className="section-band bg-white">
         <ScrollReveal>
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+          <h2 className="section-title mb-10 text-center text-slate-950">
             {p('sections.specs.title')}
           </h2>
           <div className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
@@ -368,11 +374,11 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 8. FAQ Section (Expanded) */}
-      <section className="py-16 bg-slate-50">
+      <section className="section-band bg-slate-50">
         <ScrollReveal>
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">{p('faq.title')}</h2>
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+          <h2 className="section-title mb-10 text-center text-slate-950">{p('faq.title')}</h2>
+          <div className="border-y border-slate-200">
             {faqData.map((faq, idx) => (
               <FaqItem key={idx} question={faq.question} answer={faq.answer} />
             ))}
@@ -382,10 +388,10 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       </section>
 
       {/* 9. Related Tools Section */}
-      <section className="py-16 bg-white">
+      <section className="section-band bg-white">
         <ScrollReveal>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">
+          <h2 className="section-title mb-12 text-center text-slate-950">
             {p('sections.relatedTools.title')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -402,7 +408,7 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
                 <Link
                   key={key}
                   href={href}
-                  className="group p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all"
+                  className="group canvas-card p-5 transition-colors hover:border-blue-200 hover:bg-blue-50/30"
                 >
                   <h3 className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1 flex items-center gap-2">
                     {tool.title}

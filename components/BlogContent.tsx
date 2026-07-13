@@ -62,7 +62,7 @@ export function BlogContent({ content, locale }: { content: ContentBlock[]; loca
 
           case 'h2':
             return (
-              <h2 key={index} className="text-2xl font-bold text-slate-900 mt-12 mb-4">
+              <h2 key={index} className="mb-4 mt-14 text-3xl font-semibold text-slate-950">
                 {block.text}
               </h2>
             );
@@ -101,7 +101,7 @@ export function BlogContent({ content, locale }: { content: ContentBlock[]; loca
 
           case 'tip':
             return (
-              <div key={index} className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
+              <div key={index} className="my-8 rounded-xl border border-blue-200 bg-blue-50 p-6">
                 <p className="font-semibold text-blue-900 mb-2">{block.title}</p>
                 <p className="text-blue-800 mb-0">{block.text}</p>
               </div>
@@ -125,7 +125,7 @@ export function BlogContent({ content, locale }: { content: ContentBlock[]; loca
                 <table className="w-full border-collapse bg-white rounded-lg overflow-hidden border border-slate-200">
                   {block.headers && (
                     <thead>
-                      <tr className="bg-slate-900 text-white">
+                      <tr className="border-b border-slate-200 bg-blue-50 text-slate-950">
                         {block.headers.map((header, i) => (
                           <th key={i} className="px-4 py-3 text-left text-sm font-semibold">
                             {header}
@@ -153,12 +153,12 @@ export function BlogContent({ content, locale }: { content: ContentBlock[]; loca
 
           case 'cta':
             return (
-              <div key={index} className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white my-12">
-                <h3 className="text-2xl font-bold mb-3 text-white">{block.title}</h3>
-                <p className="mb-6 text-blue-100">{block.subtitle}</p>
+              <div key={index} className="my-12 rounded-2xl border border-blue-200 bg-blue-50 p-8 text-slate-950">
+                <h3 className="mb-3 text-2xl font-semibold text-slate-950">{block.title}</h3>
+                <p className="mb-6 text-slate-700">{block.subtitle}</p>
                 <Link
                   href={block.button?.link ? localizePath(block.button.link, locale) : '/'}
-                  className="inline-block px-6 py-3 bg-white text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-colors"
+                  className="btn-primary px-6"
                 >
                   {block.button?.text}
                 </Link>
