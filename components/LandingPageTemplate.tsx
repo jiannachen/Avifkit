@@ -91,6 +91,21 @@ const useCaseIcons = [
   <Monitor key="monitor" className="w-6 h-6" />,
 ];
 
+const formatLabels: Record<TargetFormat, string> = {
+  'image/jpeg': 'JPG',
+  'image/png': 'PNG',
+  'image/webp': 'WEBP',
+  'image/avif': 'AVIF',
+  'image/gif': 'GIF',
+  'application/pdf': 'PDF',
+};
+
+const sourceFormatLabels: Partial<Record<PageKey, string>> = {
+  'png-to-avif': 'PNG',
+  'jpg-to-avif': 'JPG',
+  'webp-to-avif': 'WEBP',
+};
+
 export const LandingPageTemplate: React.FC<LandingPageProps> = ({
   pageKey,
   defaultFormat = 'image/jpeg',
@@ -101,6 +116,8 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
   const p = useTranslations(`pages.${pageKey}`);
   const currentLocale = useLocale();
   const { getLink } = useLocalizedLink();
+  const sourceFormatLabel = sourceFormatLabels[pageKey] ?? 'AVIF';
+  const targetFormatLabel = formatLabels[defaultFormat];
 
   const subtitle = p('subtitle');
 
@@ -180,11 +197,11 @@ export const LandingPageTemplate: React.FC<LandingPageProps> = ({
       <section className="paper-grid relative overflow-hidden px-4 pb-24 pt-20 md:pb-32 md:pt-28">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
           <div className="floating-panel absolute left-[4%] top-28 w-36 -rotate-3 p-3">
-            <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-slate-50 text-2xl font-semibold text-blue-600">AVIF</div>
+            <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-slate-50 text-2xl font-semibold text-blue-600">{sourceFormatLabel}</div>
             <div className="mt-3 h-2 w-16 rounded-full bg-slate-200" />
           </div>
           <div className="floating-panel absolute right-[5%] top-40 w-40 rotate-3 p-3">
-            <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-blue-50 text-2xl font-semibold text-blue-700">JPG</div>
+            <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-blue-50 text-2xl font-semibold text-blue-700">{targetFormatLabel}</div>
             <div className="mt-3 flex items-center gap-2"><span className="status-node" /><span className="h-2 w-20 rounded-full bg-slate-200" /></div>
           </div>
         </div>
