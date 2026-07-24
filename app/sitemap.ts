@@ -2,8 +2,6 @@ import { MetadataRoute } from 'next';
 import { i18n } from '@/i18n/config';
 import manifest from '@/i18n/blog/manifest.json';
 
-export const runtime = 'edge';
-
 const BASE_URL = 'https://avifkit.com';
 
 interface BlogMeta {
