@@ -3,8 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import fs from 'fs';
-import path from 'path';
+import manifest from '@/i18n/blog/manifest.json';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
@@ -84,47 +83,36 @@ interface BlogPost {
   image: string;
 }
 
-// Load blog posts from JSON files
-function loadBlogPosts(locale: string = 'en'): BlogPost[] {
-  try {
-    const blogDir = path.join(process.cwd(), 'i18n', 'blog');
-    const slugs = fs.readdirSync(blogDir);
-
-    const posts = slugs
-      .filter(slug => {
-        const slugPath = path.join(blogDir, slug);
-        return fs.statSync(slugPath).isDirectory();
-      })
-      .map(slug => {
-        const filePath = path.join(blogDir, slug, `${locale}.json`);
-        if (!fs.existsSync(filePath)) return null;
-
-        const content = fs.readFileSync(filePath, 'utf8');
-        const data = JSON.parse(content);
-
+async function loadBlogPosts(locale: string = 'en'): Promise<BlogPost[]> {
+  const posts = await Promise.all(
+    manifest.map(async (slug) => {
+      try {
+        const data = await import(`@/i18n/blog/${slug}/${locale}.json`).catch(
+          () => import(`@/i18n/blog/${slug}/en.json`)
+        );
+        const d = data.default;
         return {
-          slug: data.slug,
-          title: data.title,
-          excerpt: data.excerpt,
-          date: data.date,
-          readingTime: data.readingTime,
-          category: data.category,
-          image: data.image || `/blog/${data.slug}.jpg`,
-        };
-      })
-      .filter((post): post is BlogPost => post !== null)
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // Sort by date desc
-
-    return posts;
-  } catch (error) {
-    console.error('Error loading blog posts:', error);
-    return [];
-  }
+          slug: d.slug,
+          title: d.title,
+          excerpt: d.excerpt,
+          date: d.date,
+          readingTime: d.readingTime,
+          category: d.category,
+          image: d.image || `/blog/${d.slug}.jpg`,
+        } as BlogPost;
+      } catch {
+        return null;
+      }
+    })
+  );
+  return posts
+    .filter((p): p is BlogPost => p !== null)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const blogPosts = loadBlogPosts(locale);
+  const blogPosts = await loadBlogPosts(locale);
   const t = await getTranslations({ locale, namespace: 'blog' });
   const localePath = locale === 'en' ? '' : `/${locale}`;
 

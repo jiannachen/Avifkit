@@ -6,8 +6,7 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { BlogContent } from '@/components/BlogContent';
 import { BlogPostSchema } from '@/components/StructuredData';
-import fs from 'fs';
-import path from 'path';
+import manifest from '@/i18n/blog/manifest.json';
 import { getTranslations } from 'next-intl/server';
 
 interface BlogArticleMeta {
@@ -23,29 +22,19 @@ interface BlogArticleMeta {
   content: any[];
 }
 
-// Helper function to load blog content
-function loadBlogContent(slug: string, locale: string = 'en'): BlogArticleMeta | null {
+async function loadBlogContent(slug: string, locale: string = 'en'): Promise<BlogArticleMeta | null> {
   try {
-    const contentPath = path.join(process.cwd(), 'i18n', 'blog', slug, `${locale}.json`);
-    const fileContent = fs.readFileSync(contentPath, 'utf8');
-    return JSON.parse(fileContent);
-  } catch (error) {
+    const data = await import(`@/i18n/blog/${slug}/${locale}.json`).catch(
+      () => import(`@/i18n/blog/${slug}/en.json`)
+    );
+    return data.default;
+  } catch {
     return null;
   }
 }
 
-// Get all available blog slugs
 function getAllBlogSlugs(): string[] {
-  try {
-    const blogDir = path.join(process.cwd(), 'i18n', 'blog');
-    const slugs = fs.readdirSync(blogDir);
-    return slugs.filter(slug => {
-      const slugPath = path.join(blogDir, slug);
-      return fs.statSync(slugPath).isDirectory();
-    });
-  } catch (error) {
-    return [];
-  }
+  return manifest;
 }
 
 export async function generateMetadata({
@@ -54,7 +43,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const article = loadBlogContent(slug, locale);
+  const article = await loadBlogContent(slug, locale);
 
   if (!article) {
     return {
@@ -123,7 +112,7 @@ export async function generateStaticParams({
 
 export default async function BlogArticle({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const article = loadBlogContent(slug, locale);
+  const article = await loadBlogContent(slug, locale);
   const t = await getTranslations({ locale, namespace: 'blog' });
 
   if (!article) {

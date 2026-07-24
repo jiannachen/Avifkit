@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
 import { i18n } from '@/i18n/config';
-import fs from 'fs';
-import path from 'path';
+import manifest from '@/i18n/blog/manifest.json';
+
+export const runtime = 'edge';
 
 const BASE_URL = 'https://avifkit.com';
 
@@ -11,33 +12,18 @@ interface BlogMeta {
   image?: string;
 }
 
-// Get all blog post metadata from the blog directory
-function getAllBlogMeta(): BlogMeta[] {
-  try {
-    const blogDir = path.join(process.cwd(), 'i18n', 'blog');
-    const slugs = fs.readdirSync(blogDir).filter(slug => {
-      return fs.statSync(path.join(blogDir, slug)).isDirectory();
-    });
-    return slugs.map(slug => {
-      const filePath = path.join(blogDir, slug, 'en.json');
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      return { slug, date: data.date, image: data.image };
-    });
-  } catch (error) {
-    console.error('Error reading blog directory:', error);
-    return [];
-  }
+async function getAllBlogMeta(): Promise<BlogMeta[]> {
+  return Promise.all(
+    manifest.map(async (slug) => {
+      const data = await import(`@/i18n/blog/${slug}/en.json`);
+      return { slug, date: data.default.date, image: data.default.image };
+    })
+  );
 }
 
 // Get the last git commit date for a file or directory, falling back to file mtime
-function getContentLastModified(relativePath: string): Date {
-  try {
-    const fullPath = path.join(process.cwd(), relativePath);
-    const stat = fs.statSync(fullPath);
-    return stat.mtime;
-  } catch {
-    return new Date('2026-01-01');
-  }
+function getContentLastModified(_relativePath: string): Date {
+  return new Date('2026-01-01');
 }
 
 function buildUrl(locale: string, page: string): string {
@@ -131,7 +117,7 @@ const pageConfig: Record<string, {
   },
 };
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages = Object.keys(pageConfig);
 
   // Generate entries for all languages with alternates
@@ -155,7 +141,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // Add dynamic blog posts for all languages
-  const blogMetas = getAllBlogMeta();
+  const blogMetas = await getAllBlogMeta();
   const blogPosts = blogMetas.flatMap(({ slug, date, image }) => {
     const blogPage = `blog/${slug}`;
     return i18n.locales.map(locale => ({
