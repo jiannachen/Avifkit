@@ -1,5 +1,6 @@
 import { LandingPageTemplate } from '@/components/LandingPageTemplate';
 import { generateSEOMetadata } from '@/lib/seo';
+import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import type { ImageSizeStats } from '@/components/BeforeAfterDemo';
 
@@ -18,7 +19,9 @@ const demoStats: ImageSizeStats[] = [
   { originalSize: '64.3 KB', convertedSize: '73.1 KB', savings: '+14%', smaller: false },
 ];
 
-export default function AvifToJpg() {
+export default async function AvifToJpg({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <LandingPageTemplate
       defaultFormat="image/jpeg"

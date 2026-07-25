@@ -4,6 +4,9 @@ import manifest from '@/i18n/blog/manifest.json';
 
 const BASE_URL = 'https://avifkit.com';
 
+// Required for `output: 'export'` — force this route to be generated statically at build time.
+export const dynamic = 'force-static';
+
 interface BlogMeta {
   slug: string;
   date: string;

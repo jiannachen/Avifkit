@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import { BlogContent } from '@/components/BlogContent';
 import { BlogPostSchema } from '@/components/StructuredData';
 import manifest from '@/i18n/blog/manifest.json';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 interface BlogArticleMeta {
   slug: string;
@@ -43,6 +43,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
   const { slug, locale } = await params;
+  setRequestLocale(locale);
   const article = await loadBlogContent(slug, locale);
 
   if (!article) {
@@ -112,6 +113,7 @@ export async function generateStaticParams({
 
 export default async function BlogArticle({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
+  setRequestLocale(locale);
   const article = await loadBlogContent(slug, locale);
   const t = await getTranslations({ locale, namespace: 'blog' });
 

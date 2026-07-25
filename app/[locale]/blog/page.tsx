@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import manifest from '@/i18n/blog/manifest.json';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 export async function generateMetadata({
   params
@@ -12,6 +12,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'blog.meta' });
 
   const blogUrl = `https://avifkit.com/${locale === 'en' ? '' : locale + '/'}blog`;
@@ -112,6 +113,7 @@ async function loadBlogPosts(locale: string = 'en'): Promise<BlogPost[]> {
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const blogPosts = await loadBlogPosts(locale);
   const t = await getTranslations({ locale, namespace: 'blog' });
   const localePath = locale === 'en' ? '' : `/${locale}`;

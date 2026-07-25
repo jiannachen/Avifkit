@@ -3,7 +3,7 @@ import { Inter, Newsreader } from "next/font/google";
 import "../globals.css";
 import { LayoutClient } from "@/components/LayoutClient";
 import { routing } from "@/i18n/routing";
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 
@@ -26,6 +26,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
   const title = t('site.title');
@@ -104,6 +105,9 @@ export default async function LangLayout({
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
+
+  // Enable static rendering: derive locale from the route param instead of headers()
+  setRequestLocale(locale);
 
   // Providing all messages to the client
   // side is the easiest way to get started

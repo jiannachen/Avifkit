@@ -1,5 +1,6 @@
 import { LandingPageTemplate } from '@/components/LandingPageTemplate';
 import { generateSEOMetadata } from '@/lib/seo';
+import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import type { ImageSizeStats } from '@/components/BeforeAfterDemo';
 
@@ -18,7 +19,9 @@ const demoStats: ImageSizeStats[] = [
   { originalSize: '64.3 KB', convertedSize: '82.1 KB', savings: '+28%', smaller: false },
 ];
 
-export default function AvifToPdf() {
+export default async function AvifToPdf({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <LandingPageTemplate
       defaultFormat="application/pdf"

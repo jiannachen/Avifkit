@@ -1,7 +1,7 @@
 import { LandingPageTemplate } from '@/components/LandingPageTemplate';
 import type { Metadata } from 'next';
 import type { ImageSizeStats } from '@/components/BeforeAfterDemo';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 const BASE_URL = 'https://avifkit.com';
 const DEFAULT_OG_IMAGE = 'https://img.avifkit.com/blog/what-is-avif-guide.webp';
@@ -73,7 +73,9 @@ const demoStats: ImageSizeStats[] = [
   { originalSize: '64.3 KB', convertedSize: '73.1 KB', savings: '+14%', smaller: false },
 ];
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <LandingPageTemplate
       defaultFormat="image/jpeg"
