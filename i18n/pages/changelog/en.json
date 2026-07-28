@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Changelog - Latest AvifKit Updates",
+    "description": "See the latest AvifKit improvements, fixes, and platform updates."
+  },
+  "hero": {
+    "eyebrow": "Product updates",
+    "title": "Changelog",
+    "subtitle": "A clear record of the improvements, fixes, and behind-the-scenes work that keep AvifKit fast and reliable."
+  },
+  "timeline_title": "Recent updates",
+  "labels": {
+    "new": "New",
+    "improved": "Improved",
+    "fixed": "Fixed",
+    "maintenance": "Maintenance"
+  },
+  "releases": [
+    {
+      "date": "2026-07-28",
+      "version": "2026.07.28",
+      "title": "More reliable language routing",
+      "summary": "Default and localized URLs now resolve consistently across direct visits and static hosting.",
+      "changes": [
+        { "type": "fixed", "text": "Prevented default English pages from returning an incorrect 404 response." },
+        { "type": "improved", "text": "Aligned localized routing and redirect rules for more reliable direct links." },
+        { "type": "maintenance", "text": "Expanded the SEO audit to catch default-language routing regressions." }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "version": "2026.07.27",
+      "title": "Cleaner error handling",
+      "summary": "Navigation failures are handled more predictably, with cleaner deployment output behind the scenes.",
+      "changes": [
+        { "type": "fixed", "text": "Corrected 404 handling for missing pages and direct navigation." },
+        { "type": "maintenance", "text": "Removed generated Cloudflare cache files from source control." }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "version": "2026.07.25",
+      "title": "Smoother static deployments",
+      "summary": "A focused reliability pass improved asset delivery and localized static builds.",
+      "changes": [
+        { "type": "fixed", "text": "Restored reliable logo delivery through the static redirect configuration." },
+        { "type": "fixed", "text": "Resolved export-time build failures across localized pages." },
+        { "type": "maintenance", "text": "Updated repository ignore rules to keep generated deployment files out of commits." }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "version": "2026.07.24",
+      "title": "Cloudflare edge readiness",
+      "summary": "AvifKit's application and content pipeline were prepared for a more dependable edge deployment.",
+      "changes": [
+        { "type": "improved", "text": "Adjusted application routes and blog content discovery for edge-compatible static output." },
+        { "type": "new", "text": "Added Cloudflare Pages and Wrangler deployment configuration." },
+        { "type": "maintenance", "text": "Standardized the pnpm workspace and lockfile setup for reproducible builds." }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "version": "2026.07.19",
+      "title": "A clearer visual system",
+      "summary": "The converter, viewer, blog, and legal pages received a site-wide interface refresh.",
+      "changes": [
+        { "type": "improved", "text": "Refined typography, spacing, controls, and content hierarchy across the site." },
+        { "type": "improved", "text": "Updated converter feedback and comparison components for clearer scanning." },
+        { "type": "fixed", "text": "Improved the error section so conversion problems are easier to understand." }
+      ]
+    },
+    {
+      "date": "2025-12-02",
+      "version": "2025.12.02",
+      "title": "AvifKit's first release",
+      "summary": "AvifKit launched as a private, browser-based toolkit for converting AVIF images without server uploads.",
+      "changes": [
+        { "type": "new", "text": "Added local AVIF conversion to JPG, PNG, and WebP directly in the browser." },
+        { "type": "new", "text": "Launched localized conversion pages in English, Japanese, Spanish, and French." },
+        { "type": "new", "text": "Published the first practical guides for opening, converting, and working with AVIF files." }
+      ]
+    }
+  ]
+}

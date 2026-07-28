@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Registro de cambios - Últimas novedades de AvifKit",
+    "description": "Consulta las últimas mejoras, correcciones y actualizaciones de la plataforma AvifKit."
+  },
+  "hero": {
+    "eyebrow": "Actualizaciones del producto",
+    "title": "Registro de cambios",
+    "subtitle": "Un registro claro de las mejoras, correcciones y tareas internas que mantienen AvifKit rápido y fiable."
+  },
+  "timeline_title": "Actualizaciones recientes",
+  "labels": {
+    "new": "Nuevo",
+    "improved": "Mejora",
+    "fixed": "Corrección",
+    "maintenance": "Mantenimiento"
+  },
+  "releases": [
+    {
+      "date": "2026-07-28",
+      "version": "2026.07.28",
+      "title": "Rutas de idioma más fiables",
+      "summary": "Las URL predeterminadas y localizadas ahora funcionan de forma coherente en visitas directas y alojamiento estático.",
+      "changes": [
+        { "type": "fixed", "text": "Evitamos que las páginas predeterminadas en inglés devolvieran un error 404 incorrecto." },
+        { "type": "improved", "text": "Alineamos las rutas localizadas y las reglas de redirección para mejorar los enlaces directos." },
+        { "type": "maintenance", "text": "Ampliamos la auditoría SEO para detectar regresiones en las rutas del idioma predeterminado." }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "version": "2026.07.27",
+      "title": "Gestión de errores más clara",
+      "summary": "Los fallos de navegación se gestionan de forma más predecible y la salida de despliegue queda más limpia.",
+      "changes": [
+        { "type": "fixed", "text": "Corregimos la gestión de errores 404 en páginas inexistentes y accesos directos." },
+        { "type": "maintenance", "text": "Eliminamos del control de versiones los archivos de caché generados por Cloudflare." }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "version": "2026.07.25",
+      "title": "Despliegues estáticos más fluidos",
+      "summary": "Una revisión de fiabilidad mejoró la entrega de recursos y las compilaciones estáticas localizadas.",
+      "changes": [
+        { "type": "fixed", "text": "Restablecimos la carga fiable del logotipo mediante la configuración de redirecciones estáticas." },
+        { "type": "fixed", "text": "Resolvimos errores de compilación durante la exportación de páginas localizadas." },
+        { "type": "maintenance", "text": "Actualizamos las reglas de exclusión para evitar archivos de despliegue generados en los commits." }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "version": "2026.07.24",
+      "title": "Preparado para Cloudflare Edge",
+      "summary": "Preparamos la aplicación y el contenido de AvifKit para un despliegue en el edge más fiable.",
+      "changes": [
+        { "type": "improved", "text": "Adaptamos las rutas y el descubrimiento de artículos a una salida estática compatible con el edge." },
+        { "type": "new", "text": "Añadimos la configuración de despliegue para Cloudflare Pages y Wrangler." },
+        { "type": "maintenance", "text": "Unificamos el workspace y el lockfile de pnpm para obtener compilaciones reproducibles." }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "version": "2026.07.19",
+      "title": "Un sistema visual más claro",
+      "summary": "El convertidor, el visor, el blog y las páginas legales recibieron una renovación visual conjunta.",
+      "changes": [
+        { "type": "improved", "text": "Refinamos la tipografía, el espaciado, los controles y la jerarquía de contenido en todo el sitio." },
+        { "type": "improved", "text": "Actualizamos los estados del convertidor y la comparación de imágenes para facilitar su lectura." },
+        { "type": "fixed", "text": "Mejoramos la sección de errores para que los problemas de conversión sean más fáciles de entender." }
+      ]
+    },
+    {
+      "date": "2025-12-02",
+      "version": "2025.12.02",
+      "title": "Primer lanzamiento de AvifKit",
+      "summary": "AvifKit se lanzó como un conjunto de herramientas privado en el navegador para convertir imágenes AVIF sin subirlas a ningún servidor.",
+      "changes": [
+        { "type": "new", "text": "Añadimos la conversión local de AVIF a JPG, PNG y WebP directamente en el navegador." },
+        { "type": "new", "text": "Publicamos páginas de conversión en inglés, japonés, español y francés." },
+        { "type": "new", "text": "Publicamos las primeras guías prácticas para abrir, convertir y trabajar con archivos AVIF." }
+      ]
+    }
+  ]
+}

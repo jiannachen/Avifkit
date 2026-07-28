@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Journal des modifications - Dernières nouveautés AvifKit",
+    "description": "Découvrez les dernières améliorations, corrections et mises à jour de la plateforme AvifKit."
+  },
+  "hero": {
+    "eyebrow": "Mises à jour du produit",
+    "title": "Journal des modifications",
+    "subtitle": "Un suivi clair des améliorations, corrections et travaux internes qui rendent AvifKit rapide et fiable."
+  },
+  "timeline_title": "Mises à jour récentes",
+  "labels": {
+    "new": "Nouveau",
+    "improved": "Amélioration",
+    "fixed": "Correction",
+    "maintenance": "Maintenance"
+  },
+  "releases": [
+    {
+      "date": "2026-07-28",
+      "version": "2026.07.28",
+      "title": "Routage linguistique plus fiable",
+      "summary": "Les URL par défaut et localisées fonctionnent désormais de façon cohérente en accès direct et sur l'hébergement statique.",
+      "changes": [
+        { "type": "fixed", "text": "Correction des pages anglaises par défaut qui renvoyaient à tort une erreur 404." },
+        { "type": "improved", "text": "Harmonisation du routage localisé et des règles de redirection pour fiabiliser les liens directs." },
+        { "type": "maintenance", "text": "Extension de l'audit SEO pour détecter les régressions du routage de la langue par défaut." }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "version": "2026.07.27",
+      "title": "Gestion des erreurs plus claire",
+      "summary": "Les échecs de navigation sont gérés plus prévisiblement, avec des fichiers de déploiement mieux maîtrisés.",
+      "changes": [
+        { "type": "fixed", "text": "Correction de la gestion des erreurs 404 pour les pages absentes et les accès directs." },
+        { "type": "maintenance", "text": "Suppression des fichiers de cache Cloudflare générés dans le contrôle de version." }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "version": "2026.07.25",
+      "title": "Déploiements statiques plus fluides",
+      "summary": "Une passe de fiabilisation a amélioré la livraison des ressources et les builds statiques localisés.",
+      "changes": [
+        { "type": "fixed", "text": "Rétablissement du chargement fiable du logo grâce à la configuration des redirections statiques." },
+        { "type": "fixed", "text": "Résolution des erreurs de build à l'export sur les pages localisées." },
+        { "type": "maintenance", "text": "Mise à jour des règles d'exclusion pour écarter les fichiers de déploiement générés des commits." }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "version": "2026.07.24",
+      "title": "Prêt pour Cloudflare Edge",
+      "summary": "L'application et le contenu AvifKit ont été préparés pour un déploiement edge plus fiable.",
+      "changes": [
+        { "type": "improved", "text": "Adaptation des routes et de la découverte des articles à une sortie statique compatible edge." },
+        { "type": "new", "text": "Ajout de la configuration de déploiement Cloudflare Pages et Wrangler." },
+        { "type": "maintenance", "text": "Uniformisation du workspace et du lockfile pnpm pour des builds reproductibles." }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "version": "2026.07.19",
+      "title": "Un système visuel plus clair",
+      "summary": "Le convertisseur, la visionneuse, le blog et les pages légales ont bénéficié d'une refonte visuelle globale.",
+      "changes": [
+        { "type": "improved", "text": "Amélioration de la typographie, des espacements, des contrôles et de la hiérarchie du contenu." },
+        { "type": "improved", "text": "Mise à jour des retours du convertisseur et des comparaisons d'images pour faciliter la lecture." },
+        { "type": "fixed", "text": "Amélioration de la section d'erreurs pour rendre les problèmes de conversion plus compréhensibles." }
+      ]
+    },
+    {
+      "date": "2025-12-02",
+      "version": "2025.12.02",
+      "title": "Première version d'AvifKit",
+      "summary": "AvifKit a été lancé comme une boîte à outils privée dans le navigateur pour convertir des images AVIF sans envoi vers un serveur.",
+      "changes": [
+        { "type": "new", "text": "Ajout de la conversion locale d'AVIF vers JPG, PNG et WebP directement dans le navigateur." },
+        { "type": "new", "text": "Publication des pages de conversion en anglais, japonais, espagnol et français." },
+        { "type": "new", "text": "Publication des premiers guides pratiques pour ouvrir, convertir et utiliser les fichiers AVIF." }
+      ]
+    }
+  ]
+}

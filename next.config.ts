@@ -15,6 +15,7 @@ const defaultLocaleRoutes = [
   'avif-to-pdf',
   'avif-viewer',
   'blog',
+  'changelog',
   'privacy-policy',
   'terms',
 ];

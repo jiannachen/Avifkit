@@ -68,6 +68,12 @@ export const routes = {
     es: '/es/blog',
     fr: '/fr/blog',
   },
+  changelog: {
+    en: '/changelog',
+    ja: '/ja/changelog',
+    es: '/es/changelog',
+    fr: '/fr/changelog',
+  },
   'privacy-policy': {
     en: '/privacy-policy',
     ja: '/ja/privacy-policy',

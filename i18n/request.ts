@@ -12,6 +12,7 @@ const PAGE_DIRS: Record<string, string> = {
   'avif-to-gif': 'avif-to-gif',
   'avif-to-pdf': 'avif-to-pdf',
   'avif-viewer': 'avif-viewer',
+  'changelog': 'changelog',
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

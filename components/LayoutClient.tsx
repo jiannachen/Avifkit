@@ -18,7 +18,7 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isToolsMenuOpen, setIsToolsMenuOpen] = useState(false);
-  const converterHref = pathname.includes('/blog') || pathname.includes('/privacy-policy') || pathname.includes('/terms') || pathname.includes('/avif-viewer')
+  const converterHref = pathname.includes('/blog') || pathname.includes('/changelog') || pathname.includes('/privacy-policy') || pathname.includes('/terms') || pathname.includes('/avif-viewer')
     ? `${getLink('avif-to-jpg')}#converter`
     : '#converter';
 
@@ -216,11 +216,11 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
             <div>
               <h3 className="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">{t('nav.avif_to_others')}</h3>
               <ul className="space-y-3">
-                <li><Link href={getLink('avif-to-jpg')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to JPG</Link></li>
-                <li><Link href={getLink('avif-to-png')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to PNG</Link></li>
-                <li><Link href={getLink('avif-to-webp')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to WebP</Link></li>
-                <li><Link href={getLink('avif-to-gif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to GIF</Link></li>
-                <li><Link href={getLink('avif-to-pdf')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">AVIF to PDF</Link></li>
+                <li><Link href={getLink('avif-to-jpg')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.avif_to_jpg')}</Link></li>
+                <li><Link href={getLink('avif-to-png')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.avif_to_png')}</Link></li>
+                <li><Link href={getLink('avif-to-webp')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.avif_to_webp')}</Link></li>
+                <li><Link href={getLink('avif-to-gif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.avif_to_gif')}</Link></li>
+                <li><Link href={getLink('avif-to-pdf')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.avif_to_pdf')}</Link></li>
                 <li><Link href={getLink('avif-viewer')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('nav.viewer')}</Link></li>
               </ul>
             </div>
@@ -229,10 +229,11 @@ export const LayoutClient: React.FC<{ children: React.ReactNode }> = ({ children
             <div>
               <h3 className="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">{t('nav.others_to_avif')}</h3>
               <ul className="space-y-3">
-                <li><Link href={getLink('jpg-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">JPG to AVIF</Link></li>
-                <li><Link href={getLink('png-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">PNG to AVIF</Link></li>
-                <li><Link href={getLink('webp-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">WebP to AVIF</Link></li>
+                <li><Link href={getLink('jpg-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.jpg_to_avif')}</Link></li>
+                <li><Link href={getLink('png-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.png_to_avif')}</Link></li>
+                <li><Link href={getLink('webp-to-avif')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.webp_to_avif')}</Link></li>
                 <li><Link href={getLink('blog')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.blog')}</Link></li>
+                <li><Link href={getLink('changelog')} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{t('footer.links.changelog')}</Link></li>
               </ul>
             </div>
 

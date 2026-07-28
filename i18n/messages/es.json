@@ -64,7 +64,16 @@
       "legal": "Legal"
     },
     "links": {
-      "blog": "Blog",
+      "avif_to_jpg": "AVIF a JPG",
+      "avif_to_png": "AVIF a PNG",
+      "avif_to_webp": "AVIF a WebP",
+      "avif_to_gif": "AVIF a GIF",
+      "avif_to_pdf": "AVIF a PDF",
+      "jpg_to_avif": "JPG a AVIF",
+      "png_to_avif": "PNG a AVIF",
+      "webp_to_avif": "WebP a AVIF",
+      "blog": "Guías AVIF",
+      "changelog": "Registro de cambios",
       "api": "API para Desarrolladores",
       "knowledge": "Base de Conocimientos",
       "privacy": "Política de Privacidad",

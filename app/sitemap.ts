@@ -106,6 +106,11 @@ const pageConfig: Record<string, {
     basePriority: 0.8,
     images: ['https://img.avifkit.com/blog/what-is-avif-guide.webp'],
   },
+  'changelog': {
+    lastModified: new Date('2026-07-28'),
+    changeFrequency: 'monthly',
+    basePriority: 0.6,
+  },
   'privacy-policy': {
     lastModified: getContentLastModified('app/[locale]/privacy-policy/page.tsx'),
     changeFrequency: 'yearly',

@@ -64,7 +64,16 @@
       "legal": "法的事項"
     },
     "links": {
-      "blog": "ブログ",
+      "avif_to_jpg": "AVIFをJPGに変換",
+      "avif_to_png": "AVIFをPNGに変換",
+      "avif_to_webp": "AVIFをWebPに変換",
+      "avif_to_gif": "AVIFをGIFに変換",
+      "avif_to_pdf": "AVIFをPDFに変換",
+      "jpg_to_avif": "JPGをAVIFに変換",
+      "png_to_avif": "PNGをAVIFに変換",
+      "webp_to_avif": "WebPをAVIFに変換",
+      "blog": "AVIFガイド",
+      "changelog": "更新履歴",
       "api": "開発者向けAPI",
       "knowledge": "ナレッジベース",
       "privacy": "プライバシーポリシー",
