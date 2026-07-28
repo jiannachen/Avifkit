@@ -29,6 +29,14 @@ function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
 }
 
+function parseRedirects(relativePath) {
+  return read(relativePath)
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith('#'))
+    .map((line) => line.split(/\s+/));
+}
+
 function canonicalPath(locale, route) {
   const prefix = locale === defaultLocale ? '' : `/${locale}`;
   return route ? `${prefix}/${route}` : prefix || '/';
@@ -102,6 +110,45 @@ for (const route of staticRoutes) {
     assert(urlPath !== '/en' && !urlPath.startsWith('/en/'), `Canonical path should not include /en: ${urlPath}`);
   }
 }
+
+const redirects = parseRedirects('public/_redirects');
+const hasRedirect = (source, destination, status) =>
+  redirects.some(
+    ([actualSource, actualDestination, actualStatus]) =>
+      actualSource === source &&
+      actualDestination === destination &&
+      actualStatus === status
+  );
+
+for (const route of staticRoutes) {
+  const publicPath = canonicalPath(defaultLocale, route);
+  const exportPath = route ? `/en/${route}` : '/en';
+  assert(
+    hasRedirect(publicPath, exportPath, '200'),
+    `Missing English static rewrite: ${publicPath} -> ${exportPath}`
+  );
+
+  const publicRscPath = route ? `${publicPath}.txt` : '/index.txt';
+  const exportRscPath = route ? `${exportPath}.txt` : '/en.txt';
+  assert(
+    hasRedirect(publicRscPath, exportRscPath, '200'),
+    `Missing English RSC rewrite: ${publicRscPath} -> ${exportRscPath}`
+  );
+}
+
+assert(
+  hasRedirect('/blog/*', '/en/blog/:splat', '200'),
+  'Missing English blog post rewrite: /blog/* -> /en/blog/:splat'
+);
+assert(hasRedirect('/en', '/', '308'), 'Missing canonical redirect: /en -> /');
+assert(
+  hasRedirect('/en/*', '/:splat', '308'),
+  'Missing canonical redirect: /en/* -> /:splat'
+);
+assert(
+  !redirects.some(([source]) => source === '/:splat' || source === '/*'),
+  'A global rewrite would intercept localized routes and static assets'
+);
 
 if (errors.length > 0) {
   console.error('SEO audit failed:');

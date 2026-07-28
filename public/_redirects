@@ -1,1 +1,33 @@
+/en  /  308
+
 /  /en  200
+/avif-to-jpg  /en/avif-to-jpg  200
+/avif-to-png  /en/avif-to-png  200
+/avif-to-webp  /en/avif-to-webp  200
+/png-to-avif  /en/png-to-avif  200
+/jpg-to-avif  /en/jpg-to-avif  200
+/webp-to-avif  /en/webp-to-avif  200
+/avif-to-gif  /en/avif-to-gif  200
+/avif-to-pdf  /en/avif-to-pdf  200
+/avif-viewer  /en/avif-viewer  200
+/blog  /en/blog  200
+/privacy-policy  /en/privacy-policy  200
+/terms  /en/terms  200
+
+# Next.js static exports fetch matching RSC payloads during client navigation.
+/index.txt  /en.txt  200
+/avif-to-jpg.txt  /en/avif-to-jpg.txt  200
+/avif-to-png.txt  /en/avif-to-png.txt  200
+/avif-to-webp.txt  /en/avif-to-webp.txt  200
+/png-to-avif.txt  /en/png-to-avif.txt  200
+/jpg-to-avif.txt  /en/jpg-to-avif.txt  200
+/webp-to-avif.txt  /en/webp-to-avif.txt  200
+/avif-to-gif.txt  /en/avif-to-gif.txt  200
+/avif-to-pdf.txt  /en/avif-to-pdf.txt  200
+/avif-viewer.txt  /en/avif-viewer.txt  200
+/blog.txt  /en/blog.txt  200
+/privacy-policy.txt  /en/privacy-policy.txt  200
+/terms.txt  /en/terms.txt  200
+
+/en/*  /:splat  308
+/blog/*  /en/blog/:splat  200

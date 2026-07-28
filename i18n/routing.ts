@@ -8,8 +8,8 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: 'en',
 
-  // Keep middleware rewrites stable; public default-locale URLs are normalized in middleware.
-  localePrefix: 'always',
+  // English uses canonical URLs without a locale prefix.
+  localePrefix: 'as-needed',
 
   // HTML metadata and sitemap own hreflang output so HTTP headers don't drift from canonicals.
   alternateLinks: false,
